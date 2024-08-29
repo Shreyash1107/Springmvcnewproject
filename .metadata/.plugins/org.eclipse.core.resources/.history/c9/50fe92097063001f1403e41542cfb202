@@ -1,0 +1,25 @@
+body
+{
+    background-image: url('https://img.freepik.com/free-photo/photorealistic-wedding-venue-with-intricate-decor-ornaments_23-2151481480.jpg?t=st=1724651780~exp=1724655380~hmac=5ae96d919743fd854814328d58b96524907497e3ee2ddc646ec82f2a73ec28c8&w=996');
+}
+.login-container 
+{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+}
+.login-form 
+{
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+.login-form h3 
+{
+    margin-bottom: 1.5rem;
+}

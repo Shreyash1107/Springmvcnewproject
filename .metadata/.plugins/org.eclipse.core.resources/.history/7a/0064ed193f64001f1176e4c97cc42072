@@ -1,0 +1,9 @@
+package org.service;
+
+import org.model.DepartmentModel;
+
+public class DepartmentServiceImpl implements DepartmentService{
+	public boolean isDepartmentAded(DepartmentModel dmodel) {
+		
+	}
+}

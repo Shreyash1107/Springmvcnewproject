@@ -1,0 +1,31 @@
+sidebar {
+    width: 250px;
+}
+
+.nav-link {
+    color: white;
+    width: 100%;
+    text-align: left;
+}
+
+.nav-link:hover, .dropdown-item:hover {
+    background-color: #343a40;
+}
+
+.dropdown-menu {
+    background-color: black;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+}
+
+.dropdown-item {
+    color: white;
+    text-align: center; /* Center align the text */
+    padding-left: 0; /* Remove left padding */
+}
+
+.collapse-content {
+    text-align: center; /* Center align the sub-items */
+    padding-left: 0; /* Remove left padding */
+}

@@ -1,0 +1,7 @@
+package org.service;
+
+import org.model.DepartmentModel;
+
+public interface DepartmentService {
+	public boolean isDepartmentAded(DepartmentModel dmodel);
+}

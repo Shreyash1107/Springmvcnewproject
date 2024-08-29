@@ -1,0 +1,10 @@
+package org.service;
+
+import org.model.AlumniModel;
+import org.springframework.stereotype.Service;
+@Service("alumniservice")
+public class AlumniServiceImpl implements Alumniservice{
+	public boolean isAlumniadded(AlumniModel amodel) {
+		
+	}
+}

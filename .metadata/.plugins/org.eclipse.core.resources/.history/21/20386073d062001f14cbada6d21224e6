@@ -1,0 +1,470 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Alumni Event Management</title>
+<style>
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.container1 {
+	width: 80%;
+	min-height: 100px;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+.help {
+	width: 100%;
+	min-height: 40px;
+	background-color: #24262B;
+	display: flex;
+	flex-direction: row;
+}
+
+.help .contact {
+	display: flex;
+	flex-direction: row;
+	flex-basis: 75%;
+}
+
+.contact h4 {
+	color: white;
+	padding: 10px;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.help .icons {
+	display: flex;
+	flex-direction: row;
+	padding: 10px;
+	flex-basis: 20%;
+	padding-top: 10px;
+}
+
+.icons .b1 {
+	color: white;
+	padding: 5px;
+	font-size: 1.2em;
+	transition: 0.5s;
+}
+
+.icons .b1:hover {
+	color: white;
+	transform: translateY(-10px);
+}
+
+.logo-menu-div {
+	width: 100%;
+	min-height: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border: 1px solid #000;
+	margin-top: 10px;
+	background-color: #24262B;
+}
+
+.logo-menu-div .logo label {
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-weight: bold;
+	font-size: 2em;
+	display: flex;
+	flex-direction: row;
+	padding: 10px;
+	color: white;
+}
+
+.menu ul {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	padding: 10px;
+}
+
+.menu ul li {
+	list-style-type: none;
+	padding: 10px;
+}
+
+.menu ul li a {
+	color: white;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+}
+
+.menu ul li:hover {
+	background-color: #ADBC9F;
+	color: black;
+}
+
+.menu ul li a:hover {
+	color: black;
+}
+
+.slider {
+	width: 100%;
+	min-height: 200px;
+	margin-top: 10px;
+}
+
+.box {
+	margin-top: 10px;
+	width: 100%;
+	height: 300px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.box .b1 {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 33%;
+}
+
+.b1 .text-heading {
+	width: 100%;
+	min-height: 60px;
+	background-color: #24262B;
+}
+
+.text-heading h3 {
+	background-color: #24262B;
+	color: white;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size: 1.2em;
+	text-align: center;
+	border-top-right-radius: 50px;
+	border-bottom-left-radius: 50px;
+}
+
+.img-div img {
+	width: 100%;
+	height: 300px;
+	object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+.footercon {
+	width: 100%;
+	min-height: 200px;
+}
+
+.footer {
+	background-color: darkslategray;
+	margin-top: 120px;
+	padding: 50px 0;
+}
+
+.footer-col {
+	width: 25%;
+	padding: 0 15px;
+}
+
+.footer-col h4 {
+	color: #fff;
+	text-transform: capitalize;
+	font-size: 1.1em;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+
+.footer-col h4::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+
+.footer-col h4:hover {
+	color: brown;
+}
+
+.footer-col ul li:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+	font-size: 1em;
+	text-transform: capitalize;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 100;
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+	color: red;
+}
+
+.footer-col .social-links a {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255, 255, 255, 0.2);
+	margin: 0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #fff;
+	transition: all 0.3s ease;
+}
+
+.footer-col .social-links a:hover {
+	color: #24262B;
+	background-color: #fff;
+}
+
+@media screen and (max-width:768px) {
+	.container1 {
+		width: 100%;
+	}
+	.logo-menu-div {
+		flex-direction: column;
+		z-index: 10000;
+		height: auto;
+	}
+	.menu ul {
+		display: block;
+	}
+	.menu ul li {
+		text-align: center;
+	}
+	.logo-menu-div .logo label {
+		margin-left: 30vw;
+		min-width: 150px;
+		font-size: 1.6em;
+	}
+	.box {
+		display: flex;
+		flex-direction: column;
+		height: auto;
+		gap: 15px;
+	}
+	.box .b1 .img-div img {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.footer {
+		margin-top: 20px;
+	}
+	.footer-col {
+		width: 100%;
+		text-align: center;
+		padding: 0 15px;
+		margin-bottom: 30px;
+	}
+	.footer-col h4:hover {
+		color: brown;
+	}
+	.footer-col li a:hover {
+		color: red;
+	}
+}
+
+.events, .news, .spotlight {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.events h2, .news h2, .spotlight h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.event-item, .news-item, .spotlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.event-img, .news-img, .spotlight-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.event-info, .news-info, .spotlight-info {
+    text-align: center;
+}
+
+.event-info h3, .news-info h3, .spotlight-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.event-info p, .news-info p, .spotlight-info p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.btn-success a {
+    color: white;
+    text-decoration: none;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+<link href="<c:url value='/resources/CSS/style.css' />" rel="stylesheet" />
+</head>
+<body>
+	<div class="container1">
+		<div class="help">
+			<marquee scrollamount="10" onmouseover="this.stop()" onmouseleave="this.start()">
+				<div class="contact">
+					<h4 style="font-size: 16px">"Welcome to Our Website, Stay Tuned for Upcoming Events"</h4>
+				</div>
+			</marquee>
+			<div class="icons">
+				<a href="https://www.instagram.com/sem/campaign/emailsignup/?campaign_id=13530338610&extra_1=s%7Cc%7C547419127631%7Ce%7Cinstagram%20%27%7C&placement=&creative=547419127631&keyword=instagram%20%27&partner_id=googlesem&extra_2=campaignid%3D13530338610%26adgroupid%3D126262414014%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-388134286020%26loc_physical_ms%3D9012026%26loc_interest_ms%3D9008653%26creative%3D547419127631%26campaignid%3D13530338610%26adgroupid%3D126262414014%26matchtype%3De" class="b1"><i class="fa-brands fa-instagram"></i></a>
+				<a href="https://www.facebook.com/sem/short-form/" class="b1"><i class="fa-brands fa-facebook-f"></i></a>
+				<a href="https://twitter.com/sem/short-form/" class="b1"><i class="fa-brands fa-twitter"></i></a>
+				<a href="https://www.linkedin.com/company/sem/short-form/" class="b1"><i class="fa-brands fa-linkedin-in"></i></a>
+			</div>
+		</div>
+		<div class="logo-menu-div">
+			<div class="logo">
+				<label>Alumni Events</label>
+			</div>
+			<div class="menu">
+				<ul>
+					<li><a href="<c:url value='/alumni' />">Home</a></li>
+					<li><a href="<c:url value='/events' />">Events</a></li>
+					<li><a href="<c:url value='/news' />">News</a></li>
+					<li><a href="<c:url value='/community' />">Community</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- Bootstrap Slider -->
+		<div id="carouselExampleCaptions" class="carousel slide slider">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="<c:url value='/resources/Images/slide1.jpg' />" class="d-block w-100" alt="Slide 1">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Welcome to the Alumni Event</h5>
+						<p>Connecting alumni through memorable events.</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="<c:url value='/resources/Images/slide2.jpg' />" class="d-block w-100" alt="Slide 2">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Networking Opportunities</h5>
+						<p>Meet and network with fellow alumni.</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="<c:url value='/resources/Images/slide3.jpg' />" class="d-block w-100" alt="Slide 3">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Upcoming Events</h5>
+						<p>Stay tuned for our exciting events!</p>
+					</div>
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+		<!-- Upcoming Events Section -->
+		<div class="events">
+			<h2>Upcoming Events</h2>
+			<div class="event-item">
+				<img src="<c:url value='/resources/Images/event1.jpg' />" alt="Upcoming Event" class="event-img">
+				<div class="event-info">
+					<h3>Annual Alumni Meet</h3>
+					<p>Join us for the Annual Alumni Meet where we reconnect with old friends and celebrate our achievements. Date: September 30, 2024.</p>
+					<button class="btn btn-success"><a href="<c:url value='/register' />">Register Now</a></button>
+				</div>
+			</div>
+		</div>
+		<!-- Recent News Section -->
+		<div class="news">
+			<h2>Recent News</h2>
+			<div class="news-item">
+				<img src="<c:url value='/resources/Images/news1.jpg' />" alt="Recent News" class="news-img">
+				<div class="news-info">
+					<h3>New Alumni Network Launch</h3>
+					<p>We are excited to announce the launch of our new Alumni Network platform. Stay tuned for more details and updates.</p>
+					<button class="btn btn-success"><a href="<c:url value='/news' />">Read More</a></button>
+				</div>
+			</div>
+		</div>
+		<!-- Community Spotlight Section -->
+		<div class="spotlight">
+			<h2>Community Spotlight</h2>
+			<div class="spotlight-item">
+				<img src="<c:url value='/resources/Images/spotlight1.jpg' />" alt="Community Spotlight" class="spotlight-img">
+				<div class="spotlight-info">
+					<h3>Spotlight on John Doe</h3>
+					<p>Meet John Doe, one of our distinguished alumni who has made significant contributions to the field of technology.</p>
+					<button class="btn btn-success"><a href="<c:url value='/spotlight' />">Learn More</a></button>
+				</div>
+			</div>
+		</div>
+		<div class="footercon">
+			<footer class="footer">
+				<div class="footer-col">
+					<h4>About Us</h4>
+					<ul>
+						<li><a href="#">Our Story</a></li>
+						<li><a href="#">Mission & Vision</a></li>
+						<li><a href="#">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>Events</h4>
+					<ul>
+						<li><a href="#">Upcoming Events</a></li>
+						<li><a href="#">Past Events</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>News</h4>
+					<ul>
+						<li><a href="#">Latest News</a></li>
+						<li><a href="#">Announcements</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>Connect</h4>
+					<ul class="social-links">
+						<li><a href="https://www.instagram.com/sem/campaign/emailsignup/?campaign_id=13530338610&extra_1=s%7Cc%7C547419127631%7Ce%7Cinstagram%20%27%7C&placement=&creative=547419127631&keyword=instagram%20%27&partner_id=googlesem&extra_2=campaignid%3D13530338610%26adgroupid%3D126262414014%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-388134286020%26loc_physical_ms%3D9012026%26loc_interest_ms%3D9008653%26creative%3D547419127631%26campaignid%3D13530338610%26adgroupid%3D126262414014%26matchtype%3De" class="b1"><i class="fa-brands fa-instagram"></i></a></li>
+						<li><a href="https://www.facebook.com/sem/short-form/" class="b1"><i class="fa-brands fa-facebook-f"></i></a></li>
+						<li><a href="https://twitter.com/sem/short-form/" class="b1"><i class="fa-brands fa-twitter"></i></a></li>
+						<li><a href="https://www.linkedin.com/company/sem/short-form/" class="b1"><i class="fa-brands fa-linkedin-in"></i></a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>

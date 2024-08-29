@@ -1,0 +1,8 @@
+package org.repository;
+
+import org.springframework.stereotype.Repository;
+
+@Repository("lorinrepo")
+public class AdminLoginrepositoryImpl {
+
+}

@@ -1,0 +1,14 @@
+package org.service;
+
+import org.model.DepartmentModel;
+import org.repository.Departmentrepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+@Service("deptservice")
+public class DepartmentServiceImpl implements DepartmentService{
+	@Autowired
+	Departmentrepository deptrepo;
+	public boolean isDepartmentAded(DepartmentModel dmodel) {
+		return deptrepo.isDepartmentAded(dmodel);
+	}
+}

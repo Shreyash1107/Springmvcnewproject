@@ -1,0 +1,78 @@
+@charset "ISO-8859-1";
+
+.container {
+    background-color: black;
+    width: 90%; /* Set width to 90% for margin */
+    height: 40px; 
+    display: flex;
+    align-items: center;
+    margin: 0 auto; /* Centering the container with auto margins */
+}
+
+.logo {
+    height: 40px; 
+    margin-right: 20px; 
+    display: flex;
+    align-items: center;
+}
+
+.container ul {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container ul li {
+    display: inline;  
+}
+
+.container ul li a {
+    text-decoration: none;
+    margin: 0 15px; 
+    color: white;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.container ul li a:hover,
+.Login-btn:hover {
+    background-color: blueviolet;
+}
+
+.Login-btn {
+    color: white;
+    text-decoration: none;
+    margin-left: auto;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+/* Marquee styling */
+.marquee-wrapper {
+    width: 90%; /* Set width to 90% for margin */
+    margin: 0 auto; /* Centering the marquee with auto margins */
+    overflow: hidden; /* Ensure it behaves like a block-level element */
+}
+
+marquee {
+    width: 100%; /* Full width of its parent */
+    color: blue; /* Optional: change text color */
+}
+
+/* Image and slider styling */
+.main-div {
+    width: 90%; /* Set width to 90% for margin */
+    margin: 0 auto; /* Centering the main-div */
+    display: flex;
+    justify-content: center; /* Center the content inside */
+}
+
+.slider img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

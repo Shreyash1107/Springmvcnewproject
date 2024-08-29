@@ -1,0 +1,13 @@
+package org.repository;
+
+import org.model.BatchModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class BatchrepositoryImpl {
+	@Autowired
+	JdbcTemplate template;
+	public boolean isBatchAdded(BatchModel bmodel) {
+		
+	}
+}

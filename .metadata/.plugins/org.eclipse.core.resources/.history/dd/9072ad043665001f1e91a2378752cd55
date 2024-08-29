@@ -1,0 +1,7 @@
+package org.repository;
+
+import org.model.BatchModel;
+
+public interface Batchrepository {
+	public boolean isBatchAdded(BatchModel bmodel);
+}

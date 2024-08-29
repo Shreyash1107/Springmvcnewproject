@@ -1,0 +1,10 @@
+package org.repository;
+
+import org.model.AlumniModel;
+import org.springframework.stereotype.Repository;
+@Repository("amrepp")
+public class AlumnirepositoryImpl implements Alumnirepository{
+	public boolean isAlumniadded(AlumniModel amodel) {
+		return false;
+	}
+}

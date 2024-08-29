@@ -1,0 +1,8 @@
+package org.model;
+
+public class LoginModel {
+private int userid;
+private String username;
+private String Password;
+private 
+}

@@ -1,0 +1,126 @@
+/* Sidebar Styling */
+.sidebar {
+    background-color: #343a40;
+    height: 100vh;
+    color: white;
+    top: 0;
+    padding: 10px 0;
+    width: 250px; /* Fixed width */
+}
+
+/* Header Styling in Sidebar */
+.sidebar h4 {
+    font-size: 1.5rem;
+    color: #f8f9fa;
+    margin-bottom: 30px;
+}
+
+/* Nav Link Styling */
+.nav-link {
+    color: white;
+    width: 100%;
+    text-align: left;
+    background-color: #495057; /* Same as main nav links */
+    padding: 10px; /* Consistent padding */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Nav Link Hover Effect */
+.nav-link:hover, .dropdown-item:hover {
+    background-color: #007bff; /* Consistent hover color */
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Active Nav Link Styling */
+.nav-link.active {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    background-color: #343a40; /* Match sidebar background */
+    width: 100%; /* Full width of the sidebar */
+    border: none;
+    box-shadow: none;
+}
+
+/* Dropdown Item Styling */
+.dropdown-item {
+    color: white;
+    text-align: center;
+    padding-left: 0; /* Remove left padding */
+}
+
+/* Collapse (Submenu) Styling */
+.collapse {
+    background-color: #343a40; /* Match sidebar background */
+    border: none;
+    box-shadow: none;
+    width: 100%;
+}
+
+/* Submenu Item Styling */
+.collapse-content {
+    text-align: center;
+    padding-left: 0; /* Remove left padding */
+}
+
+/* Content Area Styling */
+.content {
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #f8f9fa;
+}
+
+.navbar-nav {
+    flex: 1;
+    justify-content: center;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 15px;
+}
+
+.navbar-nav .nav-link {
+    color: #000;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    border-radius: 0.25rem;
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}

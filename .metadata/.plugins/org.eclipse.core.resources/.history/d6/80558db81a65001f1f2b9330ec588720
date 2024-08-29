@@ -1,0 +1,7 @@
+package org.model;
+
+public class BatchModel {
+	private int Bid;
+	private String batch_year;
+	private int dept_id;
+}

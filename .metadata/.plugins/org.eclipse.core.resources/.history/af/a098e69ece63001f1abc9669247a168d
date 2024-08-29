@@ -1,0 +1,13 @@
+package org.service;
+
+import org.model.LoginModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+@Service("alumniservice")
+public class AlumniregisterserviceImpl implements Alumniregisterservice{
+	@Autowired
+	s
+	public boolean isAlumniregister(LoginModel model) {
+		return 
+	}
+}

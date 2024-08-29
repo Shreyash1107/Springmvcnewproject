@@ -1,0 +1,12 @@
+package org.repository;
+
+import org.model.BatchModel;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class BatchrepositoryImpl {
+	@Autowired
+	
+	public boolean isBatchAdded(BatchModel bmodel) {
+		
+	}
+}

@@ -1,0 +1,333 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Event Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<c:url value='/resources/CSS/style.css' />">
+    <style>
+        /* Basic styles for the body and container */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container1 {
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .box .b1 {
+            flex: 1;
+            min-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box .b1:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-heading {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-bottom: 3px solid #0056b3;
+        }
+
+        .img-div img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .info {
+            padding: 15px;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .register-button {
+            display: block;
+            width: calc(100% - 30px);
+            margin: 15px auto;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .register-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: darkslategray;
+            margin-top: 120px;
+            padding: 50px 0;
+        }
+
+        .footer-col {
+            width: 25%;
+            padding: 0 15px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            text-transform: capitalize;
+            font-size: 1.1em;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-col h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+
+        .footer-col h4:hover {
+            color: brown;
+        }
+
+        .footer-col ul li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 1em;
+            text-transform: capitalize;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 100;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: red;
+        }
+
+        .footer-col .social-links a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col .social-links a:hover {
+            color: #24262B;
+            background-color: #fff;
+        }
+
+        @media screen and (max-width:768px) {
+            .container1 {
+                width: 100%;
+            }
+
+            .logo-menu-div {
+                flex-direction: column;
+                z-index: 10000;
+                height: auto;
+            }
+
+            .menu ul {
+                display: block;
+            }
+
+            .menu ul li {
+                text-align: center;
+            }
+
+            .logo-menu-div .logo label {
+                margin-left: 30vw;
+                min-width: 150px;
+                font-size: 1.6em
+            }
+
+            .box {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                gap: 15px;
+            }
+
+            .box .b1 .img-div img {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .footer {
+                margin-top: 20px;
+            }
+
+            .footer-col {
+                width: 100%;
+                text-align: center;
+                padding: 0 15px;
+                margin-bottom: 30px;
+            }
+
+            .footer-col h4:hover {
+                color: brown;
+            }
+
+            .footer-col li a:hover {
+                color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container1">
+        <div class="help">
+            <marquee scrollamount="10" onmouseover="this.stop()" onmouseleave="this.start()">
+                <div class="contact">
+                    <h4 style="font-size: 16px">"Welcome to Our Website, Stay Tuned for Upcoming Events"</h4>
+                </div>
+            </marquee>
+            <div class="icons">
+                <i class="fa-brands fa-instagram b1"></i>
+                <i class="fa-brands fa-twitter b1"></i>
+                <i class="fa-brands fa-facebook-f b1"></i>
+            </div>
+        </div>
+        <div class="logo-menu-div">
+            <div class="logo">
+                <label>AlumniHub.org</label>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="slider">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://media.gettyimages.com/id/1066324992/photo/graduation-day.jpg?s=612x612&w=0&k=20&c=cleRpjTZbo430AbH-luZFYMMNqPwhwyTnFgWMbi_AiI=" class="d-block w-100" alt="Graduation Day">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://media.gettyimages.com/id/1396209983/photo/graduation-day.jpg?s=612x612&w=0&k=20&c=nxPw-OL7wQqnZ_fkQw_IxPGIhJ37dLkYbNe3Dmb9RXE=" class="d-block w-100" alt="Graduation Day">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://media.gettyimages.com/id/1386939559/photo/tutor-addresses-the-class.jpg?s=612x612&w=0&k=20&c=rDxpv6dKKd5Pw-iB8gQHO58LjT9EF_DWyuimp-x6G20=" class="d-block w-100" alt="Tutor Addressing Class">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="b1">
+                <div class="text-heading">Event Details</div>
+                <div class="img-div">
+                    <img src="https://via.placeholder.com/300x200" alt="Event Image">
+                </div>
+                <div class="info">
+                    <h4>Event Name</h4>
+                    <p>Description of the event goes here. Provide brief information about the event.</p>
+                    <a href="register.html" class="register-button">Register</a>
+                </div>
+            </div>
+            <!-- Repeat above block for more events -->
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-col">
+                <h4>About Us</h4>
+                <ul>
+                    <li><a href="#">Company Info</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <form action="#" method="post">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

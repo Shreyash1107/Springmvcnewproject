@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Event Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic styles for the body and container */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container1 {
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .box .b1 {
+            flex: 1;
+            min-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box .b1:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-heading {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-bottom: 3px solid #0056b3;
+        }
+
+        .img-div img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .info {
+            padding: 15px;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .register-button {
+            display: block;
+            width: calc(100% - 30px);
+            margin: 15px auto;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .register-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container1">
+        <div class="box">
+            <!-- Upcoming Events Section -->
+            <div class="b1">
+                <div class="text-heading">
+                    Upcoming Events
+                </div>
+                <div class="img-div">
+                    <img src="https://via.placeholder.com/800x200?text=Upcoming+Event" alt="Upcoming Event">
+                </div>
+                <div class="info">
+                    <p>Join us for an exciting upcoming event where you can network with other alumni and participate in various activities. Don’t miss out on this great opportunity to reconnect!</p>
+                </div>
+                <a href="#" class="register-button">Register</a>
+            </div>
+
+            <!-- Recent News Section -->
+            <div class="b1">
+                <div class="text-heading">
+                    Recent News
+                </div>
+                <div class="img-div">
+                    <img src="https://via.placeholder.com/800x200?text=Recent+News" alt="Recent News">
+                </div>
+                <div class="info">
+                    <p>Read the latest updates and news about our alumni community. Stay informed about what’s happening and how you can get involved.</p>
+                </div>
+                <a href="#" class="register-button">Register</a>
+            </div>
+
+            <!-- Community Spotlight Section -->
+            <div class="b1">
+                <div class="text-heading">
+                    Community Spotlight
+                </div>
+                <div class="img-div">
+                    <img src="https://via.placeholder.com/800x200?text=Community+Spotlight" alt="Community Spotlight">
+                </div>
+                <div class="info">
+                    <p>Check out the achievements and stories of standout members of our community. Learn more about their contributions and successes.</p>
+                </div>
+                <a href="#" class="register-button">Register</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

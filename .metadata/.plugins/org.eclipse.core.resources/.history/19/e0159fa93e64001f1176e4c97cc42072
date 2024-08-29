@@ -1,0 +1,7 @@
+package org.repository;
+
+import org.model.DepartmentModel;
+
+public interface Departmentrepository {
+	public boolean isDepartmentAded(DepartmentModel dmodel)
+}

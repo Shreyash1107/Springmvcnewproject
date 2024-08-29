@@ -1,0 +1,80 @@
+@charset "ISO-8859-1";
+
+.wrapper {
+    width: 90%; /* Set width to 90% for overall wrapper */
+    margin: 0 auto; /* Center the wrapper */
+}
+
+.container {
+    background-color: black;
+    height: 40px; 
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px; 
+    margin-right: 20px; 
+    display: flex;
+    align-items: center;
+}
+
+.container ul {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container ul li {
+    display: inline;  
+}
+
+.container ul li a {
+    text-decoration: none;
+    margin: 0 15px; 
+    color: white;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.container ul li a:hover,
+.Login-btn:hover {
+    background-color: blueviolet;
+}
+
+.Login-btn {
+    color: white;
+    text-decoration: none;
+    margin-left: auto;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+/* Marquee styling */
+.marquee-wrapper {
+    overflow: hidden; /* Ensure it behaves like a block-level element */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+marquee {
+    width: 100%; /* Full width of its parent */
+    color: blue; /* Optional: change text color */
+}
+
+/* Image and slider styling */
+.main-div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.slider img {
+    width: 100%; /* Ensure the image takes the full width of the parent */
+    height: auto;
+    display: block;
+}
