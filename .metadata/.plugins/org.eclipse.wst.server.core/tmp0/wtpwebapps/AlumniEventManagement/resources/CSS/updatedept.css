@@ -3,6 +3,7 @@
 body {
 	background-color: #1c1e21;
 	color: white;
+	overflow: hidden;
 }
 
 /* Navigation Bar styling */
@@ -76,6 +77,17 @@ body {
 .form-group-center {
 	display: flex;
 	justify-content: center;
+}
+.pagination-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+.page-button.active {
+	font-weight: bold;
+	border:teal;
+	background-color:teal;
+	color: white;
 }
 /* Card styling */
 .card {

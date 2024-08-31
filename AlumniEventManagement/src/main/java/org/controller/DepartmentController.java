@@ -15,70 +15,57 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class DepartmentController {
-	@Autowired
-	DepartmentService deptservice;
-	@RequestMapping(value = "/addview")
-	public String getdeptmodeule() {
-		return "Department";
-	}
-	@RequestMapping(value = "/adddept")
-	public String adddept() {
-		return "AddDepartment";
-	}
+    @Autowired
+    DepartmentService deptservice;
 
-	@RequestMapping(value = "/savedept")
-	public String addepartment(DepartmentModel deptmodel, Map<String, Object> map) {
-	    boolean b = deptservice.isDepartmentAded(deptmodel);
-	    if (b) {
-	        map.put("dept", "Department has been Successfully Added.......");
-	        return "AddDepartment";
-	    } else {
-	        return "Admindashboard";
-	    }
-	}
+    @RequestMapping(value = "/department", method = RequestMethod.GET)
+    public String getDepartmentPage(Map<String, Object> map) {
+        List<DepartmentModel> deptlist = deptservice.getdept();
+        map.put("deptlist", deptlist);
+        return "Department";
+    }
 
-	@RequestMapping(value = "/viewdept")
-	public String viewdept(Map<String, List<DepartmentModel>> map) {
-	    List<DepartmentModel> deptlist = deptservice.getdept();
-	    if (deptlist != null) {
-	        map.put("d", deptlist);
-		    System.out.println(deptlist);
-	        return "viewdepartment";
-	    } else {
-	        return "Admindashboard";
-	    }
-	}
-	@RequestMapping(value = "/delete")
-	public String deletrdeptid(@RequestParam("dept_id") Integer dept_id, Map<String, List<DepartmentModel>> map) {
-		deptservice.isDepartmentdeleted(dept_id);
-		List<DepartmentModel> list = deptservice.getdept();
-		if (list != null) {
-			map.put("d", list);
-			return "viewdepartment";
-		}else {
-			return "Admindashboard";
-		}
-	}
+    @RequestMapping(value = "/department", method = RequestMethod.POST)
+    public String saveDepartment(DepartmentModel deptmodel, Map<String, Object> map) {
+        boolean b = deptservice.isDepartmentAded(deptmodel);
+        if (b) {
+            map.put("message", "Department has been successfully added.");
+        } else {
+            map.put("message", "Failed to add department.");
+        }
+        
+        List<DepartmentModel> deptlist = deptservice.getdept();
+        map.put("deptlist", deptlist);
+        
+        return "Department";
+    }
 
-	@RequestMapping(value = "/update")
-	public String updatedept(@RequestParam("dept_id") Integer deptid, @RequestParam("dept_name") String name,
-			Map<String, Object> map) {
-		map.put("deptid", deptid);
-		map.put("deptname", name);
-		return "Updatedept";
-	}
+    @RequestMapping(value = "/delete")
+    public String deleteDepartment(@RequestParam("dept_id") Integer dept_id, Map<String, Object> map) {
+        deptservice.isDepartmentdeleted(dept_id);
+        List<DepartmentModel> deptlist = deptservice.getdept();
+        map.put("deptlist", deptlist);
+        return "Department";
+    }
 
-	@RequestMapping(value = "/finalupdate")
-	public String getupdateddetails(DepartmentModel dmodel1, Map<String, Object> map,HttpServletRequest request) {
-		int deptid = (Integer.parseInt(request.getParameter("dept_id")));
-		String name = request.getParameter("dept_name");
-		dmodel1.setDept_id(deptid);
-		dmodel1.setDept_name(name);
-		boolean b = deptservice.isupdateDepartment(dmodel1);
-		if (b) {
-			List<DepartmentModel> updatedlist = deptservice.getdept();
-			map.put("d", updatedlist);
-		}
-		return "viewdepartment";
-	}
+    @RequestMapping(value = "/update")
+    public String updateDepartment(@RequestParam("dept_id") Integer deptid, @RequestParam("dept_name") String name,
+            Map<String, Object> map) {
+        map.put("deptid", deptid);
+        map.put("deptname", name);
+        return "Updatedept"; // You can return the same "Department" JSP page and handle the update there if needed.
+    }
+    @RequestMapping(value = "/finalupdate")
+    public String getupdateddept(HttpServletRequest req,DepartmentModel dmodel,Map<String, Object> map) {
+    	int dept_id = Integer.parseInt(req.getParameter("dept_id"));
+    	String dept_name = req.getParameter("dept_name");
+    	dmodel.setDept_id(dept_id);
+    	dmodel.setDept_name(dept_name);
+    	boolean b = deptservice.isupdateDepartment(dmodel);
+    	if(b) {
+    		List<DepartmentModel> list = deptservice.getdept();
+    		map.put("v", list);
+    	}
+    	return "Updatedept";
+    }
 }

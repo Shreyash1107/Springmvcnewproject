@@ -22,8 +22,8 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <h3 class="text-center">Admin Dashboard</h3>
-        <a href="addview">Department Module</a>
-         <a href="btchmodel">Batch Module</a>
+        <a href="department">Department Module</a>
+        <a href="btchmodel">Batch Module</a>
         <a href="alumni">Alumni Module</a>
         <a href="#">Event Module</a>
         <a href="#">Feedback Module</a>
@@ -32,44 +32,41 @@
 
     <!-- Main Content -->
     <div class="content">
-        <div class="container-fluid">
-            <h2 class="text-center mb-5">Welcome to the Admin Dashboard</h2>    
-            <!-- Cards Section -->
-            <div class="row md-4">
-                <div class="col-md-4 mb-3">
-                    <div class="card text-white bg-warning mb-3">
-                        <div class="card-header">Total Departments</div>
+        <div class="container">
+            <div class="row">
+                <!-- Card 1: Total Departments -->
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center bg-primary text-white">
                         <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5 class="card-title">Total Departments</h5>
+                            <p class="card-text">Number of departments in the system.</p>
+                            <h3 class="card-text">${deptcount}</h3>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card text-white bg-secondary mb-3">
-                        <div class="card-header">Registered Events</div>
+
+                <!-- Card 2: Total Alumni -->
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center bg-success text-white">
                         <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5 class="card-title">Total Alumni</h5>
+                            <p class="card-text">Number of alumni registered for Application</p>
+                            <h3 class="card-text"></h3>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card text-white bg-success mb-3">
-                        <div class="card-header">Total Alumni</div>
+
+                <!-- Card 3: Event Registered -->
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center bg-warning text-white">
                         <div class="card-body">
-                            <h5 class="card-title"></h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5 class="card-title">Event Registered</h5>
+                            <p class="card-text">Number of events registered by Alumni</p>
+                            <h3 class="card-text"></h3>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Buttons Section -->
-           <!--  <div class="mb-4">
-                <button class="btn btn-custom me-2">Add</button>
-                <button class="btn btn-custom">View</button>
-            </div> -->
         </div>
     </div>
 

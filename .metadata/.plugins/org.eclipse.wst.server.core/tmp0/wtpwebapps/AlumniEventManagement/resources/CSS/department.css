@@ -1,10 +1,13 @@
-@charset "ISO-8859-1";
-
+/* General Body Styling */
 body {
 	background-color: #1c1e21;
 	color: white;
+	overflow:hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
+/* Navigation Bar Styling */
 .navbar {
 	background-color: #000000;
 	color: white;
@@ -23,6 +26,7 @@ body {
 	color: #adb5bd !important;
 }
 
+/* Sidebar Styling */
 .sidebar {
 	height: calc(100vh - 56px);
 	width: 250px;
@@ -46,6 +50,7 @@ body {
 	background-color: #495057;
 }
 
+/* Content Styling */
 .content {
 	margin-left: 250px;
 	padding: 20px;
@@ -59,6 +64,7 @@ body {
 	color: white;
 }
 
+/* Button Styling */
 .btn-custom {
 	background-color: #495057;
 	color: white;
@@ -70,6 +76,38 @@ body {
 	color: #000;
 }
 
+/* Center the Add Department Button */
+.form-group-center {
+	display: flex;
+	justify-content: center;
+}
+
+/* Card Styling */
 .card {
 	max-width: 18rem;
+}
+
+/* Pagination Styling */
+.pagination-container {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.page-button {
+	margin: 0 5px;
+}
+
+/* Highlight Active Page Button */
+.page-button.active {
+	font-weight: bold;
+	border:teal;
+	background-color:teal;
+	color: white;
+}
+
+/* Centering for Pagination Buttons */
+.pagination-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
 }

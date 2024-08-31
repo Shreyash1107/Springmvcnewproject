@@ -55,6 +55,8 @@ body {
 	min-height: 100vh;
 }
 
+
+
 .content h2,
 .content p {
 	color: white;
@@ -69,6 +71,12 @@ body {
 .btn-custom:hover {
 	background-color: #adb5bd;
 	color: #000;
+}
+
+.pagination-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
 }
 
 .card {

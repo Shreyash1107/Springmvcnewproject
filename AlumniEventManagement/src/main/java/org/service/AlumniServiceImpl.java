@@ -1,5 +1,7 @@
 package org.service;
 
+import java.util.List;
+
 import org.model.AlumniModel;
 import org.repository.Alumnirepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,9 @@ public class AlumniServiceImpl implements Alumniservice{
 	@Autowired
 	Alumnirepository amrepo;
 	public boolean isAlumniadded(AlumniModel amodel) {
-		return false;
+		return amrepo.isAlumniadded(amodel);
+	}
+	public List<AlumniModel> getalumni(){
+		return amrepo.getalumni();
 	}
 }

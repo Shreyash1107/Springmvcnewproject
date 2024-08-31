@@ -1326,3 +1326,12 @@
 0:0:0:0:0:0:0:1 - - [29/Aug/2024:22:58:12 +0530] "GET /AlumniEventManagement/addview HTTP/1.1" 200 1353
 0:0:0:0:0:0:0:1 - - [29/Aug/2024:22:58:13 +0530] "GET /AlumniEventManagement/adddept HTTP/1.1" 200 1837
 0:0:0:0:0:0:0:1 - - [29/Aug/2024:22:58:15 +0530] "GET /AlumniEventManagement/viewdept HTTP/1.1" 200 9124
+127.0.0.1 - - [29/Aug/2024:23:17:07 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [29/Aug/2024:23:17:08 +0530] "GET /AlumniEventManagement/ HTTP/1.1" 200 27279
+0:0:0:0:0:0:0:1 - - [29/Aug/2024:23:17:13 +0530] "GET /AlumniEventManagement/admin HTTP/1.1" 200 2739
+0:0:0:0:0:0:0:1 - - [29/Aug/2024:23:17:13 +0530] "GET /AlumniEventManagement/resources/JS/login.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Aug/2024:23:17:25 +0530] "GET /AlumniEventManagement/adminlogin?Name=Shreyash7213&pass=Shreyash%40123 HTTP/1.1" 200 3264
+0:0:0:0:0:0:0:1 - - [29/Aug/2024:23:19:57 +0530] "GET /AlumniEventManagement/adminlogin?Name=Shreyash7213&pass=Shreyash%40123 HTTP/1.1" 200 3269
+0:0:0:0:0:0:0:1 - - [29/Aug/2024:23:19:57 +0530] "GET /AlumniEventManagement/resources/CSS/admindashboard.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Aug/2024:23:20:00 +0530] "GET /AlumniEventManagement/alumni HTTP/1.1" 200 1329
+0:0:0:0:0:0:0:1 - - [29/Aug/2024:23:20:00 +0530] "GET /AlumniEventManagement/resources/CSS/alumni.css HTTP/1.1" 200 1040

@@ -71,6 +71,11 @@ body {
 	color: #000;
 }
 
+.pagination-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
 .card {
 	max-width: 18rem;
 }

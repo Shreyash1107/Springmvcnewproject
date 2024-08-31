@@ -1,0 +1,7 @@
+package org.repository;
+
+public class DashboardrepositoryImpl implements Dashboardrepository{
+	public int getdeptcount() {
+		
+	}
+}

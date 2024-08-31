@@ -1,0 +1,157 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: #1c1e21;
+	color: white;
+}
+
+.navbar {
+	background-color: #000000;
+	color: white;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+
+.navbar-brand {
+	color: white !important;
+}
+
+.navbar-brand:hover {
+	color: #adb5bd !important;
+}
+
+.sidebar {
+	height: calc(100vh - 56px);
+	width: 250px;
+	position: fixed;
+	top: 56px;
+	left: 0;
+	background-color: #343a40;
+	color: white;
+	padding-top: 20px;
+	z-index: 900;
+}
+
+.sidebar a {
+	color:white;
+	padding: 15px;
+	text-decoration: none;
+	display: block;
+}
+
+.sidebar a:hover {
+	background-color: #495057;
+}
+
+.content {
+	margin-left: 250px;
+	padding: 20px;
+	padding-top: 76px;
+	background-color: #212529;
+	min-height: 100vh;
+}
+
+.content h2,
+.content p {
+	color: white;
+}
+
+.btn-custom {
+	background-color: #495057;
+	color: white;
+	border: none;
+}
+
+.btn-custom:hover {
+	background-color: #adb5bd;
+	color: #000;
+}
+
+.card {
+	max-width: 18rem;
+}
+/* Body background color */
+body {
+	background-color: #1c1e21;
+	color: white;
+}
+
+/* Navigation Bar styling */
+.navbar {
+	background-color: #000000;
+	color: white;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+
+.navbar-brand {
+	color: white !important;
+}
+
+.navbar-brand:hover {
+	color: #adb5bd !important;
+}
+
+/* Sidebar styling */
+.sidebar {
+	height: calc(100vh - 56px);
+	width: 250px;
+	position: fixed;
+	top: 56px;
+	left: 0;
+	background-color: #343a40;
+	color: white;
+	padding-top: 20px;
+	z-index: 900;
+}
+
+.sidebar a {
+	color: white;
+	padding: 15px;
+	text-decoration: none;
+	display: block;
+}
+
+.sidebar a:hover {
+	background-color: #495057;
+}
+
+/* Content styling */
+.content {
+	margin-left: 250px;
+	padding: 20px;
+	padding-top: 76px;
+	background-color: #212529;
+	min-height: 100vh;
+}
+
+.content h2, .content p {
+	color: white;
+}
+
+/* Button styling */
+.btn-custom {
+	background-color: #495057;
+	color: white;
+	border: none;
+}
+
+.btn-custom:hover {
+	background-color: #adb5bd;
+	color: #000;
+}
+
+.form-group-center {
+	display: flex;
+	justify-content: center;
+}
+/* Card styling */
+.card {
+	max-width: 18rem;
+}

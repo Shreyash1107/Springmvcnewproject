@@ -1,23 +1,27 @@
 package org.model;
 
 public class AlumniModel {
-	private int Aid;
+	private Integer Aid;
 	private String Name;
 	private String Email;
 	private String Contact;
-	private int Age;
+	private Integer Age;
 	private String Company;
 	private String Gender;
-	private int Dept_id;
-	private int Bid;
+	private Integer Dept_id;
+	private Integer Bid;
+	
 	public int getAid() {
 		return Aid;
 	}
-	public void setAid(int aid) {
+	public void setAid(Integer aid) {
 		Aid = aid;
 	}
-	public AlumniModel(int aid, String name, String email, String contact, int age, String company, String gender,
-			int dept_id, int bid) {
+	public AlumniModel() {
+		
+	}
+	public AlumniModel(Integer aid, String name, String email, String contact, Integer age, String company, String gender,
+			Integer dept_id, Integer bid) {
 		Aid = aid;
 		Name = name;
 		Email = email;
@@ -54,7 +58,7 @@ public class AlumniModel {
 	public int getAge() {
 		return Age;
 	}
-	public void setAge(int age) {
+	public void setAge(Integer age) {
 		Age = age;
 	}
 	public String getCompany() {
@@ -72,13 +76,13 @@ public class AlumniModel {
 	public int getDept_id() {
 		return Dept_id;
 	}
-	public void setDept_id(int dept_id) {
+	public void setDept_id(Integer dept_id) {
 		Dept_id = dept_id;
 	}
 	public int getBid() {
 		return Bid;
 	}
-	public void setBid(int bid) {
+	public void setBid(Integer bid) {
 		Bid = bid;
 	}
 }

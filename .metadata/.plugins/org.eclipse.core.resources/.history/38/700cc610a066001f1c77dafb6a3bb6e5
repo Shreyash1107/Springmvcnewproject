@@ -1,0 +1,10 @@
+package org.repository;
+
+import org.springframework.stereotype.Repository;
+
+@Repository("dashrepo")
+public class DashboardrepositoryImpl implements Dashboardrepository{
+	public int getdeptcount() {
+		
+	}
+}
