@@ -1,5 +1,0 @@
-package org.model;
-
-public class DepartmentModel {
-	private int dept_id;
-}

@@ -1,0 +1,26 @@
+<script>
+function searchEvents() {
+    var query = document.getElementById('searchInput').value;
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/searchEvents?query=' + encodeURIComponent(query), true);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            var events = JSON.parse(xhr.responseText);
+            var tbody = document.querySelector('#data tbody');
+            tbody.innerHTML = ''; // Clear existing rows
+
+            events.forEach(function (event) {
+                var tr = document.createElement('tr');
+                tr.innerHTML = '<td>' + event.Eid + '</td>' +
+                                '<td>' + event.name + '</td>' +
+                                '<td>' + event.date + '</td>' +
+                                '<td>' + event.time + '</td>';
+                tbody.appendChild(tr);
+            });
+        } else {
+            console.error('Failed to fetch events');
+        }
+    };
+    xhr.send();
+}
+</script>

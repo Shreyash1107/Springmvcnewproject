@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,35 +8,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <!-- Bootstrap CSS -->
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<c:url value='/resources/CSS/alumni.css' />" rel="stylesheet" />
-    <script src="resources/JS/pagination.js"></script>
+    <link href="<c:url value='/resources/CSS/department.css' />" rel="stylesheet" />
+
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Admin</a>
         </div>
     </nav>
-
-    <!-- Sidebar -->
     <div class="sidebar">
         <h3 class="text-center">Admin Dashboard</h3>
-        <a href="addview">Department Module</a>
+        <a href="department">Department Module</a>
         <a href="btchmodel">Batch Module</a>
         <a href="alumni">Alumni Module</a>
-        <a href="#">Event Module</a>
+        <a href="events">Event Module</a>
         <a href="#">Feedback Module</a>
         <a href="logout">Log out</a>
     </div>
-
-    <!-- Main Content -->
     <div class="content">
         <h4 class="text-center">Alumni Module</h4>
         <form name="frm" action="save" method="POST">
             <div class="container">
+                <!-- Form Fields -->
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group mt-4">
@@ -100,8 +97,8 @@
                             <label for="batchselect">Passout-Batch</label>
                             <select class="form-control" id="batchselect" name="Bid">
                                 <option value="">Select Batch</option>
-                                <c:forEach var="batch" items="${b}">
-                                    <option value="${batch.getBid()}">${batch.getBatch_year()}</option>
+                                <c:forEach var="btyear" items="${b}">
+                                    <option value="${btyear.getBid()}">${btyear.getBatch_year()}</option>
                                 </c:forEach>
                             </select>
                         </div>
@@ -112,10 +109,13 @@
                 </div>
             </div>
         </form>
+
         <c:if test="${not empty a}">
-            <div class="alert alert-warning mt-4 text-center">${a}</div>
+            <div class="alert alert-warning mt-4 text-center" id="message-alert">${a}</div>
         </c:if>
-         <div class="col-md-12 mt-5">
+
+        <!-- DataTable -->
+        <div class="col-md-12 mt-5">
             <div class="table-responsive">
                 <table id="data" class="table table-striped table-dark text-center">
                     <thead class="thead-dark">
@@ -145,22 +145,40 @@
                                 <td>${alumni.getGender()}</td>
                                 <td>${alumni.getDept_id()}</td>
                                 <td>${alumni.getBid()}</td>
-                                <td>
-                                    <a href="#" 
-                                       class="btn btn-warning" role="button">Update</a>
-                                </td>
-                                <td>
-                                    <a href="#" 
-                                       class="btn btn-danger" role="button">Delete</a>
-                                </td>
+                                <td><a href="updatealumni?aid=${alumni.getAid()}&name=${alumni.getName()}&email=${alumni.getEmail()}&Contact=${alumni.getContact()}&Age=${alumni.getAge()}&Company=${alumni.getCompany()}&Gender=${alumni.getGender()}&Bid=${alumni.getBid()}&dept_id=${alumni.getDept_id()}" class="btn btn-warning" role="button">Update</a></td>
+                                <td><a href="del?aid=${alumni.getAid()}" class="btn btn-danger" role="button">Delete</a></td>
                             </tr>
                         </c:forEach>
                     </tbody>
                 </table>
             </div>
-            <!-- Centering the pagination -->
             <div id="nav" class="pagination-container d-flex justify-content-center mt-4"></div>
         </div>
+
+        <!-- Added Buttons -->
+        <div class="text-center mt-4">
+            <a href="deptalumni" class="btn btn-success">View Department Wise Alumni</a>
+            <a href="batchalumni" class="btn btn-warning">View Batch Year Wise Alumni</a>
+        </div>
     </div>
+    
+    <!-- jQuery and DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#data').DataTable({
+                pagingType: 'simple_numbers', 
+                language: {
+                    searchPlaceholder: "Search records"
+                },
+                dom: 'lfrtip'
+            });
+        });
+    </script>
 </body>
 </html>

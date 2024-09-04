@@ -1,5 +1,0 @@
-package org.repository;
-
-public interface Admniloginrepository {
-		public List<>
-}

@@ -1,0 +1,23 @@
+package org.model;
+
+public class Eventreistermodel {
+	private int eid;
+	private int Aid;
+	private EventModel emodel;
+	public int getEid() {
+		return eid;
+	}
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
+	public int getAid() {
+		return Aid;
+	}
+	public void setAid(int aid) {
+		Aid = aid;
+	}
+	@Override
+	public String toString() {
+		return "Eventreistermodel [eid=" + eid + ", Aid=" + Aid + "]";
+	}
+}

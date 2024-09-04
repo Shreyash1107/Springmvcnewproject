@@ -1,7 +1,0 @@
-package org.service;
-
-import org.model.BatchModel;
-
-public class BatchServiceImpl implements Batchservice {
-	public boolean isBatchAdded(BatchModel bmodel)
-}

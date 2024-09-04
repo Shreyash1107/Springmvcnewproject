@@ -1,0 +1,13 @@
+package org.service;
+
+import org.model.EventModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+@Service("evrepo")
+public class EventServiceImpl implements Eventservice{
+	@Autowired
+	
+	public boolean isEventAdded(EventModel emodel) {
+		
+	}
+}

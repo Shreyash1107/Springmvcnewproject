@@ -13,7 +13,7 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Admin</a>
         </div>
@@ -25,7 +25,7 @@
         <a href="department">Department Module</a>
         <a href="btchmodel">Batch Module</a>
         <a href="alumni">Alumni Module</a>
-        <a href="#">Event Module</a>
+        <a href="events">Event Module</a>
         <a href="#">Feedback Module</a>
         <a href="logout">Log out</a>
     </div>
@@ -36,41 +36,39 @@
             <div class="row">
                 <!-- Card 1: Total Departments -->
                 <div class="col-md-4 mb-4">
-                    <div class="card text-center bg-primary text-white">
+                    <div class="card text-center bg-primary text-white mt-4">
                         <div class="card-body">
                             <h5 class="card-title">Total Departments</h5>
                             <p class="card-text">Number of departments in the system.</p>
-                            <h3 class="card-text">${deptcount}</h3>
+                            <h3 class="card-text">${dash}</h3>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 2: Total Alumni -->
                 <div class="col-md-4 mb-4">
-                    <div class="card text-center bg-success text-white">
+                    <div class="card text-center bg-success text-white mt-4">
                         <div class="card-body">
                             <h5 class="card-title">Total Alumni</h5>
                             <p class="card-text">Number of alumni registered for Application</p>
-                            <h3 class="card-text"></h3>
+                            <h3 class="card-text">${alumnicount}</h3>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 3: Event Registered -->
                 <div class="col-md-4 mb-4">
-                    <div class="card text-center bg-warning text-white">
+                    <div class="card text-center bg-warning text-white mt-4">
                         <div class="card-body">
-                            <h5 class="card-title">Event Registered</h5>
-                            <p class="card-text">Number of events registered by Alumni</p>
-                            <h3 class="card-text"></h3>
+                            <h5 class="card-title">Events Scheduled</h5>
+                            <p class="card-text">Number of events Scheduled for Alumni</p>
+                            <h3 class="card-text">${eventcount}</h3>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

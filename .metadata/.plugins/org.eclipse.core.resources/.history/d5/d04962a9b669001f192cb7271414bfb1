@@ -1,0 +1,7 @@
+package org.service;
+
+import org.model.EventModel;
+
+public class EventServiceImpl implements Eventservice{
+	public boolean isEventAdded(EventModel emodel) 
+}

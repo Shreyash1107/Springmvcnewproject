@@ -1,0 +1,13 @@
+package org.service;
+
+import java.util.List;
+
+import org.model.AlumniModel;
+import org.model.DepartmentModel;
+
+public interface Alumniservice {
+	public boolean isAlumniadded(AlumniModel amodel);
+	public List<AlumniModel> getalumni();
+	public void deletealumni(Integer aid);
+	public List<AlumniModel> getdeptwiseAlumni(DepartmentModel depmodel);
+}

@@ -1,9 +1,0 @@
-package org.repository;
-
-import org.model.AlumniModel;
-
-public class AlumnirepositoryImpl implements Alumnirepository{
-	public boolean isAlumniadded(AlumniModel amodel) {
-		return false;
-	}
-}

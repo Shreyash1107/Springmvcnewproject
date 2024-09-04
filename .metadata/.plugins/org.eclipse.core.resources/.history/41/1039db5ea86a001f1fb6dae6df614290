@@ -1,0 +1,56 @@
+/* General Body Styling */
+body {
+	background-color: #1c1e21;
+	color: white;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+	background-color: darkgoldenrod;
+	color: white;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+
+.navbar-brand {
+	color: white !important;
+}
+
+.navbar-brand:hover {
+	color: #adb5bd !important;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    height: calc(100vh - 56px);
+    width: 250px;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    background-color: black;
+    color: white;
+    padding-top: 20px;
+    z-index: 900;
+    transition: width 0.3s ease;
+}
+
+.sidebar a {
+    color: white;
+    padding: 13px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    border-radius: 4px; /* Rounded corners for links */
+    transition: background-color 0.3s ease, padding-left 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.sidebar a:hover {
+    background-color: cornflowerblue;
+    padding-left: 20px; /* Indent link on hover for a visual effect */
+}
+
+/* Responsive Sidebar */
+@media (max-width

@@ -1,0 +1,5 @@
+package org.repository;
+
+public interface Eventrepository {
+
+}

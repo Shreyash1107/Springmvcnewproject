@@ -16,4 +16,20 @@ public class AlumniServiceImpl implements Alumniservice{
 	public List<AlumniModel> getalumni(){
 		return amrepo.getalumni();
 	}
+	public void deletealumni(Integer aid) {
+		amrepo.deletealumni(aid);
+	}
+	public List<AlumniModel> getdeptwiseAlumni(String deptname){
+		List<AlumniModel> deptalumni = amrepo.getdeptwiseAlumni(deptname);
+		return amrepo.getdeptwiseAlumni(deptname);
+	}
+	public List<AlumniModel> getalumnibatches(String batchyear){
+		return amrepo.getalumnibatches(batchyear);
+	}
+	public boolean isUpdatealumni(AlumniModel amodel) {
+		return amrepo.isUpdatealumni(amodel);
+	}
+	public List<AlumniModel> searchAlumniByName(String name){
+		return amrepo.searchAlumniByName(name);
+	}
 }

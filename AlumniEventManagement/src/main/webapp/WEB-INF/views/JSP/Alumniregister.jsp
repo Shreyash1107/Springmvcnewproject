@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <div class="registration-form">
-            <h2 class="form-title">Alumni Registration Form</h2>
+            <h2 class="form-title">Registration Form</h2>
             <form name="frm" action="success" method="GET">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>

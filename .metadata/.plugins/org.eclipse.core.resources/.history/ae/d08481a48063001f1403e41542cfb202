@@ -1,7 +1,0 @@
-package org.repository;
-
-import java.util.List;
-
-public interface Admniloginrepository {
-		public List<E>
-}

@@ -11,10 +11,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="<c:url value='/resources/CSS/btch.css' />" rel="stylesheet" />
     <script src="resources/JS/pagination.js"></script>
+        <script src="resources/JS/alert.js"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Admin</a>
         </div>
@@ -26,7 +27,7 @@
         <a href="department">Department Module</a>
         <a href="btchmodel">Batch Module</a>
         <a href="alumni">Alumni Module</a>
-        <a href="#">Event Module</a>
+        <a href="events">Event Module</a>
         <a href="#">Feedback Module</a>
         <a href="logout">Log out</a>
     </div>
@@ -36,28 +37,43 @@
         <h4 class="text-center">Batch Module</h4>
 
         <!-- Add Batch Form -->
-        <form name="frm" action="batch" method="GET">
-            <div class="form-group mt-4">
+        <!-- Add Batch Form -->
+<form name="frm" action="batch" method="GET">
+    <div class="row mt-4">
+        <!-- Pass-out Batch Textbox -->
+        <div class="col-md-4">
+            <div class="form-group">
                 <label for="exampleInputdept">Pass-out Batch</label>
-                <input type="text" class="form-control mt-4" id="exampleInputdept" name="batch_year"
+                <input type="text" class="form-control mt-2" id="exampleInputdept" name="batch_year"
                        placeholder="Enter Passout-Batch" autocomplete="off">
             </div>
-            <div class="form-group mt-2">
+        </div>
+
+        <!-- Department Dropdown -->
+        <div class="col-md-4">
+            <div class="form-group">
                 <label for="deptSelect">Department</label>
-                <select class="form-control mt-4" id="deptSelect" name="dept_id">
+                <select class="form-control mt-2" id="deptSelect" name="dept_id">
                     <option value="">Select Department</option>
                     <c:forEach var="depart" items="${d}">
                         <option value="${depart.getDept_id()}">${depart.dept_name}</option>
                     </c:forEach>
                 </select>
             </div>
-            <div class="form-group d-flex justify-content-center mt-4">
-                <button type="submit" class="btn btn-info">Add Batch</button>
-            </div>
-        </form>
+        </div>
+
+        <!-- Add Batch Button -->
+       <!-- Add Batch Button -->
+<div class="col-md-4 d-flex align-items-end">
+    <button type="submit" class="btn btn-info px-5 py-2 font-weight-bold">Add Batch</button>
+</div>
+
+    </div>
+</form>
+
 
         <c:if test="${not empty batch}">
-            <div class="alert alert-warning mt-4 text-center">${batch}</div>
+            <div class="alert alert-warning mt-4 text-center" id = "message-alert">${batch}</div>
         </c:if>
 
         <!-- View Batch Section -->

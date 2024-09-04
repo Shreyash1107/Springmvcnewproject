@@ -80,7 +80,11 @@ marquee {
 	margin-top: 10px;
 	background-color: #24262B;
 	padding-top: 10px;
+	position: sticky; /* Make it sticky */
+	top: 0; /* Stick it to the top of the viewport */
+	z-index: 1000; /* Ensure it's above other elements */
 }
+
 
 .logo-menu-div .logo label {
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

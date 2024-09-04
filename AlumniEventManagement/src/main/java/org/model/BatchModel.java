@@ -23,8 +23,8 @@ public class BatchModel {
 		return Bid;
 	}
 
-	public void setBid(int bid) {
-		Bid = bid;
+	public void setBid(int Bid) {
+		this.Bid = Bid;
 	}
 
 	public String getBatch_year() {

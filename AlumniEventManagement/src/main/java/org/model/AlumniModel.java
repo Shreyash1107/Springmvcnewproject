@@ -10,8 +10,10 @@ public class AlumniModel {
 	private String Gender;
 	private Integer Dept_id;
 	private Integer Bid;
+	private DepartmentModel deptmodel;
+	private BatchModel bmodel;
 	
-	public int getAid() {
+	public int getAid(){
 		return Aid;
 	}
 	public void setAid(Integer aid) {
@@ -84,5 +86,17 @@ public class AlumniModel {
 	}
 	public void setBid(Integer bid) {
 		Bid = bid;
+	}
+	public void setdeptmodel(DepartmentModel dmodel) {
+		this.deptmodel = dmodel;
+	}
+	public DepartmentModel getdeptmodel() {
+		return deptmodel;
+	}
+	public void setbatchmodel(BatchModel bmodel) {
+		this.bmodel = bmodel;
+	}
+	public BatchModel getbatchmodel() {
+		return bmodel;
 	}
 }

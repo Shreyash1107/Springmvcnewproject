@@ -1,0 +1,123 @@
+@charset "ISO-8859-1";
+
+/* General Body Styling */
+body {
+	background-color: #1c1e21;
+	color: white;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+	background-color: darkgoldenrod;
+	color: white;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+
+.navbar-brand {
+	color: white !important;
+}
+
+.navbar-brand:hover {
+	color: #adb5bd !important;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    height: calc(100vh - 56px);
+    width: 250px;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    background-color: black;
+    color: white;
+    padding-top: 20px;
+    z-index: 900;
+    transition: width 0.3s ease;
+}
+
+.sidebar a {
+    color: white;
+    padding: 13px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: cornflowerblue;
+    padding-left: 20px;
+}
+
+/* Content Styling */
+.content {
+	margin-left: 250px;
+	padding: 20px;
+	padding-top: 76px;
+	background-color: #212529;
+	min-height: 100vh;
+}
+
+.content h2,
+.content p {
+	color: white;
+}
+
+/* Button Styling */
+.btn-custom {
+	background-color: #495057;
+	color: white;
+	border: none;
+}
+
+.btn-custom:hover {
+	background-color: #adb5bd;
+	color: #000;
+}
+
+/* Rating Styling */
+.rating {
+    display: flex;
+    direction: row-reverse;
+    font-size: 2em;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Different star colors for each rating */
+.rating input#star5:checked ~ label {
+    color: gold;
+}
+
+.rating input#star4:checked ~ label {
+    color: gold;
+}
+
+.rating input#star3:checked ~ label {
+    color: gold;
+}
+
+.rating input#star2:checked ~ label {
+    color:gold;
+}
+
+.rating input#star1:checked ~ label {
+    color: gold;
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+    color: gold;
+}

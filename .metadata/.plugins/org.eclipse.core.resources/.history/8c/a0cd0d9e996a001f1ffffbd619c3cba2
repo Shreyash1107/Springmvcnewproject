@@ -1,0 +1,137 @@
+@charset "ISO-8859-1";
+/* General Body Styling */
+body {
+	background-color: #1c1e21;
+	color: white;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+	background-color:darkgoldenrod;
+	color: white;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+
+.navbar-brand {
+	color: white !important;
+}
+
+.navbar-brand:hover {
+	color: #adb5bd !important;
+}
+
+/* Sidebar Styling */
+.sidebar {
+	height: calc(100vh - 56px);
+	width: 250px;
+	position: fixed;
+	top: 56px;
+	left: 0;
+	background-color:#495057;
+	color: white;
+	padding-top: 20px;
+	z-index: 900;
+}
+
+.sidebar a {
+	color:white;
+	padding: 13px;
+	text-decoration: none;
+	font-size: 18px;
+	display: block;
+}
+
+.sidebar a:hover {
+	background-color:cornflowerblue;
+}
+
+/* Content Styling */
+.content {
+	margin-left: 250px;
+	padding: 20px;
+	padding-top: 76px;
+	background-color: #212529;
+	min-height: 100vh;
+}
+
+.content h2,
+.content p {
+	color: white;
+}
+
+/* Button Styling */
+.btn-custom {
+	background-color: #495057;
+	color: white;
+	border: none;
+}
+
+.btn-custom:hover {
+	background-color: #adb5bd;
+	color: #000;
+}
+
+/* Center the Add Department Button */
+.form-group-center {
+	display: flex;
+	justify-content: center;
+}
+
+/* Card Styling */
+.card {
+	max-width: 18rem;
+}
+
+/* Pagination Styling */
+.pagination-container {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.page-button {
+	margin: 0 10px;
+}
+
+/* Highlight Active Page Button */
+/*.page-button.active {
+	font-weight: bold;
+	border: teal;
+	background-color: teal;
+	color: white;
+}*/
+
+.pagination-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+/* Table Styling */
+.table-black {
+    color: white; /* Light text color for contrast */
+    background-color: black; /* Black background color for the table */
+    border-collapse: collapse; /* Ensures borders between cells are merged */
+}
+
+.table-black th {
+    background-color:cornflowerblue; /* Header background color */
+    color: black; /* Header text color */
+    font-weight: bold; /* Bold font for header text */
+}
+
+.table-black td {
+    background-color: black; /* Black background for table rows */
+    color: white; /* White text color for rows */
+    border: 1px solid darkslategray; /* Darker border for cells */
+    padding: 10px; /* Add some padding for spacing */
+    text-align: center; /* Center align text in cells */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.table-black tr:hover {
+    background-color:white; /* Lighter gray for row highlight on hover */
+}

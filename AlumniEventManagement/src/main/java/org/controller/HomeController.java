@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.model.LoginModel;
 import org.service.Adminservice;
 import org.service.Alumniregisterservice;
+import org.service.Dashboardservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -18,8 +20,10 @@ public class HomeController {
 	Adminservice adminservice;
 	@Autowired
 	Alumniregisterservice alumniservice;
+	@Autowired
+	Dashboardservice dashservice;
 	@RequestMapping(value = "/")
-	public String gethomeoage() {
+	public String gethomepage() {
 		return "index";
 	}
 	@RequestMapping(value = "/admin")
@@ -31,10 +35,18 @@ public class HomeController {
 		return "Adminlogin";
 	}
 	@RequestMapping(value = "/adminlogin")
-	public String getAdminLogin(HttpServletRequest req, LoginModel lmodel) {
+	public String getAdminLogin(HttpServletRequest req, LoginModel lmodel,Model md) {
+		
 	    String username = req.getParameter("Name");
 	    String password = req.getParameter("pass");
 	    List<LoginModel> list = adminservice.getadminlogin(username, password);
+	    int departmentCount = dashservice.getdeptcount();
+	    md.addAttribute("dash", departmentCount);
+	    int alumniCount = dashservice.getalumnicount();
+	    md.addAttribute("alumnicount", alumniCount);
+	    int eventCount = dashservice.geteventcount();
+	    md.addAttribute("eventcount", eventCount);
+		System.out.println(departmentCount);
 	    if (!list.isEmpty()) {
 	    	LoginModel model = list.get(0);
 	        String logintype = model.getLogintype();

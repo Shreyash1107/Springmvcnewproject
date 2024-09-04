@@ -27,7 +27,7 @@ public class BatchController {
     @RequestMapping(value = "/btchmodel")
     public String batchmodule(Map map,Model model) {
     	  List<BatchModel> updatedList = batchservice.getlist();
-          System.out.println(updatedList);
+			/* System.out.println(updatedList); */
           map.put("v", updatedList);
           List<DepartmentModel> deptlist = deptservice.getdept();
           model.addAttribute("d", deptlist);
@@ -40,27 +40,27 @@ public class BatchController {
     }
 
     @RequestMapping(value = "/batch")
-    public String addBatch(BatchModel bmodel, HttpServletRequest request,Model model, Map<String, Object> map) {
+    public String addBatch(BatchModel bmodel, HttpServletRequest request, Model model, Map<String, Object> map) {
         boolean isAdded;
-      
-        isAdded = batchservice.isBatchAdded(bmodel);
         String btch_year = request.getParameter("batch_year");
         int deptid = Integer.parseInt(request.getParameter("dept_id"));
         bmodel.setBatch_year(btch_year);
         bmodel.setDept_id(deptid);
+        isAdded = batchservice.isBatchAdded(bmodel);
+
         if (isAdded) {
             map.put("batch", "Batch Added Successfully");
         } else {
             map.put("batch", "Failed to Add Batch");
         }
         List<BatchModel> list = batchservice.getlist();
-        if (list != null) {
-            model.addAttribute("v", list);
-        } else {
-            model.addAttribute("v", "No batches available");
-        }
+        List<DepartmentModel> deptlist = deptservice.getdept();
+        model.addAttribute("v", list);
+        model.addAttribute("d", deptlist);
+
         return "Batchmodule";
     }
+
 
     @RequestMapping(value = "/view")
     public String viewBatchModule(Model model) {
@@ -88,6 +88,14 @@ public class BatchController {
     @RequestMapping(value = "/updatebatches")
     public String getUpdateBatch(@RequestParam("bid") Integer bid, @RequestParam("batch_year") Integer batch_year,
             @RequestParam("dept_id") Integer dept_id, Map<String, Object> map) {
+    	List<DepartmentModel> deptlist = deptservice.getdept();
+    	if(deptlist!=null) {
+    		map.put("departmentlist", deptlist);
+    	}
+    	List<BatchModel> batchlist = batchservice.getlist();
+    	if(batchlist!=null) {
+    		map.put("v", batchlist);
+    	}
         map.put("bid", bid);
         map.put("batch_year", batch_year);
         map.put("dept_id", dept_id);

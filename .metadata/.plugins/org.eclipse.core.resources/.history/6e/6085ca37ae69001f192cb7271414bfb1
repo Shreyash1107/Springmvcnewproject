@@ -1,0 +1,8 @@
+package org.model;
+
+public class EventModel {
+	private int Eid;
+	private String name;
+	private String date;
+	private String time;
+}

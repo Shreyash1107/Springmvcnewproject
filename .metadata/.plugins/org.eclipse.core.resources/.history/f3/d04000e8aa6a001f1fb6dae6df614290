@@ -1,0 +1,7 @@
+package org.model;
+
+public class FeedbackModel {
+	private int fid;
+	private String details;
+	private AlumniModel amidel;
+}

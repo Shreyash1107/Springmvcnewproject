@@ -47,7 +47,7 @@ public class DepartmentRespositoryImpl implements Departmentrepository {
 	}
 
 	public boolean isupdateDepartment(DepartmentModel deptmodel) {
-		int value = template.update("update Department set Name=? where  dept_id=?", new PreparedStatementSetter() {
+		int value = template.update("update Department set deptname=? where  Dept_id=?", new PreparedStatementSetter() {
 
 			@Override
 			public void setValues(PreparedStatement ps) throws SQLException {

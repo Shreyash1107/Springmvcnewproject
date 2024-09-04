@@ -1,0 +1,145 @@
+@charset "ISO-8859-1";
+/* General Body Styling */
+body {
+	background-color: #1c1e21;
+	color: white;
+	margin: 0;
+	font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+	background-color: #343a40; /* Dark gray background for a more modern look */
+	color: white;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	padding: 15px 20px; /* Add padding for better spacing */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+.navbar-brand {
+	color: white !important;
+	font-size: 1.5rem; /* Increase font size for the brand */
+	font-weight: bold; /* Make the brand text bold */
+}
+
+.navbar-brand:hover {
+	color: #f0ad4e !important; /* Bright color for hover effect */
+}
+
+/* Sidebar Styling */
+.sidebar {
+	height: calc(100vh - 56px);
+	width: 250px;
+	position: fixed;
+	top: 56px;
+	left: 0;
+	background-color: #212529; /* Slightly lighter background for sidebar */
+	color: white;
+	padding-top: 20px;
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+	overflow-y: auto; /* Allow scrolling if content exceeds height */
+}
+
+.sidebar h3 {
+	color: #f0ad4e; /* Accent color for the sidebar heading */
+	text-align: center;
+	padding: 15px 0;
+}
+
+.sidebar a {
+	color: #f0f0f0; /* Lighter text color for better contrast */
+	padding: 15px;
+	text-decoration: none;
+	font-size: 18px;
+	display: block;
+	transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.sidebar a:hover {
+	background-color: #495057; /* Darker shade for hover effect */
+}
+
+/* Content Styling */
+.content {
+	margin-left: 250px;
+	padding: 20px;
+	padding-top: 76px;
+	background-color: #212529;
+	min-height: 100vh;
+}
+
+/* Button Styling */
+.btn-custom {
+	background-color: #495057;
+	color: white;
+	border: none;
+}
+
+.btn-custom:hover {
+	background-color: #adb5bd;
+	color: #000;
+}
+
+/* Center the Add Department Button */
+.form-group-center {
+	display: flex;
+	justify-content: center;
+}
+
+/* Card Styling */
+.card {
+	max-width: 18rem;
+}
+
+/* Pagination Styling */
+.pagination-container {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.page-button {
+	margin: 0 10px;
+}
+
+/* Highlight Active Page Button */
+/*.page-button.active {
+	font-weight: bold;
+	border: teal;
+	background-color: teal;
+	color: white;
+}*/
+
+.pagination-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+/* Table Styling */
+.table-black {
+    color: white; /* Light text color for contrast */
+    background-color: black; /* Black background color for the table */
+    border-collapse: collapse; /* Ensures borders between cells are merged */
+}
+
+.table-black th {
+    background-color: chocolate; /* Header background color */
+    color: black; /* Header text color */
+    font-weight: bold; /* Bold font for header text */
+}
+
+.table-black td {
+    background-color: black; /* Black background for table rows */
+    color: white; /* White text color for rows */
+    border: 1px solid darkslategray; /* Darker border for cells */
+    padding: 10px; /* Add some padding for spacing */
+    text-align: center; /* Center align text in cells */
+}
+
+.table-black tr:hover {
+    background-color: darkgray; /* Lighter gray for row highlight on hover */
+}

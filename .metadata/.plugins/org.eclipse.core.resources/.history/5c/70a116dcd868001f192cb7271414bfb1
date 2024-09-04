@@ -1,0 +1,14 @@
+package org.repository;
+
+import java.util.List;
+
+import org.model.AlumniModel;
+import org.model.DepartmentModel;
+
+public interface Alumnirepository {
+	public boolean isAlumniadded(AlumniModel amodel);
+	public List<AlumniModel> getalumni();
+	public void deletealumni(Integer aid);
+	public List<AlumniModel> getdeptwiseAlumni(DepartmentModel depmodel);
+	/* public boolean isUpdateAlumni(AlumniModel amodel); */
+}

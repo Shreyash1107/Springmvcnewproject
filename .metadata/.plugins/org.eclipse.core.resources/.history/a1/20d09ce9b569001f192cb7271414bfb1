@@ -1,0 +1,33 @@
+package org.model;
+
+public class EventModel {
+	private int Eid;
+	private String name;
+	private String date;
+	private String time;
+	private AlumniModel amodel;
+	public int getEid() {
+		return Eid;
+	}
+	public void setEid(int eid) {
+		Eid = eid;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public String getTime() {
+		return time;
+	}
+	public void setTime(String time) {
+		this.time = time;
+	}
+}
