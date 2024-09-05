@@ -25,7 +25,7 @@
     </nav>
     <!-- Sidebar -->
     <div class="sidebar">
-        <h3 class="text-center">Admin Dashboard</h3>
+        <h3 class="text-center">Alumni Dashboard</h3>
         <a href="eventview">View Events</a>
         <a href="feedback">Feedback</a>
         <a href="logout">Log out</a>
@@ -34,10 +34,6 @@
     <!-- Main Content -->
     <div class="content">
         <h4 class="text-center">Scheduled Events</h4>
-        <div class="search-container mb-4 mt-4">
-            <input type="text" id="searchInput" class="form-control" placeholder="Search Events...">
-        </div>
-
         <div class="col-md-12 mt-5">
             <div class="table-responsive">
                 <table id="eventsTable" class="table table-sm table-black text-center bg-primary">

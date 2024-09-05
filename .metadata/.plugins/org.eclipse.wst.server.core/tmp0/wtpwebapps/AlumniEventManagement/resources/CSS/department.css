@@ -83,47 +83,6 @@ body {
     max-width: 18rem;
 }
 
-/* DataTables Styling */
-.dataTables_wrapper .dataTables_paginate .paginate_button {
-    background-color: #4CAF50; /* Background color of pagination buttons */
-    color: white; /* Text color */
-    border: none;
-    padding: 5px 10px;
-    margin: 2px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-    background-color: #45a049; /* Darker green on hover */
-    color: white;
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button.current {
-    color: white;
-    border: none;
-}
-
-/* Dropdown Styling for Show Entries */
-.dataTables_wrapper .dataTables_length select {
-    background-color: white; /* White background for dropdown */
-    color: black; /* Black text color for better visibility */
-    border: 1px solid #ccc;
-    padding: 5px;
-    border-radius: 4px;
-}
-
-/* Search Box Styling */
-.dataTables_wrapper .dataTables_filter input {
-    background-color: white !important; /* Ensure background is white */
-    color: black !important; /* Ensure text color is black */
-    border: 1px solid #ccc;
-    padding: 5px;
-    border-radius: 4px;
-    box-sizing: border-box; /* Include padding in width calculation */
-}
-
 /* Pagination Container */
 .pagination-container {
     text-align: center;

@@ -1,0 +1,15 @@
+package org.service;
+
+import org.model.FeedbackModel;
+import org.repository.Feedbackrepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+@Service("feedservice")
+public class FeedbackServiceImpl implements FeedbackService{
+	@Autowired
+	Feedbackrepository feedrepos;
+	public boolean issubmitFeedback(FeedbackModel fmodel) {
+		System.out.println(fmodel);
+		return frepo.issubmitFeedback(fmodel);
+	}
+}

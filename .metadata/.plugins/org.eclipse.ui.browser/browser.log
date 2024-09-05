@@ -1098,3 +1098,282 @@ Sep 04, 2024 22:44:10.28 [14896:1952:0904/224410.282:ERROR:connection_factory_im
 Sep 04, 2024 23:26:47.59 [14896:21608:0904/232647.591:ERROR:get_updates_processor.cc(265)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_QUIC_PROTOCOL_ERROR)
 Sep 04, 2024 23:44:27.64 Created TensorFlow Lite XNNPACK delegate for CPU.
 Sep 04, 2024 23:45:00.27 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+
+Sep 05, 2024 08:30:50.97 NEW SESSION
+Sep 05, 2024 08:30:50.98 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 05, 2024 08:30:54.55 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 05, 2024 08:33:26.06 [16480:5216:0905/083326.068:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Sep 05, 2024 10:47:07.92 [16480:5216:0905/104707.910:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Sep 05, 2024 11:51:35.36 [16480:5216:0905/115135.367:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+
+Sep 05, 2024 12:02:39.82 NEW SESSION
+Sep 05, 2024 12:02:39.85 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 05, 2024 12:03:08.55 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 05, 2024 12:06:18.05 [10128:2112:0905/120618.049:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Sep 05, 2024 12:09:08.24 [10128:23012:0905/120908.244:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 05, 2024 12:09:08.24 [10128:23012:0905/120908.245:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 05, 2024 12:24:33.59 [10128:23012:0905/122433.594:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 05, 2024 12:24:33.60 [10128:23012:0905/122433.595:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 05, 2024 12:27:29.87 [10128:2112:0905/122729.870:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint (unset) for first_image_paint 2.226 s
+Sep 05, 2024 12:27:30.11 [10128:2112:0905/122730.034:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint (unset) for first_image_paint 2.226 s
+Sep 05, 2024 12:27:30.28 [10128:2112:0905/122730.282:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:30.39 [10128:2112:0905/122730.399:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:30.58 [10128:2112:0905/122730.580:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:30.70 [10128:2112:0905/122730.701:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:30.86 [10128:2112:0905/122730.867:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:31.07 [10128:2112:0905/122731.074:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:31.22 [10128:2112:0905/122731.226:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:31.33 [10128:2112:0905/122731.338:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:31.48 [10128:2112:0905/122731.481:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:31.59 [10128:2112:0905/122731.597:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:31.72 [10128:2112:0905/122731.726:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:31.89 [10128:2112:0905/122731.896:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:31.99 [10128:2112:0905/122731.999:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:32.25 [10128:2112:0905/122732.257:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:32.42 [10128:2112:0905/122732.420:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:32.53 [10128:2112:0905/122732.534:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:32.65 [10128:2112:0905/122732.657:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:32.91 [10128:2112:0905/122732.914:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:33.10 [10128:2112:0905/122733.100:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:33.23 [10128:2112:0905/122733.237:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:33.41 [10128:2112:0905/122733.411:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:33.53 [10128:2112:0905/122733.538:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:33.68 [10128:2112:0905/122733.681:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:33.79 [10128:2112:0905/122733.798:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:33.91 [10128:2112:0905/122733.914:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:34.26 [10128:2112:0905/122734.054:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:34.33 [10128:2112:0905/122734.331:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:34.44 [10128:2112:0905/122734.449:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:34.56 [10128:2112:0905/122734.566:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:34.68 [10128:2112:0905/122734.681:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:34.79 [10128:2112:0905/122734.795:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:34.97 [10128:2112:0905/122734.978:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:35.12 [10128:2112:0905/122735.128:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:35.36 [10128:2112:0905/122735.361:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:35.71 [10128:2112:0905/122735.714:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:35.82 [10128:2112:0905/122735.828:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:35.94 [10128:2112:0905/122735.947:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:36.06 [10128:2112:0905/122736.062:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:36.17 [10128:2112:0905/122736.179:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:36.29 [10128:2112:0905/122736.291:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:37.72 [10128:2112:0905/122737.728:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:37.84 [10128:2112:0905/122737.847:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:37.96 [10128:2112:0905/122737.961:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:38.64 [10128:2112:0905/122738.647:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:38.76 [10128:2112:0905/122738.761:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:38.87 [10128:2112:0905/122738.879:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:39.17 [10128:2112:0905/122739.174:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:39.44 [10128:2112:0905/122739.446:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:39.56 [10128:2112:0905/122739.562:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:39.67 [10128:2112:0905/122739.678:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:39.79 [10128:2112:0905/122739.797:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:57.53 [10128:2112:0905/122757.536:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:58.54 [10128:2112:0905/122758.542:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:58.65 [10128:2112:0905/122758.658:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:27:58.77 [10128:2112:0905/122758.773:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:01.14 [10128:2112:0905/122801.141:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:01.25 [10128:2112:0905/122801.259:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:09.62 [10128:2112:0905/122809.621:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:09.74 [10128:2112:0905/122809.739:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:09.85 [10128:2112:0905/122809.854:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:09.97 [10128:2112:0905/122809.971:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:10.08 [10128:2112:0905/122810.088:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:10.20 [10128:2112:0905/122810.204:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:10.32 [10128:2112:0905/122810.321:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:10.43 [10128:2112:0905/122810.438:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:10.59 [10128:2112:0905/122810.590:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:10.73 [10128:2112:0905/122810.738:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:10.85 [10128:2112:0905/122810.853:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:11.23 [10128:2112:0905/122811.238:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:11.35 [10128:2112:0905/122811.355:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:11.47 [10128:2112:0905/122811.474:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:11.58 [10128:2112:0905/122811.586:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:11.73 [10128:2112:0905/122811.738:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:11.85 [10128:2112:0905/122811.855:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:11.97 [10128:2112:0905/122811.973:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:12.08 [10128:2112:0905/122812.082:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:12.45 [10128:2112:0905/122812.453:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:12.76 [10128:2112:0905/122812.767:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:12.88 [10128:2112:0905/122812.887:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:13.04 [10128:2112:0905/122813.046:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:13.20 [10128:2112:0905/122813.204:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:13.32 [10128:2112:0905/122813.321:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:13.47 [10128:2112:0905/122813.472:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:13.62 [10128:2112:0905/122813.620:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:13.75 [10128:2112:0905/122813.754:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:13.87 [10128:2112:0905/122813.870:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:13.98 [10128:2112:0905/122813.983:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:14.30 [10128:2112:0905/122814.304:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:14.42 [10128:2112:0905/122814.422:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:14.53 [10128:2112:0905/122814.536:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:15.17 [10128:2112:0905/122815.177:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:15.28 [10128:2112:0905/122815.288:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:15.41 [10128:2112:0905/122815.417:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:15.54 [10128:2112:0905/122815.548:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:15.75 [10128:2112:0905/122815.754:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:15.86 [10128:2112:0905/122815.868:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:16.00 [10128:2112:0905/122816.000:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:16.15 [10128:2112:0905/122816.153:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:16.27 [10128:2112:0905/122816.269:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:16.38 [10128:2112:0905/122816.387:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:16.50 [10128:2112:0905/122816.503:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:16.61 [10128:2112:0905/122816.619:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:16.73 [10128:2112:0905/122816.731:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:17.85 [10128:2112:0905/122817.853:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:17.96 [10128:2112:0905/122817.969:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:18.08 [10128:2112:0905/122818.086:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:18.20 [10128:2112:0905/122818.202:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:18.34 [10128:2112:0905/122818.342:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:18.46 [10128:2112:0905/122818.469:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:18.58 [10128:2112:0905/122818.583:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:19.77 [10128:2112:0905/122819.775:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:19.88 [10128:2112:0905/122819.886:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:20.00 [10128:2112:0905/122820.002:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:20.12 [10128:2112:0905/122820.119:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:20.23 [10128:2112:0905/122820.236:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:20.35 [10128:2112:0905/122820.353:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:20.47 [10128:2112:0905/122820.468:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:20.58 [10128:2112:0905/122820.587:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:20.70 [10128:2112:0905/122820.702:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:20.82 [10128:2112:0905/122820.820:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:20.93 [10128:2112:0905/122820.937:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:21.05 [10128:2112:0905/122821.051:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:21.16 [10128:2112:0905/122821.166:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:22.73 [10128:2112:0905/122822.735:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:22.84 [10128:2112:0905/122822.847:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:23.31 [10128:2112:0905/122823.317:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:23.43 [10128:2112:0905/122823.437:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:23.55 [10128:2112:0905/122823.551:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:23.68 [10128:2112:0905/122823.680:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:24.30 [10128:2112:0905/122824.300:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:24.41 [10128:2112:0905/122824.418:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:24.88 [10128:2112:0905/122824.884:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:25.00 [10128:2112:0905/122825.001:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:25.11 [10128:2112:0905/122825.119:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:25.33 [10128:2112:0905/122825.335:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:25.45 [10128:2112:0905/122825.451:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:25.56 [10128:2112:0905/122825.567:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:25.68 [10128:2112:0905/122825.684:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:25.80 [10128:2112:0905/122825.802:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:25.91 [10128:2112:0905/122825.918:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:26.03 [10128:2112:0905/122826.035:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:26.15 [10128:2112:0905/122826.150:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:26.26 [10128:2112:0905/122826.268:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:26.38 [10128:2112:0905/122826.384:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:26.50 [10128:2112:0905/122826.502:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:26.61 [10128:2112:0905/122826.618:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:26.73 [10128:2112:0905/122826.735:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:26.85 [10128:2112:0905/122826.851:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:26.96 [10128:2112:0905/122826.963:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:27.56 [10128:2112:0905/122827.569:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:27.68 [10128:2112:0905/122827.684:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:27.81 [10128:2112:0905/122827.812:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:28.60 [10128:2112:0905/122828.600:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:29.47 [10128:2112:0905/122828.712:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:33.95 [10128:2112:0905/122833.951:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:34.06 [10128:2112:0905/122834.066:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:34.18 [10128:2112:0905/122834.183:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:34.29 [10128:2112:0905/122834.298:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:34.41 [10128:2112:0905/122834.416:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:34.53 [10128:2112:0905/122834.533:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:34.64 [10128:2112:0905/122834.648:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:34.78 [10128:2112:0905/122834.781:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:34.91 [10128:2112:0905/122834.916:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:35.03 [10128:2112:0905/122835.033:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:35.15 [10128:2112:0905/122835.149:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:35.26 [10128:2112:0905/122835.264:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:35.38 [10128:2112:0905/122835.380:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:35.49 [10128:2112:0905/122835.498:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:35.61 [10128:2112:0905/122835.615:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:35.73 [10128:2112:0905/122835.732:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:35.84 [10128:2112:0905/122835.845:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:36.01 [10128:2112:0905/122836.014:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:36.13 [10128:2112:0905/122836.132:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:36.24 [10128:2112:0905/122836.247:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:36.36 [10128:2112:0905/122836.365:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:36.48 [10128:2112:0905/122836.480:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:36.59 [10128:2112:0905/122836.593:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:36.84 [10128:2112:0905/122836.848:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:36.96 [10128:2112:0905/122836.964:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:37.08 [10128:2112:0905/122837.081:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:37.19 [10128:2112:0905/122837.198:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:37.31 [10128:2112:0905/122837.314:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:37.43 [10128:2112:0905/122837.439:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:37.54 [10128:2112:0905/122837.547:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:37.66 [10128:2112:0905/122837.665:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:38.13 [10128:2112:0905/122838.131:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:38.24 [10128:2112:0905/122838.248:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:38.54 [10128:2112:0905/122838.548:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:38.66 [10128:2112:0905/122838.663:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:38.78 [10128:2112:0905/122838.781:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:38.89 [10128:2112:0905/122838.897:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:39.01 [10128:2112:0905/122839.014:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:39.13 [10128:2112:0905/122839.132:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:39.24 [10128:2112:0905/122839.248:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:39.36 [10128:2112:0905/122839.364:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:39.48 [10128:2112:0905/122839.482:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:39.59 [10128:2112:0905/122839.598:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:39.71 [10128:2112:0905/122839.714:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:39.83 [10128:2112:0905/122839.830:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:39.94 [10128:2112:0905/122839.947:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:40.06 [10128:2112:0905/122840.064:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:40.18 [10128:2112:0905/122840.180:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:40.31 [10128:2112:0905/122840.315:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:40.43 [10128:2112:0905/122840.431:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:40.54 [10128:2112:0905/122840.548:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:40.66 [10128:2112:0905/122840.665:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:40.78 [10128:2112:0905/122840.780:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:40.89 [10128:2112:0905/122840.899:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:41.01 [10128:2112:0905/122841.014:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:41.13 [10128:2112:0905/122841.130:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:41.25 [10128:2112:0905/122841.250:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:41.36 [10128:2112:0905/122841.364:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:41.48 [10128:2112:0905/122841.482:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:41.72 [10128:2112:0905/122841.727:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:45.56 [10128:2112:0905/122845.568:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:45.68 [10128:2112:0905/122845.681:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:45.79 [10128:2112:0905/122845.796:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:45.93 [10128:2112:0905/122845.929:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:46.04 [10128:2112:0905/122846.046:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:46.16 [10128:2112:0905/122846.164:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:46.27 [10128:2112:0905/122846.279:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:46.39 [10128:2112:0905/122846.397:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:46.51 [10128:2112:0905/122846.512:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:46.63 [10128:2112:0905/122846.631:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:50.02 [10128:2112:0905/122850.028:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:51.08 [10128:2112:0905/122851.081:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:51.40 [10128:2112:0905/122851.406:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:52.14 [10128:2112:0905/122852.144:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:52.26 [10128:2112:0905/122852.261:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:52.37 [10128:2112:0905/122852.372:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:53.41 [10128:2112:0905/122853.410:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:53.52 [10128:2112:0905/122853.528:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:56.41 [10128:2112:0905/122856.410:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:56.53 [10128:2112:0905/122856.536:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:57.02 [10128:2112:0905/122857.026:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:57.16 [10128:2112:0905/122857.160:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:57.28 [10128:2112:0905/122857.288:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:57.52 [10128:2112:0905/122857.527:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:28:57.64 [10128:2112:0905/122857.643:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:29:05.46 [10128:2112:0905/122905.459:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:29:05.57 [10128:2112:0905/122905.573:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:29:10.10 [10128:2112:0905/122910.106:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:29:10.22 [10128:2112:0905/122910.223:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:29:10.34 [10128:2112:0905/122910.342:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:29:10.45 [10128:2112:0905/122910.457:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:29:10.59 [10128:2112:0905/122910.592:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:29:10.70 [10128:2112:0905/122910.706:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:29:10.82 [10128:2112:0905/122910.823:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:29:10.98 [10128:2112:0905/122910.985:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:29:15.88 [10128:2112:0905/122915.883:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:29:18.46 [10128:2112:0905/122918.466:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 2.478 s for first_image_paint 2.226 s
+Sep 05, 2024 12:29:18.49 [10128:2112:0905/122918.492:ERROR:interface_endpoint_client.cc(722)] Message 5 rejected by interface blink.mojom.WidgetHost
+Sep 05, 2024 12:48:06.93 [10128:23012:0905/124806.930:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 05, 2024 12:48:06.93 [10128:23012:0905/124806.932:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 05, 2024 13:02:39.36 [10128:23012:0905/130239.361:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 05, 2024 13:26:45.05 [10128:2112:0905/132645.058:ERROR:interface_endpoint_client.cc(722)] Message 6 rejected by interface blink.mojom.WidgetHost
+Sep 05, 2024 13:26:45.05 [10128:2112:0905/132645.058:ERROR:interface_endpoint_client.cc(722)] Message 7 rejected by interface blink.mojom.WidgetHost
+Sep 05, 2024 13:27:32.99 [10128:2112:0905/132732.996:ERROR:interface_endpoint_client.cc(722)] Message 5 rejected by interface blink.mojom.WidgetHost
+Sep 05, 2024 15:19:49.00 [10128:2112:0905/151948.861:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Sep 05, 2024 16:16:44.25 [10128:2112:0905/161644.225:ERROR:device_event_log_impl.cc(196)] [16:16:44.224] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Sep 05, 2024 16:16:44.41 [10128:2112:0905/161644.230:ERROR:device_event_log_impl.cc(196)] [16:16:44.230] USB: usb_service_win.cc:308 SetupDiEnumDeviceInterfaces: No more data is available. (0x103)

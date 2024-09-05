@@ -1,0 +1,10 @@
+package org.repository;
+
+import org.model.FeedbackModel;
+import org.springframework.stereotype.Repository;
+@Repository("feedrepo")
+public class FeedbackrepositoryImpl implements Feddbackrepository{
+	public boolean issubmitFeedback(FeedbackModel fmodel) {
+		return false;
+	}
+}

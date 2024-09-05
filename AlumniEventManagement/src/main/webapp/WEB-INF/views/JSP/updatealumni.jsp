@@ -29,7 +29,7 @@
         <a href="btchmodel">Batch Module</a>
         <a href="alumni">Alumni Module</a>
         <a href="events">Event Module</a>
-        <a href="#">Feedback Module</a>
+        <a href="feedbackpage">Feedback Module</a>
         <a href="logout">Log out</a>
     </div>
 
@@ -60,7 +60,6 @@
                 </div>
             </div>
         </form>
-
         <div class="col-md-12 mt-5">
             <div class="table-responsive">
                 <table id="data" class="table table-striped table-dark text-center">

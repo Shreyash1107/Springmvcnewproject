@@ -10,9 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import org.model.AlumniModel;
 import org.model.BatchModel;
 import org.model.DepartmentModel;
+import org.model.FeedbackModel;
 import org.service.Alumniservice;
 import org.service.Batchservice;
 import org.service.DepartmentService;
+import org.service.FeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,7 +30,8 @@ public class AlumniController {
 	Batchservice batchservice;
 	@Autowired
 	DepartmentService deptservice;
-
+	@Autowired
+	FeedbackService feedservice;
 	@RequestMapping(value = "/alumni")
 	public String getalumnimodel(Model md) {
 		List<AlumniModel> alist = amservice.getalumni();
@@ -173,4 +176,11 @@ public class AlumniController {
 		amodel.setBid(Bid);
 		return "updatealumni";
 	}
+	@RequestMapping(value="/feedbackpage")
+	public String getfeedback(Model md) {
+		List<FeedbackModel> feedlist = feedservice.getfeedback();
+		md.addAttribute("fdview", feedlist);
+		return "Viewfeedback";
+	}
+	
 }

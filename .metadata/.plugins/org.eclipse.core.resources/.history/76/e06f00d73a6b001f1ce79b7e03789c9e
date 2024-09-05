@@ -1,0 +1,7 @@
+package org.repository;
+
+import org.model.FeedbackModel;
+
+public interface Feddbackrepository {
+	public boolean issubmitFeedback(FeedbackModel fmodel);
+}

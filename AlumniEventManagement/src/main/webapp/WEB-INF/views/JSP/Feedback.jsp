@@ -4,12 +4,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feedback Form</title>
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="<c:url value='/resources/CSS/Feedback.css' />" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<c:url value='/resources/CSS/Feedback.css' />" rel="stylesheet" />
+    <script src="resources/JS/alert.js"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -29,50 +30,48 @@
     <div class="content">
         <div class="container mt-4">
             <h2 class="text-center">Feedback Form</h2>
-            <form action="#" method="post">
-                <div class="mb-3 d-flex justify-content-between">
-                    <div style="flex: 1; margin-right: 20px;">
-                        <label for="alumniName" class="form-label">Alumni Name</label>
-                        <input type="text" class="form-control" id="alumniName" name="alumniName" placeholder="Your Name" required>
-                    </div>
-                    <div style="flex: 1;">
-                        <label for="eventName" class="form-label">Event Name</label>
-                        <select class="form-select" id="eventName" name="eventName" required>
+            <form name="frm" action="getfeedback" method="post">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="eventName" class="form-label mt-4">Event Name</label>
+                        <select class="form-select mt-2" id="eventName" name="eventid" required>
                             <option value="">Select Event</option>
                             <c:forEach var="event" items="${evl}">
                                 <option value="${event.getEid()}">${event.getName()}</option>
                             </c:forEach>
                         </select>
                     </div>
+                    <div class="col-md-6">
+                        <label for="rating" class="form-label mt-4">Rating</label>
+                        <select class="form-select mt-2" id="rating" name="rating" required>
+                            <option value="">Select a rating</option>
+                            <option value="1">1 - Worst</option>
+                            <option value="2">2 - Poor</option>
+                            <option value="3">3 - Average</option>
+                            <option value="4">4 - Good</option>
+                            <option value="5">5 - Excellent</option>
+                        </select>
+                    </div>
                 </div>
-
-                <div class="mb-3">
-                    <label for="feedbackDetails" class="form-label">Feedback Details</label>
-                    <textarea class="form-control" id="feedbackDetails" name="feedbackDetails" rows="4" placeholder="Enter your feedback here..."></textarea>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="alumniName" class="form-label mt-4">Alumni Name</label>
+                        <input class="form-control mt-2" id="alumniName" name="Name" placeholder="Enter your name" required autocomplete="off"/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="feedbackDetails" class="form-label mt-4">Any Suggestions</label>
+                        <input class="form-control mt-2" id="feedbackDetails" name="feedbackDetails" rows="4" placeholder="Enter your feedback here..." style="width:100%" required autocomplete="off"></input>
+                    </div>
                 </div>
-
-               <div class="form-group">
-    <label for="rating">Rating</label>
-    <div class="rating">
-        <input type="radio" id="star5" name="rating" value="5" />
-        <label for="star5" title="5 stars">&#9733;</label>
-        <input type="radio" id="star4" name="rating" value="4" />
-        <label for="star4" title="4 stars">&#9733;</label>
-        <input type="radio" id="star3" name="rating" value="3" />
-        <label for="star3" title="3 stars">&#9733;</label>
-        <input type="radio" id="star2" name="rating" value="2" />
-        <label for="star2" title="2 stars">&#9733;</label>
-        <input type="radio" id="star1" name="rating" value="1" />
-        <label for="star1" title="1 star">&#9733;</label>
-    </div>
-</div>
-
-
-                <button type="submit" class="btn btn-primary mt-4 w-30">Submit Feedback</button>
+                <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary mt-4">Submit Feedback</button>
+                </div>
             </form>
+            <c:if test="${not empty fd}">
+                <div class="alert alert-warning mt-4 text-center" id="message-alert">${fd}</div>
+            </c:if>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

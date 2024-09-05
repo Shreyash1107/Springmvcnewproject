@@ -1,0 +1,26 @@
+package org.repository;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import org.model.FeedbackModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementSetter;
+import org.springframework.stereotype.Repository;
+@Repository("feedrepo")
+public class FeedbackrepositoryImpl implements Feddbackrepository{
+	@Autowired
+	JdbcTemplate template;
+	public boolean issubmitFeedback(FeedbackModel fmodel) {
+		PreparedStatementSetter pstmt = new PreparedStatementSetter() {
+			
+			@Override
+			public void setValues(PreparedStatement ps) throws SQLException {
+				ps.setString(1, fmodel.getDetails());
+				ps.setString(2, fmodel.getAmidel().getAid());
+			}
+		};
+		return false;
+	}
+}

@@ -26,7 +26,7 @@
         <a href="btchmodel">Batch Module</a>
         <a href="alumni">Alumni Module</a>
         <a href="events">Event Module</a>
-        <a href="#">Feedback Module</a>
+        <a href="feedbackpage">Feedback Module</a>
         <a href="logout">Log out</a>
     </div>
     <div class="content">
