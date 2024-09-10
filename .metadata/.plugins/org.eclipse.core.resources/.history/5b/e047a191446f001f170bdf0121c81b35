@@ -1,0 +1,36 @@
+package org.service;
+
+import java.util.List;
+import org.model.DepartmentModel;
+import org.repository.Departmentrepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service("deptservice")
+public class DepartmentServiceImpl implements DepartmentService {
+
+    @Autowired
+    Departmentrepository deptrepo;
+
+    @Override
+    public boolean isDepartmentAded(DepartmentModel dmodel) {
+        dmodel.setDept_name(dmodel.getDept_name().trim().toLowerCase()); // Trim and normalize case
+        return deptrepo.isDepartmentAded(dmodel);
+    }
+
+    @Override
+    public List<DepartmentModel> getdept() {
+        return deptrepo.getdept();
+    }
+
+    @Override
+    public void isDepartmentdeleted(int dept_id) {
+        deptrepo.isDepartmentdeleted(dept_id);
+    }
+
+    @Override
+    public boolean isupdateDepartment(DepartmentModel deptmodel) {
+        deptmodel.setDept_name(deptmodel.getDept_name().trim().toLowerCase()); // Trim and normalize case
+        return deptrepo.isupdateDepartment(deptmodel);
+    }
+}

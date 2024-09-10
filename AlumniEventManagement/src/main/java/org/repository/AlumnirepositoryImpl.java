@@ -133,7 +133,7 @@ public class AlumnirepositoryImpl implements Alumnirepository {
 				ps.setInt(9, amodel.getAid());
 			}
 		};
-		int value = template.update("update Alumni set name =?,email =?,contact=?,Age=?,Company=?,Bid=?,Gender=?,dept_id=? where Aid=?",pstmt);
+		int value = template.update("update Alumni set amname =?,email =?,contact=?,Age=?,Company=?,Bid=?,Gender=?,dept_id=? where Aid=?",pstmt);
 		return value>0?true:false;
 	}
 	// AlumnirepositoryImpl.java

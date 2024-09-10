@@ -1,0 +1,22 @@
+@Service
+public class DepartmentService {
+
+    @Autowired
+    DepartmentRespositoryImpl deptrepo;
+
+    public boolean isDepartmentAded(DepartmentModel dmodel) {
+        return deptrepo.isDepartmentAded(dmodel);
+    }
+
+    public List<DepartmentModel> getdept() {
+        return deptrepo.getdept();
+    }
+
+    public void isDepartmentdeleted(int dept_id) {
+        deptrepo.isDepartmentdeleted(dept_id);
+    }
+
+    public boolean isupdateDepartment(DepartmentModel deptmodel) {
+        return deptrepo.isupdateDepartment(deptmodel);
+    }
+}

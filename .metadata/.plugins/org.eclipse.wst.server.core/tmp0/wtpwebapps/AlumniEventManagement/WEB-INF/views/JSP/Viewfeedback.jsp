@@ -38,7 +38,7 @@
             <h4 class="text-center">Events Feedback</h4>
             <div class="col-md-12 mt-5">
                 <div class="table-responsive">
-                    <table id="dataTable" class="table table-sm table-black">
+                    <table id="dataTable" class="table table-striped table-dark text-center">
                         <thead>
                             <tr>
                                 <th scope="col" class="text-center">Fid</th>

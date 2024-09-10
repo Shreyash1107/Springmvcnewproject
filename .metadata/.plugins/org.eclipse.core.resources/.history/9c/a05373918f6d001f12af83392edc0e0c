@@ -1,0 +1,140 @@
+@charset "ISO-8859-1";
+
+/* Body background color */
+body {
+    background-color: #1c1e21;
+    color: white;
+    margin: 0;
+}
+
+/* Navigation Bar styling */
+.navbar {
+    background-color: #000000;
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.navbar-brand:hover {
+    color: #adb5bd !important;
+}
+
+/* Sidebar styling */
+.sidebar {
+    height: calc(100vh - 56px);
+    width: 250px;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    background-color: #343a40;
+    color: white;
+    padding-top: 20px;
+    z-index: 900;
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for sidebar width and visibility */
+}
+
+.sidebar a {
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: blue;
+}
+
+/* Content styling */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    padding-top: 76px;
+    background-color: #212529;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+/* Card styling */
+.card {
+    max-width: 100%; /* Make cards responsive */
+    margin: auto; /* Center align cards */
+}
+
+.card-title, .card-text {
+    color: white;
+}
+
+/* Toggle button */
+.toggle-btn {
+    position: absolute;
+    top: 70px;
+    left: 250px;
+    background-color: #343a40;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1100;
+    transition: left 0.3s ease;
+}
+
+.toggle-btn.hidden {
+    left: 10px;
+}
+
+/* Button styling */
+.btn-custom {
+    background-color: #495057;
+    color: white;
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #adb5bd;
+    color: #000;
+}
+
+/* Responsive Sidebar and Content */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        top: 0;
+        padding-top: 0;
+    }
+
+    .content {
+        margin-left: 0;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+}

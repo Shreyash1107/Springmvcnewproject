@@ -1,16 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <!-- Bootstrap CSS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<c:url value='/resources/CSS/updatedept.css' />" rel="stylesheet" />
-    <script src="resources/JS/pagination.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Update Department</title>
+<!-- Bootstrap CSS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="<c:url value='/resources/CSS/updatedept.css' />" rel="stylesheet" />
+<script src="<c:url value='/resources/JS/Confirmation.js' />"></script>
+<script src="<c:url value='/resources/JS/Validatedept.js' />"></script>
+<script src="<c:url value='/resources/JS/alert.js' />"></script>
+<script src="<c:url value='/resources/JS/pagination.js' />"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -23,69 +27,62 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <h3 class="text-center">Admin Dashboard</h3>
-        <a href="department">Department Module</a>
-        <a href="btchmodel">Batch Module</a>
-        <a href="alumni">Alumni Module</a>
-        <a href="events">Event Module</a>
-        <a href="feedbackpage">Feedback Module</a>
-        <a href="logout">Log out</a>
+        <a href="department">Department Module</a> <a href="btchmodel">Batch Module</a> <a href="alumni">Alumni Module</a> <a href="events">Event Module</a> <a href="feedbackpage">Feedback Module</a> <a href="logout">Log out</a>
     </div>
 
     <!-- Main Content -->
     <div class="content">
         <h4 class="text-center">Update Department Module</h4>
-        <form name="frm" id="frm" action="finalupdate" method="POST">
-            <div class="row mb-3">
-                <!-- Department ID Field -->
-                <div class="col-md-4">
-                    <label for="exampleInputid" class="form-label mt-4">Department ID</label>
-                    <input type="text" class="form-control mt-2" id="exampleInputid" name="dept_id" value="${deptid}" readonly>
-                </div>
+
+        <!-- Form for Updating Department -->
+        <form name="frm" action="finalupdate" method="POST" class="mt-4" onsubmit="return validateDeptName()">
+            <div class="row g-3">
+                <!-- Department ID Field (Hidden) -->
+                <input type="hidden" class="form-control" name="dept_id" value="${deptid}" readonly>
+
                 <!-- Department Name Field -->
                 <div class="col-md-4">
-                    <label for="txtBatch" class="form-label mt-4">Department Name</label>
-                    <input type="text" name="dept_name" id="txtBatch" class="form-control mt-2" value="${deptname}" placeholder="Enter Department" onkeyup="validateBatch()" autocomplete="off">
-                    <small id="s" class="form-text text-muted"></small>
+                    <label for="txtDept" class="form-label">Department Name</label>
+                    <input type="text" class="form-control" name="dept_name" id="txtDept" value="${deptname}" placeholder="Enter Department Name" autocomplete="off">
+                    <div id="deptError" class="text-danger mt-2"></div>
                 </div>
+
                 <!-- Update Button -->
-                <div class="col-md-4 d-flex align-items-end">
-                    <input type='submit' name='s' id="btn" value='Update Department' class="btn btn-info font-weight-bold"/>
+                <div class="col-md-2 d-flex align-items-end">
+                    <button type="submit" class="btn btn-info">Update Department</button>
                 </div>
             </div>
         </form>
 
-        <!-- Alert Message -->
-        <c:if test="${not empty m}">
-            <div class="alert alert-primary mt-4">${m}</div>
+        <!-- Message Display -->
+        <c:if test="${not empty message}">
+            <div class="alert alert-primary mt-4 text-center" id="message-alert">${message}</div>
         </c:if>
-
-        <!-- Department Table -->
-        <div class="mt-5">
-            <table id="data" class="table table-striped table-dark">
-                <thead>
-                    <tr>
-                        <th scope="col">Deptid</th>
-                        <th scope="col">Dept Name</th>
-                        <th scope="col">Update</th>
-                        <th scope="col">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach var="batch" items="${v}">
+        <c:if test="${showTable}">
+            <div class="col-md-12 mt-5">
+                <table id="data" class="table table-striped table-dark text-center">
+                    <thead>
                         <tr>
-                            <td>${batch.dept_id}</td>
-                            <td>${batch.dept_name}</td>
-                            <td>
-                                <a href="update?dept_id=${batch.dept_id}&dept_name=${batch.dept_name}" class="btn btn-warning" role="button">Update</a>
-                            </td>
-                            <td>
-                                <a href="delete?dept_id=${batch.dept_id}" class="btn btn-danger" role="button">Delete</a>
-                            </td>
+                            <th scope="col">Sr. No</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Update</th>
+                            <th scope="col">Delete</th>
                         </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                        <c:forEach var="dept" items="${deptlist}">
+                            <tr>
+                                <td>${dept.dept_id}</td>
+                                <td>${dept.dept_name}</td>
+                                <td><a href="javascript:void(0);" class="btn btn-warning" onclick="confirmUpdate(${dept.dept_id}, '${dept.dept_name}')">Update</a></td>
+                                <td><a href="javascript:void(0);" class="btn btn-danger" onclick="confirmDelete(${dept.dept_id})">Delete</a></td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+        </c:if>
+        <div id="nav" class="pagination-container d-flex justify-content-center mt-4"></div>
     </div>
 
     <!-- Bootstrap JS -->

@@ -1,0 +1,115 @@
+package org.controller;
+
+import java.util.List;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.model.LoginModel;
+import org.service.Adminservice;
+import org.service.Alumniregisterservice;
+import org.service.Dashboardservice;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HomeController {
+    @Autowired
+    Adminservice adminservice;
+    @Autowired
+    Alumniregisterservice alumniservice;
+    @Autowired
+    Dashboardservice dashservice;
+
+    @RequestMapping(value = "/")
+    public String gethomepage(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        if (session != null && session.getAttribute("user") != null) {
+            // User is logged in, redirect to the appropriate dashboard
+            String userType = (String) session.getAttribute("userType"); // Adjust attribute name as necessary
+            if ("Admin".equals(userType)) {
+                return "redirect:/Admindashboard";
+            } else {
+                return "redirect:/Alumnidashboard";
+            }
+        }
+
+        // Proceed to index page for guests
+        return "index";
+    }
+
+    @RequestMapping(value = "/admin")
+    public String getadmin() {
+        return "Adminlogin";
+    }
+
+    @RequestMapping(value = "/redirect")
+    public String getlogin() {
+        return "Adminlogin";
+    }
+
+    @RequestMapping(value = "/adminlogin")
+    public String getAdminLogin(HttpServletRequest req, Model md, LoginModel model) {
+        String username = req.getParameter("Name");
+        String password = req.getParameter("pass");
+        List<LoginModel> list = adminservice.getadminlogin(username, password);
+        int departmentCount = dashservice.getdeptcount();
+        md.addAttribute("dash", departmentCount);
+        int alumniCount = dashservice.getalumnicount();
+        md.addAttribute("alumnicount", alumniCount);
+        int eventCount = dashservice.geteventcount();
+        md.addAttribute("eventcount", eventCount);
+
+        if (!list.isEmpty()) {
+            model = list.get(0);
+            String logintype = model.getLogintype();
+            HttpSession session = req.getSession();
+            session.setAttribute("user", model); // Save user information in session
+            session.setAttribute("userType", logintype); // Save user type
+
+            if ("Admin".equals(logintype)) {
+                return "Admindashboard";
+            } else {
+                return "Alumnidashboard";
+            }
+        } else {
+            req.setAttribute("msg", "Invalid username or password.");
+            return "Adminlogin";
+        }
+    }
+
+    @RequestMapping(value = "/alumniregister")
+    public String registeralumni() {
+        return "Alumniregister";
+    }
+
+    @RequestMapping(value = "/success")
+    public String getregistration(LoginModel lmd) {
+        boolean b = alumniservice.isAlumniregister(lmd);
+        if (b) {
+            return "Adminlogin";
+        } else {
+            return "Alumniregister";
+        }
+    }
+
+    @RequestMapping("/logout")
+    public String logout(HttpServletRequest request, HttpServletResponse response) {
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+        }
+        
+        // Clear cookies
+        Cookie cookie = new Cookie("JSESSIONID", null);
+        cookie.setPath("/"); // Ensure the cookie is cleared across the entire application
+        cookie.setMaxAge(0); // Set the maximum age to 0 to delete the cookie
+        response.addCookie(cookie);
+
+        return "Adminlogin"; // Redirect to login page
+    }
+}

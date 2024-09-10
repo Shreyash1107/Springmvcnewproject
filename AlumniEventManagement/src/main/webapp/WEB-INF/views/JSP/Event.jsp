@@ -72,12 +72,12 @@
 				<table id="data" class="table table-striped table-dark text-center">
 					<thead class="thead-dark">
 						<tr>
-							<th scope="col">Eid</th>
-							<th scope="col">Name</th>
-							<th scope="col">Date</th>
-							<th scope="col">Time</th>
-							<th scope="col">Update</th>
-							<th scope="col">Delete</th>
+							<th scope="col" class="text-center">Eid</th>
+							<th scope="col" class="text-center">Name</th>
+							<th scope="col" class="text-center">Date</th>
+							<th scope="col" class="text-center">Time</th>
+							<th scope="col" class="text-center">Update</th>
+							<th scope="col" class="text-center">Delete</th>
 						</tr>
 					</thead>
 					<tbody>

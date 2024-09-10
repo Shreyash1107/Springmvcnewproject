@@ -1,7 +1,0 @@
-package org.repository;
-
-import org.model.EventModel;
-
-public interface Eventrepository {
-	public boolean isEventAdded(EventModel emodel)
-}

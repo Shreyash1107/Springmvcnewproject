@@ -1,102 +1,158 @@
 @charset "ISO-8859-1";
-/* Body background color */
+
+/* General Body Styling */
 body {
-	background-color: #1c1e21;
-	color: white;
+    background-color: #1c1e21;
+    color: white;
 }
 
-/* Navigation Bar styling */
+/* Navigation Bar Styling */
 .navbar {
-	background-color: #000000;
-	color: chocolate;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 1000;
+    background-color: #000000;
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .navbar-brand {
-	color: white !important;
+    color: white !important;
 }
 
 .navbar-brand:hover {
-	color: #adb5bd !important;
+    color: #adb5bd !important;
 }
 
-/* Sidebar styling */
+/* Sidebar Styling */
 .sidebar {
-	height: calc(100vh - 56px);
-	width: 250px;
-	position: fixed;
-	top: 56px;
-	left: 0;
-	background-color: #343a40;
-	color: white;
-	padding-top: 20px;
-	z-index: 900;
+    height: calc(100vh - 56px);
+    width: 250px;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    background-color: #343a40;
+    color: white;
+    padding-top: 20px;
+    z-index: 900;
 }
 
 .sidebar a {
-	color: white;
-	padding: 15px;
-	text-decoration: none;
-	font-size: 20px;
-	display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
 }
 
 .sidebar a:hover {
-	background-color:blue;
+    background-color: blue;
 }
 
-/* Content styling */
+/* Content Styling */
 .content {
-	margin-left: 250px;
-	padding: 20px;
-	padding-top: 76px;
-	background-color: #212529;
-	min-height: 100vh;
+    margin-left: 250px;
+    padding: 20px;
+    padding-top: 76px;
+    background-color: #212529;
+    min-height: 100vh;
 }
 
-.content h2, .content p {
-	color: white;
+.content h4, .content p {
+    color: white;
 }
 
-/* Button styling */
-.btn-custom {
-	background-color: #495057;
-	color: white;
-	border: none;
+/* Form Styling */
+.form-label {
+    color: white;
 }
 
-.btn-custom:hover {
-	background-color: #adb5bd;
-	color: #000;
+.form-control {
+    background-color: #343a40;
+    color: white;
+    border: 1px solid #495057;
 }
 
-.form-group-center {
-	display: flex;
-	justify-content: center;
+.form-control:focus {
+    border-color: #17a2b8;
+    box-shadow: none;
 }
+
+/* Button Styling */
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
+
+/* Table Styling */
+.table {
+    background-color: #212529;
+}
+
+.table-dark th, .table-dark td {
+    color: white;
+}
+
+.table-dark thead th {
+    background-color: #343a40;
+}
+
+/* Pagination Styling */
 .pagination-container {
-	text-align: center;
-	margin-top: 20px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .page-button {
-	margin: 0 10px;
+    margin: 0 10px;
 }
 
-/* Highlight Active Page Button */
-/*.page-button.active {
-	font-weight: bold;
-	border:teal;
-	background-color:teal;
-	color: white;
-}*/
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 200px;
+    }
+    .content {
+        margin-left: 200px;
+    }
+}
 
-.pagination-container {
-	display: flex;
-	justify-content: center;
-	margin-top: 20px;
+@media (max-width: 992px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 56px; /* Adjust to fit below the navbar */
+    }
+    .content {
+        margin-left: 0;
+        padding-top: 56px; /* Adjust padding to fit below the navbar */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar a {
+        font-size: 18px;
+    }
+    .btn-info {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar a {
+        font-size: 16px;
+        padding: 10px;
+    }
+    .content {
+        padding: 15px;
+    }
+    .btn-info {
+        padding: 8px;
+    }
 }

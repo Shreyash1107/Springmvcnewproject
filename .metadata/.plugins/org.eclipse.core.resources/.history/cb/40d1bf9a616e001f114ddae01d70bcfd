@@ -1,0 +1,84 @@
+package org.repository;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.model.DepartmentModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementSetter;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+@Repository("deptrepo")
+public class DepartmentRespositoryImpl implements Departmentrepository {
+
+    @Autowired
+    JdbcTemplate template;
+
+    @Override
+    public boolean isDepartmentAded(DepartmentModel dmodel) {
+        // Step 1: Check if a department with the same name (case-insensitive) already exists
+        int count = template.queryForObject(
+            "SELECT COUNT(*) FROM department WHERE LOWER(deptname) = LOWER(?)", 
+            new Object[] { dmodel.getDept_name() }, 
+            Integer.class
+        );
+
+        // If a department already exists, return false
+        if (count > 0) {
+            return false;
+        }
+
+        // Step 2: If no department exists, insert the new department
+        int val = template.update(
+            "INSERT INTO department (dept_id, deptname) VALUES ('0', ?)", 
+            new PreparedStatementSetter() {
+                @Override
+                public void setValues(PreparedStatement ps) throws SQLException {
+                    ps.setString(1, dmodel.getDept_name());
+                }
+            }
+        );
+        return val > 0; // Return true if insertion is successful
+    }
+
+    @Override
+    public List<DepartmentModel> getdept() {
+        List<DepartmentModel> deptlist = template.query(
+            "SELECT * FROM department ORDER BY dept_id ASC", 
+            new RowMapper<DepartmentModel>() {
+                @Override
+                public DepartmentModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    DepartmentModel dmodel = new DepartmentModel();
+                    dmodel.setDept_id(rs.getInt(1));
+                    dmodel.setDept_name(rs.getString(2));
+                    return dmodel;
+                }
+            }
+        );
+        return deptlist.size() > 0 ? deptlist : null;
+    }
+
+    @Override
+    public void isDepartmentdeleted(int dept_id) {
+        template.update("DELETE FROM department WHERE dept_id = ?", dept_id);
+    }
+
+    @Override
+    public boolean isupdateDepartment(DepartmentModel deptmodel) {
+        int value = template.update(
+            "UPDATE department SET deptname=? WHERE dept_id=?", 
+            new PreparedStatementSetter() {
+                @Override
+                public void setValues(PreparedStatement ps) throws SQLException {
+                    ps.setString(1, deptmodel.getDept_name());
+                    ps.setInt(2, deptmodel.getDept_id());
+                }
+            }
+        );
+        return value > 0; // Return true if update is successful
+    }
+}

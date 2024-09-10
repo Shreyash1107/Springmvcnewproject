@@ -1,0 +1,17 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('mainContent');
+    const toggleBtn = document.getElementById('toggleBtn');
+
+    toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('hide');
+        content.classList.toggle('full-width');
+        if (sidebar.classList.contains('hide')) {
+            toggleBtn.textContent = 'Show Sidebar';
+            toggleBtn.classList.add('hidden');
+        } else {
+            toggleBtn.textContent = 'Hide Sidebar';
+            toggleBtn.classList.remove('hidden');
+        }
+    });
+});

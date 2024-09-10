@@ -1,9 +1,10 @@
 package org.controller;
-
 import java.util.List;
-import java.util.Optional;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.model.LoginModel;
 import org.service.Adminservice;
@@ -13,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 @Controller
 public class HomeController {
 	@Autowired
@@ -35,8 +35,7 @@ public class HomeController {
 		return "Adminlogin";
 	}
 	@RequestMapping(value = "/adminlogin")
-	public String getAdminLogin(HttpServletRequest req, LoginModel lmodel,Model md) {
-		
+	public String getAdminLogin(HttpServletRequest req,Model md,LoginModel model) {
 	    String username = req.getParameter("Name");
 	    String password = req.getParameter("pass");
 	    List<LoginModel> list = adminservice.getadminlogin(username, password);
@@ -46,14 +45,13 @@ public class HomeController {
 	    md.addAttribute("alumnicount", alumniCount);
 	    int eventCount = dashservice.geteventcount();
 	    md.addAttribute("eventcount", eventCount);
-		System.out.println(departmentCount);
+		/* System.out.println(departmentCount); */
 	    if (!list.isEmpty()) {
-	    	LoginModel model = list.get(0);
+	    	model = list.get(0);
 	        String logintype = model.getLogintype();
 	        if ("Admin".equals(logintype)) {
 	            return "Admindashboard";
 	        } else {
-	            
 	            return "Alumnidashboard";
 	        }
 	    } else {
@@ -75,8 +73,14 @@ public class HomeController {
 			return "Alumniregister";
 		}
 	}
-	@RequestMapping(value = "/logout")
+	@RequestMapping(value="/logout")
 	public String logout() {
-		return "index";
+		return "Adminlogin";
 	}
+	/*
+	 * @RequestMapping("/logout") public String logout(HttpServletRequest request,
+	 * HttpServletResponse response) { HttpSession session =
+	 * request.getSession(false); if (session != null) { session.invalidate(); }
+	 * response.addCookie(new Cookie("JSESSIONID", null)); return "Adminlogin"; }
+	 */
 }

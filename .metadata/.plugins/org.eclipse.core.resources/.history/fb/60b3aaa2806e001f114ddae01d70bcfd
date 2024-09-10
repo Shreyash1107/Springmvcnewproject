@@ -1,0 +1,9 @@
+function validatePassoutYear() {
+    var currentYear = new Date().getFullYear();
+    var passoutYear = document.getElementById('passoutYear').value;
+    if (passoutYear > currentYear) {
+        alert("Passout year cannot be in the future.");
+        return false; // Prevent form submission
+    }
+    return true; // Allow form submission
+}

@@ -4,7 +4,15 @@ public class BatchModel {
 	private int Bid;
 	private String batch_year;
 	private int dept_id;
-	private String deptname;
+	private DepartmentModel deptmodel;
+	public DepartmentModel getDeptmodel() {
+		return deptmodel;
+	}
+
+	public void setDeptmodel(DepartmentModel deptmodel) {
+		this.deptmodel = deptmodel;
+	}
+
 	public BatchModel(int Bid, String batch_year, int dept_id) {
 		this.Bid = Bid;
 		this.batch_year = batch_year;
@@ -41,12 +49,5 @@ public class BatchModel {
 
 	public void setDept_id(int dept_id) {
 		this.dept_id = dept_id;
-	}
-	
-	public void setdeptname(String dept_name) {
-		this.deptname = dept_name;
-	}
-	public String getdeptname() {
-		return deptname;
 	}
 }

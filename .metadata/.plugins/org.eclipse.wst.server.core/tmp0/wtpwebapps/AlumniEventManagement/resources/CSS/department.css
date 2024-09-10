@@ -37,7 +37,7 @@ body {
 }
 
 .sidebar a {
-    color:white;
+    color: white;
     padding: 15px;
     text-decoration: none;
     font-size: 20px;
@@ -87,4 +87,143 @@ body {
 .pagination-container {
     text-align: center;
     margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 200px;
+    }
+    .content {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .content {
+        margin-left: 0;
+        padding-top: 56px; /* Adjust padding to fit below the navbar */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar a {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar a {
+        font-size: 16px;
+        padding: 10px;
+    }
+    .content {
+        padding: 15px;
+    }
+}
+
+/* Toggle button container (attached to sidebar) */
+.toggle-container {
+    position: fixed;
+    top: 60px; /* Adjust to fit below the navbar */
+    left: 250px; /* Initially aligned with sidebar */
+    z-index: 1001;
+    transition: left 0.3s ease;
+}
+
+/* Hamburger icon (three lines) styling */
+.toggle-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.toggle-btn span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Change toggle button position when sidebar is hidden */
+.sidebar.hide + .toggle-container {
+    left: 0; /* Move toggle button when sidebar is hidden */
+    transition: left 0.3s ease;
+}
+
+/* Content styling */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    padding-top: 76px;
+    background-color: #212529;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+/* Content full-width when sidebar is hidden */
+.content.full-width {
+    margin-left: 0;
+}
+
+/* Card styling */
+.card {
+    max-width: 100%;
+    margin: auto;
+}
+
+.card-title, .card-text {
+    color: white;
+}
+
+/* Button styling */
+.btn-custom {
+    background-color: #495057;
+    color: white;
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #adb5bd;
+    color: #000;
+}
+
+/* Responsive Styling */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .toggle-container {
+        left: 200px; /* Adjust for smaller screens */
+    }
+
+    .sidebar.hide + .toggle-container {
+        left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .content {
+        padding: 10px;
+    }
 }

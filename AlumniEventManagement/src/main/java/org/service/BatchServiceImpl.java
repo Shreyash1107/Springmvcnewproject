@@ -13,6 +13,9 @@ public class BatchServiceImpl implements Batchservice {
 	public boolean isBatchAdded(BatchModel bmodel) {
 		return batchrepo.isBatchAdded(bmodel);
 	}
+	 public boolean isBatchYearExist(String batch_year) {
+		 return batchrepo.isBatchYearExist(batch_year);
+	 }
 	public List<BatchModel> getlist(){
 		return batchrepo.getlist();
 	}
@@ -20,7 +23,6 @@ public class BatchServiceImpl implements Batchservice {
 		batchrepo.deletebatch(bid);
 	}
 	public boolean isBatchupdated(BatchModel bmodel) {
-		System.out.println(bmodel);
-		return batchrepo.isBatchupdated(bmodel);
+		return batchrepo.isBatchUpdated(bmodel);
 	}
 }

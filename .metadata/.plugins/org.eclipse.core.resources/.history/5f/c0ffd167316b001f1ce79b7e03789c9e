@@ -1,9 +1,0 @@
-package org.repository;
-
-import org.model.FeedbackModel;
-
-public class FeedbackrepositoryImpl {
-	public boolean issubmitFeedback(FeedbackModel fmodel) {
-		
-	}
-}

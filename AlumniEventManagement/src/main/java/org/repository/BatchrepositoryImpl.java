@@ -6,56 +6,79 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.model.BatchModel;
+import org.model.DepartmentModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+
 @Repository("batchrepo")
-public class BatchrepositoryImpl implements Batchrepository{
-	@Autowired
-	JdbcTemplate template;
-	public boolean isBatchAdded(BatchModel bmodel) {
-		PreparedStatementSetter pstmt = new PreparedStatementSetter() {
-			
-			@Override
-			public void setValues(PreparedStatement ps) throws SQLException {
-				ps.setString(1, bmodel.getBatch_year());
-				ps.setInt(2, bmodel.getDept_id());
-			}
-		};
-		int value = template.update("insert into Batch values('0',?,?)",pstmt);
-		return value>0?true:false;
-	}
-	public List<BatchModel> getlist(){
-		RowMapper<BatchModel> rmap = new RowMapper<BatchModel>() {
-			
-			@Override
-			public BatchModel mapRow(ResultSet rs, int rowNum) throws SQLException {
-				BatchModel bmodel = new BatchModel();
-				bmodel.setBid(rs.getInt(1));
-				bmodel.setBatch_year(rs.getString(2));
-				bmodel.setDept_id(rs.getInt(3));
-				return bmodel;
-			}
-		};
-		List<BatchModel> batches = template.query("select *from Batch", rmap);
-		return batches.size()>0?batches:null;
-	}
-	public void deletebatch(int bid) {
-		template.update("delete from Batch where Bid = ?", bid);
-		}
-	public boolean isBatchupdated(BatchModel bmodel) {
-		PreparedStatementSetter pstmt = new PreparedStatementSetter() {
-			
-			@Override
-			public void setValues(PreparedStatement ps) throws SQLException {
-				ps.setString(1, bmodel.getBatch_year());
-				ps.setInt(2, bmodel.getDept_id());
-				ps.setInt(3, bmodel.getBid());
-			}
-		};
-		int value = template.update("update Batch set batch_year=?,dept_id=? where Bid = ?",pstmt);
-		return value>0?true:false;
-	}
+public class BatchrepositoryImpl implements Batchrepository {
+
+    @Autowired
+    JdbcTemplate template;
+
+    @Override
+    public boolean isBatchYearExist(String batch_year) {
+        String sql = "SELECT COUNT(*) FROM Batch WHERE batch_year = ?";
+        Integer count = template.queryForObject(sql, new Object[]{batch_year}, Integer.class);
+        return count != null && count > 0;
+    }
+
+    @Override
+    public boolean isBatchAdded(BatchModel bmodel) {
+        if (isBatchYearExist(bmodel.getBatch_year())) {
+            return false;
+        }
+        PreparedStatementSetter pstmt = new PreparedStatementSetter() {
+            @Override
+            public void setValues(PreparedStatement ps) throws SQLException {
+                ps.setString(1, bmodel.getBatch_year());
+                ps.setInt(2, bmodel.getDept_id());
+            }
+        };
+        int value = template.update("INSERT INTO Batch (batch_year, dept_id) VALUES (?, ?)", pstmt);
+        return value > 0;
+    }
+
+    @Override
+    public List<BatchModel> getlist() {
+        RowMapper<BatchModel> rmap = new RowMapper<BatchModel>() {
+            @Override
+            public BatchModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+                BatchModel bmodel = new BatchModel();
+                DepartmentModel dmodel = new DepartmentModel();
+                bmodel.setBid(rs.getInt("Bid"));
+                bmodel.setBatch_year(rs.getString("batch_year"));
+                dmodel.setDept_name(rs.getString("Deptname"));
+                bmodel.setDeptmodel(dmodel);
+                return bmodel;
+            }
+        };
+        List<BatchModel> batches = template.query("SELECT b.Bid, b.batch_year, d.Deptname FROM Batch b INNER JOIN Department d ON b.dept_id = d.dept_id", rmap);
+        return batches.size() > 0 ? batches : null;
+    }
+
+    @Override
+    public void deletebatch(int bid) {
+        template.update("DELETE FROM Batch WHERE Bid = ?", bid);
+    }
+
+    @Override
+    public boolean isBatchUpdated(BatchModel bmodel) {
+        if (isBatchYearExist(bmodel.getBatch_year())) {
+            return false;
+        }
+        PreparedStatementSetter pstmt = new PreparedStatementSetter() {
+            @Override
+            public void setValues(PreparedStatement ps) throws SQLException {
+                ps.setString(1, bmodel.getBatch_year());
+                ps.setInt(2, bmodel.getDept_id());
+                ps.setInt(3, bmodel.getBid());
+            }
+        };
+        int value = template.update("UPDATE Batch SET batch_year = ?, dept_id = ? WHERE Bid = ?", pstmt);
+        return value > 0;
+    }
 }

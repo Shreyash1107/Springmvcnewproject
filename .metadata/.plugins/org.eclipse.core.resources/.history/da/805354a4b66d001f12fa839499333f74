@@ -1,0 +1,52 @@
+function validateName(str) {
+    let flag = false;
+    if (str.trim() === "") {
+        document.getElementById("n").innerHTML = "Username cannot be blank";
+        return false;
+    }
+    for (let i = 0; i < str.length; i++) {
+        let ascii = str.charCodeAt(i);
+        if (!((ascii >= 65 && ascii <= 90) || (ascii >= 97 && ascii <= 122) || (ascii >= 48 && ascii <= 57) || (ascii == 32))) {
+            flag = true;
+            break;
+        }
+    }
+    if (flag) {
+        document.getElementById("n").innerHTML = "Invalid username";
+        return false;
+    } else {
+        document.getElementById("n").innerHTML = "";
+        return true;
+    }
+}
+
+// Password validation
+function validatePassword(str) {
+    let ucount = 0, lcount = 0, dcount = 0, sccount = 0;
+    if (str.length < 8) {
+        document.getElementById("p").innerHTML = "Invalid password";
+        return false;
+    } else {
+        for (let i = 0; i < str.length; i++) {
+            let ascii = str.charCodeAt(i);
+            if (ascii >= 65 && ascii <= 90) ucount++;
+            if (ascii >= 97 && ascii <= 122) lcount++;
+            if (ascii >= 48 && ascii <= 57) dcount++;
+            if (!((ascii >= 65 && ascii <= 90) || (ascii >= 97 && ascii <= 122) || (ascii >= 48 && ascii <= 57))) sccount++;
+        }
+        if (ucount >= 1 && lcount >= 1 && dcount >= 1 && sccount >= 1) {
+            document.getElementById("p").innerHTML = "";
+            return true;
+        } else {
+            document.getElementById("p").innerHTML = "Invalid password";
+            return false;
+        }
+    }
+}
+
+// Form validation
+function validateForm() {
+    let usernameValid = validateName(document.getElementById('username').value);
+    let passwordValid = validatePassword(document.getElementById('password').value);
+    return usernameValid && passwordValid;
+}

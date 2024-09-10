@@ -14,51 +14,67 @@ import org.springframework.stereotype.Repository;
 
 @Repository("deptrepo")
 public class DepartmentRespositoryImpl implements Departmentrepository {
-	@Autowired
-	JdbcTemplate template;
 
-	public boolean isDepartmentAded(DepartmentModel dmodel) {
-		PreparedStatementSetter pstmt = new PreparedStatementSetter() {
-			@Override
-			public void setValues(PreparedStatement ps) throws SQLException {
-				ps.setString(1, dmodel.getDept_name());
-			}
-		};
-		int val = template.update("insert into department values('0',?)", pstmt);
-		return val > 0 ? true : false;
-	}
+    @Autowired
+    JdbcTemplate template;
 
-	public List<DepartmentModel> getdept() {
-		RowMapper<DepartmentModel> rmap = new RowMapper<DepartmentModel>() {
-			@Override
-			public DepartmentModel mapRow(ResultSet rs, int rowNum) throws SQLException {
-				DepartmentModel dmodel = new DepartmentModel();
-				dmodel.setDept_id(rs.getInt(1));
-				dmodel.setDept_name(rs.getString(2));
-				return dmodel;
-			}
-		};
-		List<DepartmentModel> deptlist = template.query("select *from Department order by dept_id asc", rmap);
-		return deptlist.size() > 0 ? deptlist : null;
-	}
+    @Override
+    public boolean isDepartmentAded(DepartmentModel dmodel) {
+        String deptName = dmodel.getDept_name().trim().toUpperCase(); 
+        int count = template.queryForObject(
+            "SELECT COUNT(*) FROM department WHERE UPPER(TRIM(deptname)) = ?", 
+            new Object[]{deptName}, 
+            Integer.class
+        );
+        if (count > 0) {
+            return false;
+        }
+        int val = template.update(
+            "INSERT INTO department (dept_id, deptname) VALUES (0, ?)", 
+            deptName
+        );
+        return val > 0; // Return true if insertion is successful
+    }
 
-	public void isDepartmentdeleted(int dept_id) {
-		template.update("delete from Department where dept_id = ?", dept_id);
-	}
+    @Override
+    public List<DepartmentModel> getdept() {
+        return template.query(
+            "SELECT * FROM department ORDER BY dept_id ASC", 
+            new RowMapper<DepartmentModel>() {
+                @Override
+                public DepartmentModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    DepartmentModel dmodel = new DepartmentModel();
+                    dmodel.setDept_id(rs.getInt("dept_id"));
+                    dmodel.setDept_name(rs.getString("deptname"));
+                    return dmodel;
+                }
+            }
+        );
+    }
 
-	public boolean isupdateDepartment(DepartmentModel deptmodel) {
-		int value = template.update("update Department set deptname=? where  Dept_id=?", new PreparedStatementSetter() {
+    @Override
+    public void isDepartmentdeleted(int dept_id) {
+        template.update("DELETE FROM department WHERE dept_id = ?", dept_id);
+    }
 
-			@Override
-			public void setValues(PreparedStatement ps) throws SQLException {
-				ps.setString(1, deptmodel.getDept_name());
-				ps.setInt(2, deptmodel.getDept_id());
-			}
-		});
-		if (value > 0) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+    @Override
+    public boolean isupdateDepartment(DepartmentModel deptmodel) {
+        // Check for duplicate department names excluding the current department
+        String deptName = deptmodel.getDept_name().trim().toUpperCase();
+        int count = template.queryForObject(
+            "SELECT COUNT(*) FROM department WHERE UPPER(TRIM(deptname)) = ? AND dept_id != ?", 
+            new Object[]{deptName, deptmodel.getDept_id()}, 
+            Integer.class
+        );
+        if (count > 0) {
+            return false; // Department name already exists
+        }
+
+        int value = template.update(
+            "UPDATE department SET deptname = ? WHERE dept_id = ?", 
+            deptName, 
+            deptmodel.getDept_id()
+        );
+        return value > 0; // Return true if update is successful
+    }
 }

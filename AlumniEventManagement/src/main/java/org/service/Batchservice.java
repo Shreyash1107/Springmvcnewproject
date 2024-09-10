@@ -6,6 +6,7 @@ import org.model.BatchModel;
 
 public interface Batchservice {
 	public boolean isBatchAdded(BatchModel bmodel);
+	 public boolean isBatchYearExist(String batch_year);
 	public List<BatchModel> getlist();
 	public void deletebatch(int bid);
 	public boolean isBatchupdated(BatchModel bmodel);

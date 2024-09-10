@@ -6,11 +6,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Alumni Module</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="<c:url value='/resources/CSS/department.css' />" rel="stylesheet" />
-
+  <script src="resources/JS/Validatealumni.js"></script>
     <!-- DataTables CSS -->
     <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
@@ -31,20 +31,22 @@
     </div>
     <div class="content">
         <h4 class="text-center">Alumni Module</h4>
-        <form name="frm" action="save" method="POST">
+        <form name="frm" action="save" method="POST" onsubmit="return validateForm()">
             <div class="container">
                 <!-- Form Fields -->
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group mt-4">
                             <label for="inputname">Name</label>
-                            <input type="text" class="form-control" id="inputname" name="Name" aria-describedby="amname" placeholder="Enter Alumni Name" autocomplete="off">
+                            <input type="text" class="form-control" id="inputname" name="Name" placeholder="Enter Alumni Name" autocomplete="off">
+                            <div id="nameError" class="text-danger"></div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group mt-4">
                             <label for="inputemail">Email</label>
-                            <input type="email" class="form-control" id="inputemail" name="Email" aria-describedby="amemail" placeholder="Enter Alumni Email" autocomplete="off">
+                            <input type="email" class="form-control" id="inputemail" name="Email" placeholder="Enter Alumni Email" autocomplete="off">
+                            <div id="emailError" class="text-danger"></div>
                         </div>
                     </div>
                 </div>
@@ -52,13 +54,15 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="inputcontact">Contact</label>
-                            <input type="text" class="form-control" id="inputcontact" name="Contact" aria-describedby="amcontact" placeholder="Enter Alumni Contact" autocomplete="off">
+                            <input type="text" class="form-control" id="inputcontact" name="Contact" placeholder="Enter Alumni Contact" autocomplete="off">
+                            <div id="contactError" class="text-danger"></div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="inputage">Age</label>
-                            <input type="number" class="form-control" id="inputage" name="Age" aria-describedby="amage" placeholder="Enter Alumni Age" autocomplete="off">
+                            <input type="number" class="form-control" id="inputage" name="Age" placeholder="Enter Alumni Age" autocomplete="off">
+                            <div id="ageError" class="text-danger"></div>
                         </div>
                     </div>
                 </div>
@@ -66,7 +70,8 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="inputcompany">Company</label>
-                            <input type="text" class="form-control" id="inputcompany" name="Company" aria-describedby="amcomp" placeholder="Enter Alumni Company" autocomplete="off">
+                            <input type="text" class="form-control" id="inputcompany" name="Company" placeholder="Enter Alumni Company" autocomplete="off">
+                            <div id="companyError" class="text-danger"></div>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -77,6 +82,7 @@
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
+                            <div id="genderError" class="text-danger"></div>
                         </div>
                     </div>
                 </div>
@@ -90,6 +96,7 @@
                                     <option value="${deptname.getDept_id()}">${deptname.getDept_name()}</option>
                                 </c:forEach>
                             </select>
+                            <div id="deptError" class="text-danger"></div>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -101,6 +108,7 @@
                                     <option value="${btyear.getBid()}">${btyear.getBatch_year()}</option>
                                 </c:forEach>
                             </select>
+                            <div id="batchError" class="text-danger"></div>
                         </div>
                     </div>
                 </div>
@@ -120,17 +128,17 @@
                 <table id="data" class="table table-striped table-dark text-center">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">Aid</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Contact</th>
-                            <th scope="col">Age</th>
-                            <th scope="col">Company</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Dept_id</th>
-                            <th scope="col">Bid</th>
-                            <th scope="col">Update</th>
-                            <th scope="col">Delete</th>
+                            <th scope="col" class="text-center">Aid</th>
+                            <th scope="col" class="text-center">Name</th>
+                            <th scope="col" class="text-center">Email</th>
+                            <th scope="col" class="text-center">Contact</th>
+                            <th scope="col" class="text-center">Age</th>
+                            <th scope="col" class="text-center">Company</th>
+                            <th scope="col" class="text-center">Gender</th>
+                            <th scope="col" class="text-center">Dept_id</th>
+                            <th scope="col" class="text-center">Bid</th>
+                            <th scope="col" class="text-center">Update</th>
+                            <th scope="col" class="text-center">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -170,13 +178,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#data').DataTable({
-                pagingType: 'simple_numbers', 
-                language: {
-                    searchPlaceholder: "Search records"
-                },
-                dom: 'lfrtip'
+                "pagingType": "full_numbers"
+            });
+
+            // Custom pagination controls
+            $('#data').on('draw.dt', function () {
+                let table = $('#data').DataTable();
+                $('#nav').html(table.pagination());
             });
         });
     </script>

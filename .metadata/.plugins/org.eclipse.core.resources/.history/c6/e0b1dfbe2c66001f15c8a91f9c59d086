@@ -1,6 +1,0 @@
-package org.model;
-
-public class AlumniModel {
-	private int Aid;
-	private String Name;
-}

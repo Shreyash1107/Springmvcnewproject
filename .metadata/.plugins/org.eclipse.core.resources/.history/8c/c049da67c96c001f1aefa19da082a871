@@ -1,0 +1,38 @@
+function validateDropdown() {
+    var deptSelect = document.getElementById("deptSelect").value;
+    var deptError = document.getElementById("deptError");
+
+    if (deptSelect === "") {
+        deptError.innerHTML = "Department must be selected.";
+        return false; // Prevent form submission
+    } else {
+        deptError.innerHTML = "";
+        return true; // Allow form submission
+    }
+}
+
+function validateBatchForm() {
+    let batchYear = document.getElementById("exampleInputdept").value.trim();
+    let batchError = document.getElementById("batchError");
+
+    let isBatchValid = true;
+    let isDeptValid = true;
+
+    // Validate Pass-out Batch
+    if (batchYear === "") {
+        batchError.innerHTML = "Pass-out Batch cannot be empty.";
+        isBatchValid = false;
+    } else if (!/^\d{4}$/.test(batchYear)) {
+        batchError.innerHTML = "Pass-out Batch should be a 4-digit number.";
+        isBatchValid = false;
+    } else {
+        batchError.innerHTML = "";
+    }
+
+    // Validate Department Dropdown
+    if (!validateDropdown()) {
+        isDeptValid = false;
+    }
+
+    return isBatchValid && isDeptValid; // Allow form submission only if both are valid
+}

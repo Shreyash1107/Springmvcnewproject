@@ -1,7 +1,0 @@
-package org.service;
-
-import org.model.EventModel;
-
-public interface Eventservice {
-	public boolean isEventAdded(EventModel emodel);
-}

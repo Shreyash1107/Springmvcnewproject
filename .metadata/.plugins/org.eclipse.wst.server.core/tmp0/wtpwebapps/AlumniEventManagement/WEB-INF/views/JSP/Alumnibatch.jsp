@@ -91,12 +91,13 @@
     <script>
         $(document).ready(function() {
             $('#data').DataTable({
-                "paging": true,    // Enable pagination
-                "searching": true, // Enable searching
-                "info": true,      // Show table info
-                "lengthChange": true // Allow changing the number of records per page
+                "paging": true,    
+                "searching": true, 
+                "info": true,      
+                "lengthChange": true 
             });
         });
     </script>
+    <script src="<c:url value='/resources/JS/Sidebar.js' />"></script>
 </body>
 </html>

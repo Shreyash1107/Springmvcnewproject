@@ -1,9 +1,0 @@
-package org.service;
-
-import org.model.AlumniModel;
-
-public class AlumniServiceImpl implements Alumniservice{
-	public boolean isAlumniadded(AlumniModel amodel) {
-		
-	}
-}

@@ -1,0 +1,69 @@
+function validateFeedbackForm() {
+    let eventName = document.getElementById("eventName").value.trim();
+    let rating = document.getElementById("rating").value.trim();
+    let alumniName = document.getElementById("alumniName").value.trim();
+    let feedbackDetails = document.getElementById("feedbackDetails").value.trim();
+
+    let eventNameError = document.getElementById("eventNameError");
+    let ratingError = document.getElementById("ratingError");
+    let alumniNameError = document.getElementById("alumniNameError");
+    let feedbackDetailsError = document.getElementById("feedbackDetailsError");
+
+    let isValid = true;
+
+    // Validate Event Name
+    if (eventName === "") {
+        eventNameError.innerHTML = "Event Name is required.";
+        isValid = false;
+    } else {
+        eventNameError.innerHTML = "";
+    }
+
+    // Validate Rating
+    if (rating === "") {
+        ratingError.innerHTML = "Rating is required.";
+        isValid = false;
+    } else {
+        ratingError.innerHTML = "";
+    }
+
+    // Validate Alumni Name (Only letters allowed)
+    if (alumniName === "") {
+        alumniNameError.innerHTML = "Alumni Name is required.";
+        isValid = false;
+    } else if (!/^[a-zA-Z\s]+$/.test(alumniName)) {
+        alumniNameError.innerHTML = "Alumni Name should only contain letters.";
+        isValid = false;
+    } else {
+        alumniNameError.innerHTML = "";
+    }
+
+    // Validate Feedback Details (Only letters and spaces allowed)
+    if (feedbackDetails === "") {
+        feedbackDetailsError.innerHTML = "Feedback Details are required.";
+        isValid = false;
+    } else if (!/^[a-zA-Z\s]+$/.test(feedbackDetails)) {
+        feedbackDetailsError.innerHTML = "Feedback Details should only contain letters and spaces.";
+        isValid = false;
+    } else {
+        feedbackDetailsError.innerHTML = "";
+    }
+
+    return isValid; // Allow form submission only if all fields are valid
+}
+
+// Restrict input to letters only
+function restrictToLetters(event) {
+    var charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122) && charCode != 32) {
+        event.preventDefault(); // Prevent non-letter input
+    }
+}
+
+// Restrict input to letters and spaces
+function restrictToLettersAndSpaces(event) {
+    var charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122) && charCode != 32) {
+        event.preventDefault(); // Prevent non-letter and non-space input
+    }
+}

@@ -1,0 +1,172 @@
+/* General Body Styling */
+body {
+    background-color: #1c1e21;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    background-color: #000000;
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.navbar-brand:hover {
+    color: #adb5bd !important;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    background-color: #343a40;
+    color: white;
+    padding-top: 20px;
+    z-index: 900;
+    transition: transform 0.3s ease;
+}
+
+.sidebar .d-flex {
+    height: 100%;
+}
+
+.sidebar a {
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+}
+
+.sidebar a:hover {
+    background-color: #495057;
+}
+
+/* Content Styling */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    padding-top: 76px;
+    background-color: #212529;
+    color: white;
+    min-height: 100vh;
+}
+
+/* Table Styling */
+.table {
+    background-color: #343a40;
+    color: white;
+}
+
+.table th {
+    background-color: #6c757d;
+    color: white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #2e3236;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #343a40;
+}
+
+.table td, .table th {
+    color: white;
+}
+
+/* Button Styling */
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
+
+.btn-warning, .btn-danger {
+    color: white;
+}
+
+/* Pagination Container */
+.pagination-container {
+    color: white;
+    background-color: #343a40;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Adjust layout for screens smaller than 992px (tablets and small desktops) */
+@media (max-width: 991.98px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 200px;
+        padding: 15px;
+        padding-top: 70px;
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+}
+
+/* Adjust layout for screens smaller than 768px (mobile devices) */
+@media (max-width: 767.98px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        transform: translateX(-100%); /* Hide sidebar by default */
+    }
+
+    .sidebar.collapse.show {
+        transform: translateX(0); /* Show sidebar when toggled */
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 15px;
+        padding-top: 60px;
+    }
+
+    .navbar {
+        position: relative;
+    }
+}
+
+/* Adjust layout for very small screens (smaller than 576px) */
+@media (max-width: 575.98px) {
+    .navbar-brand {
+        font-size: 18px;
+    }
+
+    .sidebar a {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .table th, .table td {
+        font-size: 12px;
+    }
+}

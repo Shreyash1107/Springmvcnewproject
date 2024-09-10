@@ -1,0 +1,24 @@
+ function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false; // Prevent non-digit input
+            }
+            return true;
+        }
+
+        // Validate the form before submission
+        function validateBatchForm() {
+            let batchYear = document.getElementById("exampleInputdept").value.trim();
+            let batchError = document.getElementById("batchError");
+
+            if (batchYear === "") {
+                batchError.innerHTML = "Pass-out Batch cannot be empty.";
+                return false; // Prevent form submission
+            } else if (!/^\d{4}$/.test(batchYear)) {
+                batchError.innerHTML = "Pass-out Batch should be a 4-digit number.";
+                return false; // Prevent form submission
+            } else {
+                batchError.innerHTML = "";
+                return true; // Allow form submission
+            }
+        }
