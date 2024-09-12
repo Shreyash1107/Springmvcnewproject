@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 public class EventServiceImpl implements Eventservice{
 	@Autowired
 	Eventrepository evrepo;
-	public boolean isEventAdded(EventModel emodel) {
-		return evrepo.isEventAdded(emodel);
+	public boolean isEventAded(EventModel emodel) {
+		return evrepo.isEventAded(emodel);
 	}
 	public List<EventModel> getevents(){
 		return evrepo.getevents();
@@ -22,7 +22,10 @@ public class EventServiceImpl implements Eventservice{
 	public void deleteevents(Integer Eid) {
 		evrepo.deleteevents(Eid);
 	}
-	public boolean isUpdateEvent(EventModel emodel) {
-		return evrepo.isUpdateEvent(emodel);
+	public boolean isupdateEvent(EventModel emodel) {
+		return evrepo.isupdateEvent(emodel);
+	}
+	public boolean isEventexists(String evname) {
+		return evrepo.isEventexists(evname);
 	}
 }

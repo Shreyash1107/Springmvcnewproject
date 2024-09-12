@@ -1,16 +1,13 @@
-window.onload = function() {
     function validateDropdown() {
-        var deptSelect = document.getElementById("deptSelect").value;
+        let dept = document.getElementById("deptSelect").value;
         var deptError = document.getElementById("deptError");
-
-        if (deptSelect === "") {
+        if (dept === "") {
             deptError.innerHTML = "Department must be selected.";
             return false;
         } else {
             deptError.innerHTML = "";
             return true;
         }
-    }
     function validateBatchForm() {
         let batchYear = document.getElementById("passoutYear").value.trim();
         let batchError = document.getElementById("passoutYearError");

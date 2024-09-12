@@ -1,0 +1,60 @@
+function validateForm() {
+    let isValid = true;
+
+    // Validate each field
+    const name = document.getElementById("inputname").value.trim();
+    const email = document.getElementById("inputemail").value.trim();
+    const contact = document.getElementById("inputcontact").value.trim();
+    const age = document.getElementById("inputage").value.trim();
+    const company = document.getElementById("inputcompany").value.trim();
+    const gender = document.getElementById("gend").value.trim();
+    const dept = document.getElementById("deptSelect").value.trim();
+    const batch = document.getElementById("batchselect").value.trim();
+
+    // Clear previous error messages
+    document.getElementById("nameError").innerText = "";
+    document.getElementById("emailError").innerText = "";
+    document.getElementById("contactError").innerText = "";
+    document.getElementById("ageError").innerText = "";
+    document.getElementById("companyError").innerText = "";
+    document.getElementById("genderError").innerText = "";
+    document.getElementById("deptError").innerText = "";
+    document.getElementById("batchError").innerText = "";
+
+    // Validate fields
+    if (!name) {
+        document.getElementById("nameError").innerText = "Name is required.";
+        isValid = false;
+    }
+    if (!email) {
+        document.getElementById("emailError").innerText = "Email is required.";
+        isValid = false;
+    }
+    if (!contact) {
+        document.getElementById("contactError").innerText = "Contact is required.";
+        isValid = false;
+    }
+    if (!age) {
+        document.getElementById("ageError").innerText = "Age is required.";
+        isValid = false;
+    }
+    if (!company) {
+        document.getElementById("companyError").innerText = "Company is required.";
+        isValid = false;
+    }
+    if (!gender) {
+        document.getElementById("genderError").innerText = "Gender is required.";
+        isValid = false;
+    }
+    if (!dept) {
+        document.getElementById("deptError").innerText = "Department is required.";
+        isValid = false;
+    }
+    if (!batch) {
+        document.getElementById("batchError").innerText = "Batch is required.";
+        isValid = false;
+    }
+
+    // Prevent form submission if invalid
+    return isValid;
+}

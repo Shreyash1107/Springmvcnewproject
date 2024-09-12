@@ -57,7 +57,6 @@ public class HomeController {
 	    } else {
 	        req.setAttribute("msg", "Invalid username or password.");
 	    }
-	    
 	    return "Adminlogin";
 	}
 	@RequestMapping(value = "/alumniregister")

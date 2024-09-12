@@ -1,0 +1,107 @@
+package org.repository;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.model.AlumniModel;
+import org.model.DepartmentModel;
+import org.model.EventModel;
+import org.model.Eventreistermodel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementSetter;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+@Repository("evrepo")
+public class EventRepositoryImpl implements Eventrepository {
+	@Autowired
+	JdbcTemplate template;
+
+	public boolean isEventAded(EventModel emodel) {
+	    String evname = emodel.getName().toUpperCase().trim(); 
+	    int count = template.queryForObject(
+	        "SELECT COUNT(*) FROM Events WHERE UPPER(TRIM(name)) = ?", 
+	        new Object[]{evname}, 
+	        Integer.class
+	    );
+	    if (count > 0) {
+	        return false;
+	    }
+	    int val = template.update(
+	        "INSERT INTO Events (Eid, name, date, Time) VALUES (0, ?, ?, ?)", 
+	        evname, 
+	        emodel.getDate(),  
+	        emodel.getTime()   
+	    );
+	    
+	    return val > 0; 
+	}
+
+	public List<EventModel> getevents() {
+		RowMapper<EventModel> rmap = new RowMapper<EventModel>() {
+
+			@Override
+			public EventModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+				EventModel emodel = new EventModel();
+				emodel.setEid(rs.getInt(1));
+				emodel.setName(rs.getString(2));
+				emodel.setDate(rs.getString(3));
+				emodel.setTime(rs.getString(4));
+				return emodel;
+			}
+		};
+		List<EventModel> evlist = template.query("select *from Events", rmap);
+		return evlist.size() > 0 ? evlist : null;
+	}
+
+	public List<EventModel> getalumniwiselist(int id) {
+		PreparedStatementSetter pstmt = new PreparedStatementSetter() {
+
+			@Override
+			public void setValues(PreparedStatement ps) throws SQLException {
+				ps.setInt(1, id);
+			}
+		};
+		RowMapper<EventModel> rmapper = new RowMapper<EventModel>() {
+			@Override
+			public EventModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+				EventModel emodel = new EventModel();
+				AlumniModel amodel = new AlumniModel();
+				emodel.setEid(rs.getInt("Eid"));
+				emodel.setName(rs.getString("event_name"));
+				amodel.setName(rs.getString("alumni_name"));
+				emodel.setAmodel(amodel);
+				return emodel;
+			}
+		};
+		List<EventModel> evlist = template.query("SELECT e.Eid, e.Name as event_name, am.amname as alumni_name "
+				+ "FROM Alumni am " + "INNER JOIN Eventregister evreg ON am.Aid = evreg.Aid "
+				+ "INNER JOIN Events e ON evreg.Eid = e.Eid " + "WHERE am.Aid = ?", pstmt, rmapper);
+		return evlist.size() > 0 ? evlist : null;
+	}
+	public void deleteevents(Integer Eid) {
+		template.update("delete from Events where Eid=?",Eid);
+	}
+	public boolean isupdateEvent(EventModel emodel) {
+	    String evname = emodel.getName().trim().toUpperCase();
+	    int count = template.queryForObject(
+	        "SELECT COUNT(*) FROM Events WHERE UPPER(TRIM(name)) = ? AND Eid != ? AND date = ? AND Time = ?", 
+	        new Object[]{evname, emodel.getEid(), emodel.getDate(), emodel.getTime()}, 
+	        Integer.class
+	    );
+	    if (count > 0) {
+	        return false; 
+	    }
+	    int value = template.update(
+	        "UPDATE Events SET name = ?, date = ?, Time = ? WHERE Eid = ?", 
+	        new Object[]{evname, emodel.getDate(), emodel.getTime(), emodel.getEid()}
+	    );
+	    
+	    // Return true if the update was successful, otherwise false
+	    return value > 0; 
+	}
+
+}

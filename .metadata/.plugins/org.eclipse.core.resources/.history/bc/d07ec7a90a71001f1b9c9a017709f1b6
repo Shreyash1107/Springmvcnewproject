@@ -1,0 +1,24 @@
+
+			// Set the minimum date to current date
+			function setMinDate() {
+				var today = new Date();
+				var day = today.getDate().toString().padStart(2, '0');
+				var month = (today.getMonth() + 1).toString().padStart(2, '0');
+				var year = today.getFullYear();
+				var minDate = year + '-' + month + '-' + day;
+
+				$('#inputdate').attr('min', minDate);
+			}
+
+			// Set the minimum time to current time
+			function setMinTime() {
+				var now = new Date();
+				var hours = now.getHours().toString().padStart(2, '0');
+				var minutes = now.getMinutes().toString().padStart(2, '0');
+				var minTime = hours + ':' + minutes;
+
+				$('#inputtime').attr('min', minTime);
+			}
+
+			setMinDate(); // Call function on page load
+			setMinTime(); // Call function on page load

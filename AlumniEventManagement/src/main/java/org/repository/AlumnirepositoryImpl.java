@@ -36,26 +36,42 @@ public class AlumnirepositoryImpl implements Alumnirepository {
 		int value = template.update("insert into Alumni values('0',?,?,?,?,?,?,?,?)", pstmt);
 		return value > 0 ? true : false;
 	}
+	@Override
+	public boolean emailExists(String email) {
+	    String sql = "SELECT COUNT(*) FROM Alumni WHERE Email = ?";
+	    Integer count = template.queryForObject(sql, new Object[]{email}, Integer.class);
+	    return count != null && count > 0;
+	}
+
+	@Override
+	public boolean contactExists(String contact) {
+	    String sql = "SELECT COUNT(*) FROM Alumni WHERE Contact = ?";
+	    Integer count = template.queryForObject(sql, new Object[]{contact}, Integer.class);
+	    return count != null && count > 0;
+	}
 
 	public List<AlumniModel> getalumni() {
 		RowMapper<AlumniModel> rmap = new RowMapper<AlumniModel>() {
-
 			@Override
 			public AlumniModel mapRow(ResultSet rs, int rowNum) throws SQLException {
 				AlumniModel amodel = new AlumniModel();
+				BatchModel bmodel = new BatchModel();
+				DepartmentModel dmodel = new DepartmentModel();
 				amodel.setAid(rs.getInt(1));
 				amodel.setName(rs.getString(2));
 				amodel.setEmail(rs.getString(3));
 				amodel.setContact(rs.getString(4));
 				amodel.setAge(rs.getInt(5));
 				amodel.setCompany(rs.getString(6));
-				amodel.setBid(rs.getInt(7));
-				amodel.setGender(rs.getString(8));
-				amodel.setDept_id(rs.getInt(9));
+				amodel.setGender(rs.getString(7));
+				bmodel.setBatch_year(rs.getString(8));
+				amodel.setbatchmodel(bmodel);
+				dmodel.setDept_name(rs.getString(9));
+				amodel.setdeptmodel(dmodel);
 				return amodel;
 			}
 		};
-		List<AlumniModel> alumnilist = template.query("select *from Alumni", rmap);
+		List<AlumniModel> alumnilist = template.query("select am.Aid,am.amname,am.Email,am.Contact,am.Age,am.Company,am.Gender,b.Batch_Year,d.deptname from Alumni am inner join Department d on am.Dept_id=d.Dept_id inner join Batch b on b.Bid=am.Bid", rmap);
 		return alumnilist.size() > 0 ? alumnilist : null;
 	}
 
@@ -135,26 +151,5 @@ public class AlumnirepositoryImpl implements Alumnirepository {
 		};
 		int value = template.update("update Alumni set amname =?,email =?,contact=?,Age=?,Company=?,Bid=?,Gender=?,dept_id=? where Aid=?",pstmt);
 		return value>0?true:false;
-	}
-	// AlumnirepositoryImpl.java
-	public List<AlumniModel> searchAlumniByName(String name) {
-	    String sql = "SELECT * FROM Alumni WHERE Name LIKE ?";
-	    PreparedStatementSetter pstmt = ps -> ps.setString(1, "%" + name + "%");
-
-	    RowMapper<AlumniModel> rmap = (rs, rowNum) -> {
-	        AlumniModel amodel = new AlumniModel();
-	        amodel.setAid(rs.getInt("Aid"));
-	        amodel.setName(rs.getString("Name"));
-	        amodel.setEmail(rs.getString("Email"));
-	        amodel.setContact(rs.getString("Contact"));
-	        amodel.setAge(rs.getInt("Age"));
-	        amodel.setCompany(rs.getString("Company"));
-	        amodel.setBid(rs.getInt("Bid"));
-	        amodel.setGender(rs.getString("Gender"));
-	        amodel.setDept_id(rs.getInt("Dept_id"));
-	        return amodel;
-	    };
-
-	    return template.query(sql, pstmt, rmap);
 	}
 }

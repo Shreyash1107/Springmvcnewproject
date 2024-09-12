@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.model.AlumniModel;
+import org.model.DepartmentModel;
 import org.model.EventModel;
 import org.model.Eventreistermodel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,18 +20,24 @@ public class EventRepositoryImpl implements Eventrepository {
 	@Autowired
 	JdbcTemplate template;
 
-	public boolean isEventAdded(EventModel emodel) {
-		PreparedStatementSetter pstmt = new PreparedStatementSetter() {
-
-			@Override
-			public void setValues(PreparedStatement ps) throws SQLException {
-				ps.setString(1, emodel.getName());
-				ps.setString(2, emodel.getDate());
-				ps.setString(3, emodel.getTime());
-			}
-		};
-		int value = template.update("insert into Events values('0',?,?,?)", pstmt);
-		return value > 0 ? true : false;
+	public boolean isEventAded(EventModel emodel) {
+	    String evname = emodel.getName().toUpperCase().trim(); 
+	    int count = template.queryForObject(
+	        "SELECT COUNT(*) FROM Events WHERE UPPER(TRIM(name)) = ?", 
+	        new Object[]{evname}, 
+	        Integer.class
+	    );
+	    if (count > 0) {
+	        return false;
+	    }
+	    int val = template.update(
+	        "INSERT INTO Events (Eid, name, date, Time) VALUES (0, ?, ?, ?)", 
+	        evname, 
+	        emodel.getDate(),  
+	        emodel.getTime()   
+	    );
+	    
+	    return val > 0; 
 	}
 
 	public List<EventModel> getevents() {
@@ -78,7 +85,7 @@ public class EventRepositoryImpl implements Eventrepository {
 	public void deleteevents(Integer Eid) {
 		template.update("delete from Events where Eid=?",Eid);
 	}
-	public boolean isUpdateEvent(EventModel emodel) {
+	public boolean isupdateEvent(EventModel emodel) {
 		PreparedStatementSetter pstmt = new PreparedStatementSetter() {
 			
 			@Override
@@ -92,4 +99,10 @@ public class EventRepositoryImpl implements Eventrepository {
 		int value = template.update("update Events set Name=?,Date=?,Time=? where Eid=?",pstmt);
 		return value>0?true:false;
 	}
+	public boolean isEventexists(String evname) {
+	    String sql = "SELECT COUNT(*) FROM Events WHERE UPPER(TRIM(name)) = ?";
+	    Integer count = template.queryForObject(sql, new Object[]{evname.toUpperCase().trim()}, Integer.class);
+	    return count != null && count > 0;
+	}
+
 }

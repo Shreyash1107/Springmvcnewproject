@@ -1,0 +1,18 @@
+function confirmDelete(Eid) {
+	if (confirm("Are you sure you want to remove this Scheduled Events?")) {
+		window.location.href = 'delevent?Eid=' + Eid;
+	}
+}
+function confirmUpdate(Eid, Name, date, Time) {
+	if (confirm("Are you sure you want to update this alumni record?")) {
+		window.location.href = 'updateevent?Eid=' + Eid +
+			'&Name=' + encodeURIComponent(name) +
+			'&email=' + encodeURIComponent(email) +
+			'&Contact=' + encodeURIComponent(Contact) +
+			'&Age=' + Age +
+			'&Company=' + encodeURIComponent(Company) +
+			'&Gender=' + encodeURIComponent(Gender) +
+			'&Bid=' + Bid +
+			'&dept_id=' + dept_id;
+	}
+}

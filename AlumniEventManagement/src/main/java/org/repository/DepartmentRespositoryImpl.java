@@ -33,7 +33,7 @@ public class DepartmentRespositoryImpl implements Departmentrepository {
             "INSERT INTO department (dept_id, deptname) VALUES (0, ?)", 
             deptName
         );
-        return val > 0; // Return true if insertion is successful
+        return val > 0; 
     }
 
     @Override
@@ -59,7 +59,7 @@ public class DepartmentRespositoryImpl implements Departmentrepository {
 
     @Override
     public boolean isupdateDepartment(DepartmentModel deptmodel) {
-        // Check for duplicate department names excluding the current department
+        
         String deptName = deptmodel.getDept_name().trim().toUpperCase();
         int count = template.queryForObject(
             "SELECT COUNT(*) FROM department WHERE UPPER(TRIM(deptname)) = ? AND dept_id != ?", 
@@ -67,7 +67,7 @@ public class DepartmentRespositoryImpl implements Departmentrepository {
             Integer.class
         );
         if (count > 0) {
-            return false; // Department name already exists
+            return false; 
         }
 
         int value = template.update(
@@ -75,6 +75,6 @@ public class DepartmentRespositoryImpl implements Departmentrepository {
             deptName, 
             deptmodel.getDept_id()
         );
-        return value > 0; // Return true if update is successful
+        return value > 0; 
     }
 }

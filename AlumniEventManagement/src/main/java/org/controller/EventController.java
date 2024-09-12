@@ -30,15 +30,17 @@ public class EventController {
 	}
 	@RequestMapping(value="/saveevent")
 	public String events(EventModel emodel,Model md,HttpServletRequest req) {
-		String evname = req.getParameter("Name");
+		String evname = req.getParameter("Name").trim().toUpperCase();
 		String date = req.getParameter("Date");
 		String time = req.getParameter("Time");
 		emodel.setName(evname);
 		emodel.setDate(date);
 		emodel.setTime(time);
-		boolean b = evservice.isEventAdded(emodel);
+		boolean b = evservice.isEventAded(emodel);
 		if(b) {
 			md.addAttribute("ev", "Event has been Added Successfully.............");
+		}else {
+			md.addAttribute("ev","Event Already Exists");
 		}
 		List<EventModel> evlist = evservice.getevents();
 		if(evlist!=null) {
@@ -80,20 +82,31 @@ public class EventController {
 		return "Updateevent";
 	}
 	@RequestMapping(value = "/finalupdateevent")
-	public String getupdatedevent(HttpServletRequest req,Model md,EventModel evmd) {
-		Integer Eid = Integer.parseInt(req.getParameter("Eid"));
-		String Name = req.getParameter("Name");
-		String date = req.getParameter("Date");
-		String Time = req.getParameter("Time");
-		evmd.setEid(Eid);
-		evmd.setName(Name);
-		evmd.setDate(date);
-		evmd.setTime(Time);
-		boolean b = evservice.isUpdateEvent(evmd);
-		if(b) {
-			List<EventModel> finallist = evservice.getevents();
-			md.addAttribute("e", finallist);
-		}
-		return "Updateevent";
+	public String getupdatedevent(HttpServletRequest req, Model md, EventModel evmd) {
+	    Integer Eid = Integer.parseInt(req.getParameter("Eid"));
+	    String Name = req.getParameter("Name").trim().toUpperCase();
+	    String date = req.getParameter("Date");
+	    String Time = req.getParameter("Time");
+	    evmd.setEid(Eid);
+	    evmd.setName(Name);
+	    evmd.setDate(date);
+	    evmd.setTime(Time);
+
+	    boolean isEventexists = evservice.isEventexists(Name);
+	    if (isEventexists) {
+	        md.addAttribute("msg", "Event Already Scheduled");
+	        md.addAttribute("showtable", false);
+	        return "Updateevent";
+	    }
+
+	    boolean b = evservice.isupdateEvent(evmd);
+	    if (b) {
+	        List<EventModel> finallist = evservice.getevents();
+	        md.addAttribute("e", finallist);
+	        md.addAttribute("msg", "Events Updated Successfully");
+	        md.addAttribute("showtable", true);
+	    }
+	    return "Updateevent";
 	}
+
 }

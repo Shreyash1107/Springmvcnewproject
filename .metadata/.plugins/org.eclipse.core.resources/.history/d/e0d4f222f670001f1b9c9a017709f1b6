@@ -1,0 +1,122 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Alumni</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<c:url value='/resources/CSS/alumni.css' />" rel="stylesheet" />
+    <script src="<c:url value='/resources/JS/Validatealumni.js' />"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Admin</a>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3 class="text-center">Admin Dashboard</h3>
+        <a href="department">Department Module</a> 
+        <a href="btchmodel">Batch Module</a> 
+        <a href="alumni">Alumni Module</a> 
+        <a href="events">Event Module</a> 
+        <a href="feedbackpage">Feedback Module</a> 
+        <a href="logout">Log out</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h4 class="text-center">Update Alumni</h4>
+
+        <!-- Form for Updating Alumni -->
+        <form name="frm" action="finalupdatealumni" method="POST" class="mt-4" onsubmit="return validateForm()">
+            <div class="row g-3">
+                <!-- Alumni ID Field (Hidden) -->
+                <input type="hidden" class="form-control" name="Aid" value="${aid}" readonly>
+
+                <!-- Name Field -->
+                <div class="col-md-3">
+                    <label for="inputname" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="inputname" name="Name" value="${name}" placeholder="Enter Alumni Name" autocomplete="off">
+                    <span id="nameError" class="error-message text-danger"></span>
+                </div>
+
+                <!-- Email Field -->
+                <div class="col-md-3">
+                    <label for="inputemail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputemail" name="Email" value="${email}" placeholder="Enter Alumni Email" autocomplete="off">
+                    <span id="emailError" class="error-message text-danger">${error}</span>
+                </div>
+
+                <!-- Contact Field -->
+                <div class="col-md-3">
+                    <label for="inputcontact" class="form-label">Contact</label>
+                    <input type="text" class="form-control" id="inputcontact" name="Contact" value="${Contact}" placeholder="Enter Alumni Contact" autocomplete="off">
+                    <span id="contactError" class="error-message text-danger">${error}</span>
+                </div>
+
+                <!-- Age Field -->
+                <div class="col-md-3">
+                    <label for="inputage" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="inputage" name="Age" value="${Age}" placeholder="Enter Alumni Age" autocomplete="off">
+                    <span id="ageError" class="error-message text-danger"></span>
+                </div>
+
+                <!-- Company Field -->
+                <div class="col-md-3">
+                    <label for="inputcompany" class="form-label">Company</label>
+                    <input type="text" class="form-control" id="inputcompany" name="Company" value="${Company}" placeholder="Enter Alumni Company" autocomplete="off">
+                    <span id="companyError" class="error-message text-danger"></span>
+                </div>
+
+                <!-- Gender Dropdown -->
+                <div class="col-md-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="form-control" name="Gender" id="gender">
+                        <option value="">Select Gender</option>
+                        <option value="Male" <c:if test="${gender == 'Male'}">selected</c:if>>Male</option>
+                        <option value="Female" <c:if test="${gender == 'Female'}">selected</c:if>>Female</option>
+                    </select>
+                </div>
+
+                <!-- Batch Dropdown -->
+                <div class="col-md-3">
+                    <label for="batch" class="form-label">Batch</label>
+                    <select class="form-control" name="Batch" id="batch">
+                        <c:forEach var="b" items="${b}">
+                            <option value="${b.bid}" <c:if test="${b.batch_year == batch}">selected</c:if>>${b.batch_year}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                <!-- Department Dropdown -->
+                <div class="col-md-3">
+                    <label for="department" class="form-label">Department</label>
+                    <select class="form-control" name="Dept_id" id="department">
+                        <c:forEach var="d" items="${deptname}">
+                            <option value="${d.dept_id}" <c:if test="${d.dept_name == dept}">selected</c:if>>${d.dept_name}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-primary">Update Alumni</button>
+                    <span class="text-success">${success}</span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

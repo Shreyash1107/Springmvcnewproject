@@ -1460,3 +1460,131 @@ Sep 10, 2024 12:41:08.78 Attempting to use a delegate that only supports static-
 Sep 10, 2024 12:43:24.34 [18880:18864:0910/124324.344:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
 Sep 10, 2024 13:12:40.72 [18880:16972:0910/131240.721:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
 Sep 10, 2024 13:31:16.01 [18880:18864:0910/133116.015:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 10, 2024 16:06:06.66 [20172:5988:0910/160606.669:ERROR:CONSOLE(2)] "Blocked autofocusing on a <cib-action-bar> element in a cross-origin subframe.", source: https://edgeservices.bing.com/rp/R7vxLXVYaINFVPMIDP1QDAE2wTA.gz.js (2)
+Sep 10, 2024 16:06:06.78 [20172:5988:0910/160606.775:ERROR:CONSOLE(2)] "Blocked autofocusing on a <textarea> element in a cross-origin subframe.", source: https://edgeservices.bing.com/rp/R7vxLXVYaINFVPMIDP1QDAE2wTA.gz.js (2)
+
+Sep 10, 2024 21:38:24.12 NEW SESSION
+Sep 10, 2024 21:38:24.15 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 10, 2024 21:38:55.97 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 10, 2024 21:50:58.14 [13012:5768:0910/215058.142:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 10, 2024 22:05:53.54 [13012:14592:0910/220553.548:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 10, 2024 22:41:06.35 [13012:14592:0910/224106.356:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 10, 2024 23:00:47.21 [13012:14592:0910/230047.210:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 10, 2024 23:00:47.21 [13012:14592:0910/230047.211:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 10, 2024 23:03:43.67 [13012:14592:0910/230343.670:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 10, 2024 23:03:43.67 [13012:14592:0910/230343.672:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+
+Sep 11, 2024 08:22:15.97 NEW SESSION
+Sep 11, 2024 08:22:15.98 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 11, 2024 08:22:19.35 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 11, 2024 08:39:32.57 [20112:12480:0911/083932.569:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 11, 2024 08:52:43.14 [20112:19752:0911/085243.143:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 08:52:43.15 [20112:19752:0911/085243.143:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 08:53:42.02 [20112:19752:0911/085342.022:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 08:53:42.02 [20112:19752:0911/085342.023:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 10:03:37.65 [20112:19752:0911/100337.652:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 11, 2024 10:30:16.38 [20112:12480:0911/103016.385:ERROR:device_event_log_impl.cc(196)] [10:30:16.384] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Sep 11, 2024 12:14:20.37 [20112:12480:0911/121420.375:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 11, 2024 12:22:57.87 [20112:12480:0911/122257.875:ERROR:device_event_log_impl.cc(196)] [12:22:57.875] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Sep 11, 2024 12:30:48.33 [20112:19752:0911/123048.332:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 12:30:52.43 [20112:19752:0911/123052.437:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 12:31:00.87 [20112:12480:0911/123100.876:ERROR:device_event_log_impl.cc(196)] [12:31:00.876] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Sep 11, 2024 12:31:32.58 [20112:19752:0911/123132.582:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 12:31:40.34 [20112:19752:0911/123140.340:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 12:31:42.60 [20112:19752:0911/123142.600:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 12:31:55.33 [20112:19752:0911/123155.334:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 12:32:29.38 [20112:19752:0911/123229.381:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 12:32:46.44 [20112:12480:0911/123246.443:ERROR:device_event_log_impl.cc(196)] [12:32:46.443] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Sep 11, 2024 12:58:02.49 [20112:12480:0911/125802.497:ERROR:interface_endpoint_client.cc(722)] Message 5 rejected by interface blink.mojom.WidgetHost
+Sep 11, 2024 13:02:15.18 [20112:12480:0911/130215.182:ERROR:interface_endpoint_client.cc(722)] Message 5 rejected by interface blink.mojom.WidgetHost
+Sep 11, 2024 13:09:59.46 [20112:19752:0911/130959.459:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 11, 2024 13:17:29.02 [20112:19752:0911/131729.023:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 13:17:29.03 [20112:19752:0911/131729.031:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+
+Sep 11, 2024 13:27:43.85 NEW SESSION
+Sep 11, 2024 13:27:43.87 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 11, 2024 13:27:57.76 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 11, 2024 13:36:40.09 [6656:17608:0911/133640.092:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 11, 2024 13:37:10.26 [6656:17608:0911/133710.265:ERROR:device_event_log_impl.cc(196)] [13:37:10.264] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Sep 11, 2024 13:51:39.05 [6656:19936:0911/135139.051:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 13:51:43.15 [6656:19936:0911/135143.155:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 13:51:45.03 [6656:17608:0911/135145.034:ERROR:device_event_log_impl.cc(196)] [13:51:45.033] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Sep 11, 2024 13:52:05.84 [6656:19936:0911/135205.842:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 13:54:12.81 [6656:17608:0911/135412.813:ERROR:device_event_log_impl.cc(196)] [13:54:12.813] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Sep 11, 2024 13:56:28.63 [6656:13076:0911/135628.636:ERROR:cert_verify_proc_builtin.cc(1063)] CertVerifyProcBuiltin for sync.adotmob.com failed:
+Sep 11, 2024 13:56:28.63 ----- Certificate i=0 (CN=sync.adotmob.com) -----
+Sep 11, 2024 13:56:28.64 ERROR: Time is after notAfter
+Sep 11, 2024 13:56:28.64 
+Sep 11, 2024 13:56:28.64 
+Sep 11, 2024 14:11:15.69 [6656:23284:0911/141115.697:ERROR:cert_verify_proc_builtin.cc(1063)] CertVerifyProcBuiltin for sync.adotmob.com failed:
+Sep 11, 2024 14:11:15.69 ----- Certificate i=0 (CN=sync.adotmob.com) -----
+Sep 11, 2024 14:11:15.69 ERROR: Time is after notAfter
+Sep 11, 2024 14:11:15.69 
+Sep 11, 2024 14:11:15.69 
+Sep 11, 2024 14:13:06.26 [6656:12736:0911/141306.259:ERROR:cert_verify_proc_builtin.cc(1063)] CertVerifyProcBuiltin for sync.adotmob.com failed:
+Sep 11, 2024 14:13:06.26 ----- Certificate i=0 (CN=sync.adotmob.com) -----
+Sep 11, 2024 14:13:06.26 ERROR: Time is after notAfter
+Sep 11, 2024 14:13:06.26 
+Sep 11, 2024 14:13:06.26 
+Sep 11, 2024 14:13:07.74 [6656:23284:0911/141307.742:ERROR:cert_verify_proc_builtin.cc(1063)] CertVerifyProcBuiltin for sync.adotmob.com failed:
+Sep 11, 2024 14:13:07.74 ----- Certificate i=0 (CN=sync.adotmob.com) -----
+Sep 11, 2024 14:13:07.74 ERROR: Time is after notAfter
+Sep 11, 2024 14:13:07.74 
+Sep 11, 2024 14:13:07.74 
+Sep 11, 2024 14:13:08.38 [6656:23284:0911/141308.388:ERROR:cert_verify_proc_builtin.cc(1063)] CertVerifyProcBuiltin for sync.adotmob.com failed:
+Sep 11, 2024 14:13:08.38 ----- Certificate i=0 (CN=sync.adotmob.com) -----
+Sep 11, 2024 14:13:08.38 ERROR: Time is after notAfter
+Sep 11, 2024 14:13:08.38 
+Sep 11, 2024 14:13:08.38 
+Sep 11, 2024 14:21:22.02 [6656:23284:0911/142122.026:ERROR:cert_verify_proc_builtin.cc(1063)] CertVerifyProcBuiltin for sync.adotmob.com failed:
+Sep 11, 2024 14:21:22.09 ----- Certificate i=0 (CN=sync.adotmob.com) -----
+Sep 11, 2024 14:21:22.09 ERROR: Time is after notAfter
+Sep 11, 2024 14:21:22.09 
+Sep 11, 2024 14:21:22.09 
+Sep 11, 2024 14:26:04.18 [6656:13076:0911/142602.493:ERROR:cert_verify_proc_builtin.cc(1063)] CertVerifyProcBuiltin for sync.adotmob.com failed:
+Sep 11, 2024 14:26:05.82 ----- Certificate i=0 (CN=sync.adotmob.com) -----
+Sep 11, 2024 14:26:05.82 ERROR: Time is after notAfter
+Sep 11, 2024 14:26:05.82 
+Sep 11, 2024 14:26:05.85 
+Sep 11, 2024 14:26:41.57 [6656:17608:0911/142641.573:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 11, 2024 14:31:27.48 [6656:19936:0911/143127.487:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 14:31:28.52 [6656:19936:0911/143127.491:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 11, 2024 14:41:19.05 [6656:17608:0911/144118.932:ERROR:device_event_log_impl.cc(196)] [14:41:18.931] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Sep 11, 2024 14:46:58.47 [6656:23284:0911/144658.339:ERROR:cert_verify_proc_builtin.cc(1063)] CertVerifyProcBuiltin for sync.adotmob.com failed:
+Sep 11, 2024 14:46:58.52 ----- Certificate i=0 (CN=sync.adotmob.com) -----
+Sep 11, 2024 14:46:58.52 ERROR: Time is after notAfter
+Sep 11, 2024 14:46:58.53 
+Sep 11, 2024 14:46:58.53 
+Sep 11, 2024 14:47:54.45 [6656:23284:0911/144754.439:ERROR:cert_verify_proc_builtin.cc(1063)] CertVerifyProcBuiltin for sync.adotmob.com failed:
+Sep 11, 2024 14:47:54.49 ----- Certificate i=0 (CN=sync.adotmob.com) -----
+Sep 11, 2024 14:47:54.49 ERROR: Time is after notAfter
+Sep 11, 2024 14:47:54.49 
+Sep 11, 2024 14:47:54.50 
+
+Sep 11, 2024 14:58:29.69 NEW SESSION
+Sep 11, 2024 14:58:29.73 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 11, 2024 14:58:49.30 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+
+Sep 12, 2024 16:18:53.26 NEW SESSION
+Sep 12, 2024 16:18:53.30 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 12, 2024 16:18:53.76 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 12, 2024 16:21:14.66 [13508:7932:0912/162114.664:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 12, 2024 17:27:51.01 [13508:13204:0912/172750.481:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 12, 2024 17:27:56.13 [13508:13204:0912/172756.133:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 12, 2024 18:33:12.13 [13508:13204:0912/183312.136:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 12, 2024 18:33:14.76 [13508:13204:0912/183314.760:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 12, 2024 20:02:50.16 [13508:13204:0912/200250.162:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 12, 2024 20:49:42.53 [13508:13772:0912/204942.532:ERROR:get_updates_processor.cc(265)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+Sep 12, 2024 20:50:27.55 [13508:13772:0912/205027.550:ERROR:get_updates_processor.cc(265)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+Sep 12, 2024 20:51:35.06 [13508:13772:0912/205135.063:ERROR:get_updates_processor.cc(265)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+Sep 12, 2024 20:53:16.32 [13508:13772:0912/205316.326:ERROR:get_updates_processor.cc(265)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+Sep 12, 2024 20:55:48.21 [13508:13772:0912/205548.218:ERROR:get_updates_processor.cc(265)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+Sep 12, 2024 21:02:07.92 [13508:13772:0912/210207.923:ERROR:get_updates_processor.cc(265)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+Sep 12, 2024 21:14:45.35 [13508:13204:0912/211445.355:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 12, 2024 21:14:45.37 [13508:13204:0912/211445.356:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 12, 2024 21:17:18.14 [13508:13204:0912/211718.146:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 12, 2024 21:17:18.14 [13508:13204:0912/211718.148:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 12, 2024 21:20:14.43 [13508:13204:0912/212014.432:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 12, 2024 21:20:14.43 [13508:13204:0912/212014.433:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 12, 2024 21:29:45.18 [13508:13204:0912/212945.180:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 12, 2024 21:29:45.18 [13508:13204:0912/212945.182:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105

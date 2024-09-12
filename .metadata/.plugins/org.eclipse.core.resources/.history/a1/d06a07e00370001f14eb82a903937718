@@ -1,0 +1,22 @@
+function confirmDelete(aid) {
+    if (confirm("Are you sure you want to remove this Alumni?")) {
+        window.location.href = 'del?aid=' + aid;
+    }
+}
+function confirmUpdate(aid, name, email, contact, age, company, bid, gender, dept_id) {
+    if (confirm("Are you sure you want to update this alumni record?")) {
+        var url = 'updateAlumni?' +
+                  'aid=' + encodeURIComponent(aid) + '&' +
+                  'name=' + encodeURIComponent(name) + '&' +
+                  'email=' + encodeURIComponent(email) + '&' +
+                  'contact=' + encodeURIComponent(contact) + '&' +
+                  'age=' + encodeURIComponent(age) + '&' +
+                  'company=' + encodeURIComponent(company) + '&' +
+                  'bid=' + encodeURIComponent(bid) + '&' +
+                  'gender=' + encodeURIComponent(gender) + '&' +
+                  'dept_id=' + encodeURIComponent(dept_id);
+        
+        // Redirect to the URL
+        window.location.href = url;
+    }
+}

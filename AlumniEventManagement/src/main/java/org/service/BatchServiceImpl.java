@@ -23,6 +23,7 @@ public class BatchServiceImpl implements Batchservice {
 		batchrepo.deletebatch(bid);
 	}
 	public boolean isBatchupdated(BatchModel bmodel) {
+		System.out.println("Service Impl ------------->" + bmodel);
 		return batchrepo.isBatchUpdated(bmodel);
 	}
 }

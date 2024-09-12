@@ -1,0 +1,29 @@
+function validateEvents() {
+	var name = document.forms["frm"]["Name"].value;
+	var date = document.forms["frm"]["Date"].value;
+	var time = document.forms["frm"]["Time"].value;
+	var events = document.getElementById("everror");
+	var dates = document.getElementById("dterror");
+	var timeerror = document.getElementById("timeerror");
+	var namePattern = /^[A-Za-z\s]+$/;
+	events.innerHTML = "";
+	if (name === "") {
+		events.innerHTML += "Event Name is required.<br>";
+		return false;
+	} else if (/^\s/.test(name)) {
+		events.innerHTML += "Event Name should not start with spaces.<br>";
+		return false;
+	} else if (!namePattern.test(name.trim())) {
+		events.innerHTML += "Event Name should contain only letters and spaces.<br>";
+		return false;
+	}
+	if (date === "") {
+        document.getElementById("dterror").innerHTML = "Event Date is required.";
+        isValid = false;
+    }
+    if (time === "") {
+        document.getElementById("timeerror").innerText = "Event Time is required.";
+        isValid = false;
+    }
+return true;
+}

@@ -1,0 +1,26 @@
+// Function to set the minimum date to the current date
+function setMinDate() {
+    var today = new Date();
+    var day = today.getDate().toString().padStart(2, '0');
+    var month = (today.getMonth() + 1).toString().padStart(2, '0');
+    var year = today.getFullYear();
+    var minDate = year + '-' + month + '-' + day;
+
+    document.getElementById('inputdate').setAttribute('min', minDate);
+}
+
+// Function to set the minimum time to the current time
+function setMinTime() {
+    var now = new Date();
+    var hours = now.getHours().toString().padStart(2, '0');
+    var minutes = now.getMinutes().toString().padStart(2, '0');
+    var minTime = hours + ':' + minutes;
+
+    document.getElementById('inputtime').setAttribute('min', minTime);
+}
+
+// Call functions on page load
+document.addEventListener('DOMContentLoaded', function() {
+    setMinDate();
+    setMinTime();
+});

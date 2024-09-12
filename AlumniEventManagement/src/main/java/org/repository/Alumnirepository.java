@@ -5,11 +5,15 @@ import java.util.List;
 import org.model.AlumniModel;
 
 public interface Alumnirepository {
-	public boolean isAlumniadded(AlumniModel amodel);
-	public List<AlumniModel> getalumni();
-	public void deletealumni(Integer aid);
-	public List<AlumniModel> getdeptwiseAlumni(String deptname);
-	public List<AlumniModel> getalumnibatches(String batchyear);
-	public boolean isUpdatealumni(AlumniModel amodel);
-	public List<AlumniModel> searchAlumniByName(String name);
+    boolean isAlumniadded(AlumniModel amodel);
+    List<AlumniModel> getalumni();
+    void deletealumni(Integer aid);
+    List<AlumniModel> getdeptwiseAlumni(String deptname);
+    List<AlumniModel> getalumnibatches(String batchyear);
+    boolean isUpdatealumni(AlumniModel amodel);
+    
+    // New methods for checking duplicates
+    boolean emailExists(String email);
+    boolean contactExists(String contact);
 }
+

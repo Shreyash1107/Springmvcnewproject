@@ -59,7 +59,7 @@
 
 				<!-- Add Batch Button -->
 				<div class="col-md-4 d-flex align-items-end">
-					<button type="submit" class="btn btn-info px-5 py-2 font-weight-bold">Add Batch</button>
+					<button type="submit" class="btn btn-info px-5 py-2 font-weight-bold" onclick="validateDropdown() ">Add Batch</button>
 				</div>
 			</div>
 		</form>
@@ -97,8 +97,8 @@
 		</div>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="<c:url value='/resources/JS/Confirmbatch.js' />"></script>
 	<script src="<c:url value='/resources/JS/Validatebatch.js' />"></script>
+	<script src="<c:url value='/resources/JS/Confirmbatch.js' />"></script>
 	<script src="<c:url value='/resources/JS/alert.js' />"></script>
 	<script src="<c:url value='/resources/JS/pagination.js' />"></script>
 	<script src="<c:url value='/resources/JS/batch.js' />"></script>

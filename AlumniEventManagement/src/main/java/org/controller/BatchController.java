@@ -83,7 +83,7 @@ public class BatchController {
 
     @RequestMapping(value = "/updatebatches")
     public String getUpdateBatch(@RequestParam("bid") Integer bid, @RequestParam("batch_year") Integer batch_year,
-            @RequestParam("dept_id") Integer dept_id, Map<String, Object> map) {
+            @RequestParam("dept_id") String dept_id, Map<String, Object> map) {
         List<DepartmentModel> deptlist = deptservice.getdept();
         if (deptlist != null) {
             map.put("d", deptlist);

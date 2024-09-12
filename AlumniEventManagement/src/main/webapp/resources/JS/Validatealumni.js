@@ -1,11 +1,21 @@
 function validateName() {
     var name = document.forms["frm"]["Name"].value;
     var nameError = document.getElementById("nameError");
+    var namePattern = /^[A-Za-z\s]+$/;
     if (name === "") {
-        nameError.innerText = "Name is required.";
+        nameError.innerHTML = "Name is required.";
         return false;
-    } else {
-        nameError.innerText = "";
+    } 
+    else if (/^\s/.test(name)) {
+        nameError.innerHTML = "Name should not start with spaces.";
+        return false;
+    }
+    else if (!namePattern.test(name.trim())) {
+        nameError.innerHTML = "Name should contain only letters and spaces.";
+        return false;
+    } 
+    else {
+        nameError.innerHTML = "";
         return true;
     }
 }
@@ -15,13 +25,13 @@ function validateEmail() {
     var emailError = document.getElementById("emailError");
     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email === "") {
-        emailError.innerText = "Email is required.";
+        emailError.innerHTML = "Email is required.";
         return false;
     } else if (!emailPattern.test(email)) {
-        emailError.innerText = "Invalid email format.";
+        emailError.innerHTML = "Invalid email format.";
         return false;
     } else {
-        emailError.innerText = "";
+        emailError.innerHTML = "";
         return true;
     }
 }
@@ -31,13 +41,13 @@ function validateContact() {
     var contactError = document.getElementById("contactError");
     var contactPattern = /^[0-9]+$/;
     if (contact === "") {
-        contactError.innerText = "Contact number is required.";
+        contactError.innerHTML = "Contact number is required.";
         return false;
     } else if (!contactPattern.test(contact) || contact.length < 10) {
-        contactError.innerText = "Contact number must be numeric and at least 10 digits long.";
+        contactError.innerHTML = "Contact number must be numeric and at least 10 digits long.";
         return false;
     } else {
-        contactError.innerText = "";
+        contactError.innerHTML = "";
         return true;
     }
 }
@@ -46,13 +56,13 @@ function validateAge() {
     var age = document.forms["frm"]["Age"].value;
     var ageError = document.getElementById("ageError");
     if (age === "") {
-        ageError.innerText = "Age is required.";
+        ageError.innerHTML = "Age is required.";
         return false;
     } else if (isNaN(age) || age <= 0) {
-        ageError.innerText = "Age must be a positive number.";
+        ageError.innerHTML = "Age must be a positive number.";
         return false;
     } else {
-        ageError.innerText = "";
+        ageError.innerHTML = "";
         return true;
     }
 }
@@ -60,11 +70,25 @@ function validateAge() {
 function validateCompany() {
     var company = document.forms["frm"]["Company"].value;
     var companyError = document.getElementById("companyError");
-    if (company === "") {
-        companyError.innerText = "Company is required.";
+    var regex = /^[A-Za-z]+(?:\s[A-Za-z]+)*$/;
+
+    if (company.startsWith(" ")) {
+        companyError.innerHTML = "Starting space is not allowed.";
         return false;
-    } else {
-        companyError.innerText = "";
+    }
+
+    else if (company === "") {
+        companyError.innerHTML = "Company is required.";
+        return false;
+    }
+
+    else if (!regex.test(company)) {
+        companyError.innerHTML = "Only alphabets and spaces between words are allowed.";
+        return false;
+    } 
+
+    else {
+        companyError.innerHTML = "";
         return true;
     }
 }
@@ -73,10 +97,10 @@ function validateGender() {
     var gender = document.forms["frm"]["Gender"].value;
     var genderError = document.getElementById("genderError");
     if (gender === "") {
-        genderError.innerText = "Gender is required.";
+        genderError.innerHTML = "Gender is required.";
         return false;
     } else {
-        genderError.innerText = "";
+        genderError.innerHTML = "";
         return true;
     }
 }
@@ -85,10 +109,10 @@ function validateDept() {
     var dept = document.forms["frm"]["dept_id"].value;
     var deptError = document.getElementById("deptError");
     if (dept === "") {
-        deptError.innerText = "Department is required.";
+        deptError.innerHTML = "Department is required.";
         return false;
     } else {
-        deptError.innerText = "";
+        deptError.innerHTML = "";
         return true;
     }
 }
@@ -97,23 +121,40 @@ function validateBatch() {
     var batch = document.forms["frm"]["Bid"].value;
     var batchError = document.getElementById("batchError");
     if (batch === "") {
-        batchError.innerText = "Batch is required.";
+        batchError.innerHTML = "Batch is required.";
         return false;
     } else {
-        batchError.innerText = "";
+        batchError.innerHTML = "";
         return true;
     }
 }
 
 function validateForm() {
     var isValid = true;
-    isValid &= validateName();
-    isValid &= validateEmail();
-    isValid &= validateContact();
-    isValid &= validateAge();
-    isValid &= validateCompany();
-    isValid &= validateGender();
-    isValid &= validateDept();
-    isValid &= validateBatch();
+
+    if (!validateName()) {
+        isValid = false;
+    }
+    if (!validateEmail()) {
+        isValid = false;
+    }
+    if (!validateContact()) {
+        isValid = false;
+    }
+    if (!validateAge()) {
+        isValid = false;
+    }
+    if (!validateCompany()) {
+        isValid = false;
+    }
+    if (!validateGender()) {
+        isValid = false;
+    }
+    if (!validateDept()) {
+        isValid = false;
+    }
+    if (!validateBatch()) {
+        isValid = false;
+    }   
     return isValid;
 }
