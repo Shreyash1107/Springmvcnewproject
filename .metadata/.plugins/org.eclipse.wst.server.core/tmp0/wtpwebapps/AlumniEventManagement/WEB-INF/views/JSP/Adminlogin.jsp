@@ -13,6 +13,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link href="<c:url value='/resources/CSS/admin.css' />" rel="stylesheet" />
 <script src="resources/JS/validatelogin.js"></script>
+<script src="resources/JS/alert.js"></script>
 </head>
 <body>
 	<div class="login-container">
@@ -51,6 +52,9 @@
 					<a href="alumniregister">Forgot Password? Sign up here</a>
 				</div>
 			</form>
+			<c:if test="${not empty msg}">
+                <div class="alert alert-warning mt-4 text-center" id="message-alert">${msg}</div>
+            </c:if>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

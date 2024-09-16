@@ -41,22 +41,24 @@
                     <table id="dataTable" class="table table-striped table-dark text-center">
                         <thead>
                             <tr>
-                                <th scope="col" class="text-center">Fid</th>
-                                <th scope="col" class="text-center">Details</th>
-                                <th scope="col" class="text-center">Eid</th>
-                                <th scope="col" class="text-center">Name</th>
+                                <th scope="col" class="text-center">Sr. No</th>
+                                <th scope="col" class="text-center">Suggestions</th>
+                                <th scope="col" class="text-center">Event-Name</th>
+                                <th scope="col" class="text-center">Alumni-Name</th>
                                 <th scope="col" class="text-center">Ratings</th>
                             </tr>
                         </thead>
                         <tbody>
+                        <c:set var="counter" value="1" />
                             <c:forEach var="viewfd" items="${fdview}">
                                 <tr>
-                                    <td>${viewfd.fid}</td>
-                                    <td>${viewfd.details}</td>
-                                    <td>${viewfd.emodel.eid}</td>
-                                    <td>${viewfd.name}</td>
-                                    <td>${viewfd.rating}</td>
+                                    <td>${counter}</td>
+                                    <td>${viewfd.getSuggestions()}</td>
+                                    <td>${viewfd.getEmodel().getName()}</td>
+                                    <td>${viewfd.getName()}</td>
+                                    <td>${viewfd.getRatings()}</td>
                                 </tr>
+                                <c:set var="counter" value="${counter + 1}" />
                             </c:forEach>
                         </tbody>
                     </table>

@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.model.AlumniModel;
 import org.model.BatchModel;
 import org.model.DepartmentModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,11 +53,12 @@ public class BatchrepositoryImpl implements Batchrepository {
                 bmodel.setBid(rs.getInt("Bid"));
                 bmodel.setBatch_year(rs.getString("batch_year"));
                 dmodel.setDept_name(rs.getString("Deptname"));
+                bmodel.setDept_id(rs.getInt("dept_id"));
                 bmodel.setDeptmodel(dmodel);
                 return bmodel;
             }
         };
-        List<BatchModel> batches = template.query("SELECT b.Bid, b.batch_year, d.Deptname FROM Batch b INNER JOIN Department d ON b.dept_id = d.dept_id", rmap);
+        List<BatchModel> batches = template.query("SELECT b.Bid, d.Dept_id, b.batch_year, d.Deptname FROM Batch b INNER JOIN Department d ON b.dept_id = d.dept_id order by BID desc", rmap);
         return batches.size() > 0 ? batches : null;
     }
 
@@ -79,6 +81,32 @@ public class BatchrepositoryImpl implements Batchrepository {
             }
         };
         int value = template.update("UPDATE Batch SET batch_year = ?, dept_id = ? WHERE Bid = ?", pstmt);
+        System.out.println("====================" + bmodel.getDept_id());
         return value > 0;
     }
+    public List<AlumniModel> getdeptbatchalumni(Integer Aid) {
+		return template.query(
+				"select am.Aid,am.amname,am.Email,am.Contact,am.Age,am.Company,am.Gender,b.Batch_Year,d.deptname from Alumni am inner join Department d on am.Dept_id=d.Dept_id inner join Batch b on b.Bid=am.Bid where Aid=?",
+				new Object[] { Aid },
+				new RowMapper<AlumniModel>() {
+					@Override
+					public AlumniModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+						AlumniModel amodel = new AlumniModel();
+						BatchModel bmodel = new BatchModel();
+						DepartmentModel dmodel = new DepartmentModel();
+						amodel.setAid(rs.getInt("Aid"));
+						amodel.setName(rs.getString("amname"));
+						amodel.setEmail(rs.getString("Email"));
+						amodel.setContact(rs.getString("Contact"));
+						amodel.setAge(rs.getInt("Age"));
+						amodel.setCompany(rs.getString("Company"));
+						amodel.setGender(rs.getString("Gender"));
+						bmodel.setBatch_year(rs.getString("Batch_Year"));
+						amodel.setbatchmodel(bmodel);
+						dmodel.setDept_name(rs.getString("deptname"));
+						amodel.setdeptmodel(dmodel);
+						return amodel;
+					}
+				});
+	}
 }

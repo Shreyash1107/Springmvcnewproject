@@ -1,0 +1,58 @@
+public class FeedbackModel {
+    private int fid;
+    private String details;
+    private EventModel emodel;
+    private String name;
+    private int rating;
+    private int alumniId; // New field
+
+    // Getter and setter for alumniId
+    public int getAlumniId() {
+        return alumniId;
+    }
+
+    public void setAlumniId(int alumniId) {
+        this.alumniId = alumniId;
+    }
+
+    // Existing getters and setters
+    public int getFid() {
+        return fid;
+    }
+
+    public void setFid(int fid) {
+        this.fid = fid;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public EventModel getEmodel() {
+        return emodel;
+    }
+
+    public void setEmodel(EventModel emodel) {
+        this.emodel = emodel;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+}

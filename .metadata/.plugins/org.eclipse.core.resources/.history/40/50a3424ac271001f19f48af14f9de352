@@ -1,0 +1,19 @@
+package org.service;
+
+import org.model.FeedbackModel;
+import org.model.EventModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.repository.Feedbackrepository;
+
+@Service("fservice")
+public class FeedbackServiceImpl implements FeedbackService {
+
+    @Autowired
+    Feedbackrepository feedrepo;
+
+    public boolean submitFeedback(FeedbackModel feedbackModel, EventModel eventModel, int alumniId) {
+    	System.out.println(alumniId);
+        return feedrepo.submitFeedback(feedbackModel, eventModel, alumniId);
+    }
+}

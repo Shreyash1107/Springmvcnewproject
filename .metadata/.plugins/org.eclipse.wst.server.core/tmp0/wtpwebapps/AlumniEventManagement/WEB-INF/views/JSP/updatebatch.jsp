@@ -8,6 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Update Batch</title>
 <!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -36,37 +38,49 @@
 		<h4 class="text-center">Batch Update Module</h4>
 
 		<!-- Form for Updating Batch -->
-		<form name="frm" action="finalupdatebatches" method="GET" class="mt-4"
+		<form name="frm" action="finalupdatebatches" method="POST" class="mt-4"
 			onsubmit="return validateBatchForm()">
 			<div class="row g-3">
 				<!-- Batch ID Field (Hidden) -->
-				<input type="hidden" class="form-control" name="bid" value="${bid}"
-					readonly>
+				<input type="hidden" class="form-control" name="bid" value="${bid}" readonly>
 
 				<!-- Passout Batch Field -->
 				<div class="col-md-4">
 					<label for="passoutYear" class="form-label">Pass-out Batch</label>
 					<input type="text" class="form-control" name="batch_year"
 						id="passoutYear" value="${batch_year}"
-						placeholder="Enter Passout Batch" autocomplete="off"> <span
-						id="passoutYearError" class="error-message text-danger"></span>
+						placeholder="Enter Passout Batch" autocomplete="off">
+					<span id="passoutYearError" class="error-message text-danger"></span>
 				</div>
 
-				<!-- Department Dropdown -->
+				<!-- Department Dropdown (First) -->
 				<div class="col-md-4">
-					<label for="deptSelect" class="form-label">Department</label> <select
-						class="form-control" name="dept_id" id="deptSelect">
+					<label for="deptSelect" class="form-label">Selected Department</label>
+					<select class="form-control" name="dept_id" id="deptSelect" readonly>
 						<c:forEach var="depart" items="${d}">
 							<option value="${depart.getDept_id()}"
 								${depart.getDept_id() == dept_id ? 'selected' : ''}>
-								${depart.getDept_name()}</option>
+								${depart.getDept_name()} 
+							</option>
 						</c:forEach>
-					</select> <span id="deptError" class="error-message text-danger"></span>
+					</select>
+					<span id="deptError1" class="error-message text-danger"></span>
 				</div>
-				<!-- Update Button -->
-				<div class="col-md-2 d-flex align-items-end">
-					<button type="submit" class="btn btn-info">Update Batch</button>
+
+				<!-- Department Dropdown (Second) -->
+				<div class="col-md-4">
+					<label for="deptSelect2" class="form-label">Choose Department</label>
+					<select class="form-control" id="deptSelect2" name="id">
+						<option value="">Select Department</option>
+						<c:forEach var="depart" items="${dl}">
+							<option value="${depart.dept_id}">${depart.dept_name}</option>
+						</c:forEach>
+					</select>
+					<span id="deptError2" class="error-message text-danger"></span>
 				</div>
+			</div>
+			<div class="col-md-12 mt-3 text-center">
+				<button type="submit" class="btn btn-info">Update Batch</button>
 			</div>
 		</form>
 
@@ -89,6 +103,7 @@
 						</tr>
 					</thead>
 					<tbody>
+						<c:set var="counter" value="1" />
 						<c:forEach var="batch" items="${v}">
 							<tr>
 								<td>${batch.getBid()}</td>
@@ -96,10 +111,12 @@
 								<td>${batch.getDeptmodel().getDept_name()}</td>
 								<td><a
 									href="updatebatches?bid=${batch.getBid()}&batch_year=${batch.getBatch_year()}&dept_id=${batch.getDept_id()}"
-									class="btn btn-warning">Update</a></td>
+									class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a></td>
 								<td><a href="remove?bid=${batch.getBid()}"
-									class="btn btn-danger">Delete</a></td>
+									class="btn btn-danger"><i
+										class="fas fa-trash"></i></a></td>
 							</tr>
+							<c:set var="counter" value="${counter + 1}" />
 						</c:forEach>
 					</tbody>
 				</table>
@@ -118,5 +135,61 @@
 	<script src="<c:url value='/resources/JS/alert.js' />"></script>
 	<script src="<c:url value='/resources/JS/pagination.js' />"></script>
 	<script src="<c:url value='/resources/JS/batch.js' />"></script>
+
+	<!-- JavaScript Validation -->
+	<script>
+		function validateDropdown(id, errorId) {
+			let dept = document.getElementById(id).value;
+			var deptError = document.getElementById(errorId);
+			if (dept === "") {
+				deptError.innerHTML = "Department must be selected.";
+				return false;
+			} else {
+				deptError.innerHTML = "";
+				return true;
+			}
+		}
+
+		function validateBatchForm() {
+			let batchYear = document.getElementById("passoutYear").value.trim();
+			let batchError = document.getElementById("passoutYearError");
+
+			let isBatchValid = true;
+			let isDept1Valid = true;
+			let isDept2Valid = true;
+
+			// Validate Batch Year
+			if (batchYear === "") {
+				batchError.innerHTML = "Pass-out Batch cannot be empty.";
+				isBatchValid = false;
+			} else if (!/^\d{4}$/.test(batchYear)) {
+				batchError.innerHTML = "Pass-out Batch should be a 4-digit number.";
+				isBatchValid = false;
+			} else {
+				batchError.innerHTML = "";
+			}
+
+			// Validate First Department Dropdown
+			if (!validateDropdown("deptSelect", "deptError1")) {
+				isDept1Valid = false;
+			}
+
+			// Validate Second Department Dropdown
+			if (!validateDropdown("deptSelect2", "deptError2")) {
+				isDept2Valid = false;
+			}
+
+			return isBatchValid && isDept1Valid && isDept2Valid;
+		}
+
+		document.querySelector("form[name='frm']").onsubmit = function () {
+			return validateBatchForm();
+		};
+
+		document.getElementById("passoutYear").addEventListener("input", function (event) {
+			const value = event.target.value;
+			event.target.value = value.replace(/\D/g, '');
+		});
+	</script>
 </body>
 </html>

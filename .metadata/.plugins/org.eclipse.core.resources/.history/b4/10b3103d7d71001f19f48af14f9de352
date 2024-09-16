@@ -1,0 +1,37 @@
+package org.service;
+
+import java.util.List;
+
+import org.model.FeedbackModel;
+import org.repository.Feedbackrepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service("feedservice")
+public class FeedbackServiceImpl implements FeedbackService {
+
+    @Autowired
+    Feedbackrepository feedrepo;
+    
+    @Autowired
+    EmailService emailService;  // Inject the EmailService
+
+    private final String adminEmail = "admin-email@example.com";  // Replace with actual admin email
+
+    @Override
+    public boolean issubmitFeedback(FeedbackModel fmodel) {
+        // Submit the feedback
+        boolean isSubmitted = feedrepo.issubmitFeedback(fmodel);
+        
+        if (isSubmitted) {
+            emailService.sendFeedbackNotification(adminEmail, fmodel.getName());
+        }
+        
+        return isSubmitted;
+    }
+
+    @Override
+    public List<FeedbackModel> getfeedback() {
+        return feedrepo.getfeedback();
+    }
+}

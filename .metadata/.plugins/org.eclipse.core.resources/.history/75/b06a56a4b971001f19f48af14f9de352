@@ -1,0 +1,12 @@
+package org.service;
+
+import java.util.List;
+
+import org.model.AlumniModel;
+import org.model.EventModel;
+import org.model.FeedbackModel;
+
+public interface FeedbackService {
+	public boolean issubmitFeedback(FeedbackModel fmodel,EventModel emodel,AlumniModel amodel)
+	public List<FeedbackModel> getfeedback();
+}

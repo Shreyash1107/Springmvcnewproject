@@ -1,0 +1,36 @@
+function validateBatchForm() {
+    var isValid = true;
+
+    // Batch Year Validation
+    var passoutYearInput = document.getElementById('passoutYear');
+    var passoutYearErrorElement = document.getElementById('passoutYearError');
+    var currentYear = new Date().getFullYear();
+    var passoutYear = parseInt(passoutYearInput.value, 10);
+    var minYear = 1990; // Minimum allowed batch year
+
+    passoutYearErrorElement.textContent = ''; // Clear previous error messages
+
+    if (isNaN(passoutYear)) {
+        passoutYearErrorElement.textContent = 'Please enter a valid year.';
+        isValid = false;
+    } else if (passoutYear >= currentYear) {
+        passoutYearErrorElement.textContent = 'Passout year cannot be the current year or in the future.';
+        isValid = false;
+    } else if (passoutYear < minYear) {
+        passoutYearErrorElement.textContent = 'Passout year cannot be before 1990.';
+        isValid = false;
+    }
+
+    // Department Validation
+    var deptSelect = document.getElementById('deptSelect');
+    var deptErrorElement = document.getElementById('deptError');
+
+    deptErrorElement.textContent = ''; // Clear previous error messages
+
+    if (deptSelect.value === '') {
+        deptErrorElement.textContent = 'Please select a department.';
+        isValid = false;
+    }
+
+    return isValid;
+}

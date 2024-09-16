@@ -1,28 +1,24 @@
 package org.model;
 
 public class FeedbackModel {
-	public int fid;
-	public String details;
-	public EventModel emodel;
-	public int rating;
-	public String getName() {
-		return name;
+    private int Fid;
+    private String Name;
+    @Override
+	public String toString() {
+		return "FeedbackModel [Fid=" + Fid + ", Name=" + Name + ", emodel=" + emodel + ", suggestions=" + suggestions
+				+ ", Ratings=" + Ratings + "]";
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	String name;
 	public int getFid() {
-		return fid;
+		return Fid;
 	}
 	public void setFid(int fid) {
-		this.fid = fid;
+		Fid = fid;
 	}
-	public String getDetails() {
-		return details;
+	public String getName() {
+		return Name;
 	}
-	public void setDetails(String details) {
-		this.details = details;
+	public void setName(String name) {
+		Name = name;
 	}
 	public EventModel getEmodel() {
 		return emodel;
@@ -30,15 +26,20 @@ public class FeedbackModel {
 	public void setEmodel(EventModel emodel) {
 		this.emodel = emodel;
 	}
-	public int getRating() {
-		return rating;
+	public String getSuggestions() {
+		return suggestions;
 	}
-	public void setRating(int rating) {
-		this.rating = rating;
+	public void setSuggestions(String suggestions) {
+		this.suggestions = suggestions;
 	}
-	@Override
-	public String toString() {
-		return "FeedbackModel [fid=" + fid + ", details=" + details + ", emodel=" + emodel + ", rating=" + rating
-				+ ", name=" + name + "]";
+	public int getRatings() {
+		return Ratings;
 	}
-}
+	public void setRatings(int ratings) {
+		Ratings = ratings;
+	}
+	private EventModel emodel;
+    private String suggestions;
+    private int Ratings;
+    
+ }

@@ -1,0 +1,9 @@
+package org.model;
+
+public class FeedbackModel {
+    private int Fid;
+    private String Name;
+    private EventModel emodel;
+    private String suggestions;
+    
+ }

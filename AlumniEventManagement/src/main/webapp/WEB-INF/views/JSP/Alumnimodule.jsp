@@ -8,6 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alumni Module</title>
 <!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -45,7 +47,7 @@
 						<div class="form-group mt-4">
 							<label for="inputname">Name</label> <input type="text"
 								class="form-control" id="inputname" name="Name"
-								placeholder="Enter Alumni Name" autocomplete="off">
+								placeholder="Enter Alumni Name" autocomplete="off" onkeyup="validateName() ">
 							<div id="nameError" class="text-danger"></div>
 						</div>
 					</div>
@@ -53,7 +55,7 @@
 						<div class="form-group mt-4">
 							<label for="inputemail">Email</label> <input type="email"
 								class="form-control" id="inputemail" name="Email"
-								placeholder="Enter Alumni Email" autocomplete="off">
+								placeholder="Enter Alumni Email" autocomplete="off" onkeyup="validateEmail()">
 							<div id="emailError" class="text-danger"></div>
 						</div>
 					</div>
@@ -63,7 +65,7 @@
 						<div class="form-group">
 							<label for="inputcontact">Contact</label> <input type="text"
 								class="form-control" id="inputcontact" name="Contact"
-								placeholder="Enter Alumni Contact" autocomplete="off">
+								placeholder="Enter Alumni Contact" autocomplete="off" onkeyup="validateContact()">
 							<div id="contactError" class="text-danger"></div>
 						</div>
 					</div>
@@ -71,7 +73,7 @@
 						<div class="form-group">
 							<label for="inputage">Age</label> <input type="number"
 								class="form-control" id="inputage" name="Age"
-								placeholder="Enter Alumni Age" autocomplete="off">
+								placeholder="Enter Alumni Age" autocomplete="off" onkeyup="validateAge()">
 							<div id="ageError" class="text-danger"></div>
 						</div>
 					</div>
@@ -81,14 +83,14 @@
 						<div class="form-group">
 							<label for="inputcompany">Company</label> <input type="text"
 								class="form-control" id="inputcompany" name="Company"
-								placeholder="Enter Alumni Company" autocomplete="off">
+								placeholder="Enter Alumni Company" autocomplete="off" onkeyup="validateCompany()">
 							<div id="companyError" class="text-danger"></div>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="gend">Gender</label> <select class="form-control"
-								id="gend" name="Gender">
+								id="gend" name="Gender" onchange="validateGender()">
 								<option value="">Select Gender</option>
 								<option value="Male">Male</option>
 								<option value="Female">Female</option>
@@ -101,7 +103,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="deptSelect">Department</label> <select
-								class="form-control" id="deptSelect" name="dept_id">
+								class="form-control" id="deptSelect" name="dept_id" onchange="validateDept()">
 								<option value="">Select Department</option>
 								<c:forEach var="deptname" items="${dept}">
 									<option value="${deptname.getDept_id()}">${deptname.getDept_name()}</option>
@@ -113,7 +115,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="batchselect">Passout-Batch</label> <select
-								class="form-control" id="batchselect" name="Bid">
+								class="form-control" id="batchselect" name="Bid" onchange="validateBatch()">
 								<option value="">Select Batch</option>
 								<c:forEach var="btyear" items="${b}">
 									<option value="${btyear.getBid()}">${btyear.getBatch_year()}</option>
@@ -124,7 +126,7 @@
 					</div>
 				</div>
 				<div class="form-group mt-4 text-center">
-					<button type="submit" class="btn btn-info" onclick="validateName()">Add
+					<button type="submit" class="btn btn-info">Add
 						Alumni</button>
 				</div>
 			</div>
@@ -158,9 +160,10 @@
 						</tr>
 					</thead>
 					<tbody>
+					<c:set var="counter" value="1" />
 						<c:forEach var="alumni" items="${al}">
 							<tr>
-								<td class="p-6">${alumni.getAid()}</td>
+								<td class="p-6">${counter}</td>
 								<td class="p-6">${alumni.getName()}</td>
 								<td class="p-6">${alumni.getEmail()}</td>
 								<td class="p-6">${alumni.getContact()}</td>
@@ -169,9 +172,11 @@
 								<td class="p-6">${alumni.getGender()}</td>
 								<td class="p-6">${alumni.getdeptmodel().getDept_name()}</td>
 								<td class="p-6">${alumni.getbatchmodel().getBatch_year()}</td>
-								<td><a href="javascript:void(0);" class="btn btn-warning" onclick="confirmUpdate(${alumni.getAid()}, '${alumni.getName()}', '${alumni.getEmail()}', '${alumni.getContact()}', ${alumni.getAge()}, '${alumni.getCompany()}', '${alumni.getGender()}', '${alumni.getdeptmodel().getDept_id()}', '${alumni.getbatchmodel().getBid()}')">Update</a></td>
-								<td><a href="javascript:void(0);" class="btn btn-danger" onclick="confirmDelete(${alumni.getAid()})">Delete</a></td>
+								<td><a href="javascript:void(0);" class="btn btn-warning" onclick="confirmUpdate(${alumni.getAid()}, '${alumni.getName()}', '${alumni.getEmail()}', '${alumni.getContact()}', ${alumni.getAge()}, '${alumni.getCompany()}', '${alumni.getGender()}', '${alumni.getdeptmodel().getDept_id()}', '${alumni.getbatchmodel().getBid()}')"><i class="fas fa-pencil-alt"></i></a></td>
+								<td><a href="javascript:void(0);" class="btn btn-danger" onclick="confirmDelete(${alumni.getAid()})"><i
+										class="fas fa-trash"></i></a></td>
 							</tr>
+							<c:set var="counter" value="${counter + 1}" />
 						</c:forEach>
 					</tbody>
 				</table>

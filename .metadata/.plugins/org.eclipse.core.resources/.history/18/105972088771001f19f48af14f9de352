@@ -1,0 +1,30 @@
+function validateFeedbackForm() {
+    var isValid = true;
+    var eventName = document.getElementById("eventName");
+    var rating = document.getElementById("rating");
+    var feedbackDetails = document.getElementById("feedbackDetails");
+    document.getElementById("eventError").innerText = "";
+    document.getElementById("ratingError").innerText = "";
+    document.getElementById("feedbackDetailsError").innerText = "";
+    if (eventName.value === "") {
+        document.getElementById("eventError").innerText = "Event Name cannot be empty.";
+        isValid = false;
+    }
+    if (rating.value === "") {
+        document.getElementById("ratingError").innerText = "Rating cannot be empty.";
+        isValid = false;
+    }
+    var feedbackValue = feedbackDetails.value.trim();
+    if (feedbackValue === "") {
+        document.getElementById("feedbackDetailsError").innerText = "Feedback Details cannot be empty.";
+        isValid = false;
+    } else if (!/^[a-zA-Z\s]+$/.test(feedbackValue)) {
+        document.getElementById("feedbackDetailsError").innerText = "Feedback Details should only contain alphabets and spaces.";
+        isValid = false;
+    } else if (/^\s/.test(feedbackValue)) {
+        document.getElementById("feedbackDetailsError").innerText = "Feedback Details should not start with a space.";
+        isValid = false;
+    }
+
+    return isValid;
+}

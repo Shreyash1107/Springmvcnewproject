@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.model.AlumniModel;
 import org.model.EventModel;
@@ -23,8 +24,7 @@ public class UserController {
 	@Autowired
 	Eventservice evservice;
 	@Autowired
-	FeedbackService feedservice;
-
+	FeedbackService fservice;
 	@RequestMapping(value = "/eventview")
 	public String viewevetnts(Model md) {
 		List<EventModel> eventslist = evservice.getevents();
@@ -39,20 +39,21 @@ public class UserController {
 		return "Feedback";
 	}
 
-	@RequestMapping(value = "/getfeedback", method = RequestMethod.POST)
+	@RequestMapping(value = "/getfeedback")
 	public String getfeedback(FeedbackModel fmodel, Model md, HttpServletRequest req, EventModel evmodel) {
 		List<EventModel> events = evservice.getevents();
 		md.addAttribute("evl", events);
-		String name = req.getParameter("Name");
+		String name = req.getParameter("Name").trim().toUpperCase();
 		int evid = Integer.parseInt(req.getParameter("eventid"));
 		String details = req.getParameter("feedbackDetails");
 		int ratings = Integer.parseInt(req.getParameter("rating"));
-		fmodel.setDetails(details);
+		fmodel.setSuggestions(details);
 		evmodel.setEid(evid);
+		fmodel.setRatings(ratings);
 		fmodel.setEmodel(evmodel);
 		fmodel.setName(name);
 		/* System.out.println(fmodel); */
-		boolean b = feedservice.issubmitFeedback(fmodel);
+		boolean b = fservice.issubmitFeedback(fmodel);
 		if (b) {
 			md.addAttribute("fd", "Feedback Submitted,Thank you for your response..............");
 		}

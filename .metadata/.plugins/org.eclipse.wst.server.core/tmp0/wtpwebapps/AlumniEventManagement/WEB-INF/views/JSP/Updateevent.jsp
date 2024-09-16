@@ -9,6 +9,8 @@
 <title>Admin Dashboard - Event Module</title>
 
 <!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -24,6 +26,7 @@
 <script src="resources/JS/alert.js"></script>
 <script src="<c:url value='/resources/JS/Date-timefix.js' />"></script>
 <script src="<c:url value='/resources/JS/Validateevents.js' />"></script>
+<script src="<c:url value='/resources/JS/Confirmevent.js' />"></script>
 </head>
 <body>
 	<!-- Navigation Bar -->
@@ -41,7 +44,7 @@
 	</nav>
 	<!-- Sidebar -->
 	<div class="sidebar">
-		<h3 class="text-center mt-3">Admin Dashboard</h3>
+		<h3 class="text-center mt-3">Admin-Dashboard</h3>
 		<a href="department">Department Module</a> <a href="btchmodel">Batch
 			Module</a> <a href="alumni">Alumni Module</a> <a href="events">Event
 			Module</a> <a href="feedbackpage">Feedback Module</a> <a href="logout">Log
@@ -52,7 +55,6 @@
 	<div class="content">
 		<!-- Page Heading -->
 		<h4 class="text-center mt-4">Update Event Module</h4>
-
 		<!-- Event Form -->
 		<form name="frm" action="finalupdateevent" method="POST" class="mt-4" onsubmit="return validateEvents()">
 			<div class="container">
@@ -115,17 +117,21 @@
 						</tr>
 					</thead>
 					<tbody>
+					 <c:set var="counter" value="1" />
 						<c:forEach var="evlst" items="${e}">
 							<tr>
-								<td>${evlst.getEid()}</td>
+								<td>${counter}</td>
 								<td>${evlst.getName()}</td>
 								<td>${evlst.getDate()}</td>
 								<td>${evlst.getTime()}</td>
-								<td><a href="updateevent?Eid=${evlst.getEid()}"
-									class="btn btn-warning">Update</a></td>
-								<td><a href="delevent?Eid=${evlst.getEid()}"
-									class="btn btn-danger">Delete</a></td>
+								<td><a
+									href="javascript:void(0);"
+									class="btn btn-warning" role="button" onclick="confirmUpdate(${evlst.getEid()},'${evlst.getName()}','${evlst.getDate()}','${evlst.getTime()}')"><i class="fas fa-pencil-alt"></i></a></td>
+								<td><a href="javascript:void(0);"
+									class="btn btn-danger" role="button" onclick="confirmDelete(${evlst.getEid()})"> <i
+									class="fas fa-trash"></i></a></td>
 							</tr>
+							<c:set var="counter" value="${counter + 1}" />
 						</c:forEach>
 					</tbody>
 				</table>

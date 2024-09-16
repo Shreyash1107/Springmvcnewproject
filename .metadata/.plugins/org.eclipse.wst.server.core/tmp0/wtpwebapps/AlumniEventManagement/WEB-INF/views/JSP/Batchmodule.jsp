@@ -8,6 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Batch Module</title>
 	<!-- Bootstrap CSS -->
+	<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="<c:url value='/resources/CSS/btch.css' />" rel="stylesheet" />
@@ -40,7 +42,7 @@
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="passoutYear">Pass-out Batch</label>
-						<input type="text" class="form-control mt-2" id="passoutYear" name="batch_year" placeholder="Enter Passout-Batch" autocomplete="off">
+						<input type="number" class="form-control mt-2" id="passoutYear" name="batch_year" placeholder="Enter Passout-Batch" autocomplete="off">
 						<span id="passoutYearError" class="error-message"></span>
 					</div>
 				</div>
@@ -80,14 +82,17 @@
 						</tr>
 					</thead>
 					<tbody>
+					<c:set var="counter" value="1"/>
 						<c:forEach var="batch" items="${viewbtch}">
 							<tr>
-								<td>${batch.getBid()}</td>
+								<td>${counter}</td>
 								<td>${batch.getBatch_year()}</td>
 								<td>${batch.getDeptmodel().getDept_name()}</td>
-								<td><a href="javascript:void(0);" class="btn btn-warning" onclick="confirmUpdate(${batch.getBid()}, '${batch.getBatch_year()}', ${batch.getDept_id()})">Update</a></td>
-								<td><a href="javascript:void(0);" class="btn btn-danger" onclick="confirmDelete(${batch.getBid()})">Delete</a></td>
+								<td><a href="javascript:void(0);" class="btn btn-warning" onclick="confirmUpdate(${batch.getBid()}, '${batch.getBatch_year()}', ${batch.getDept_id()})"><i class="fas fa-pencil-alt"></i></a></td>
+								<td><a href="javascript:void(0);" class="btn btn-danger" onclick="confirmDelete(${batch.getBid()})"><i
+									class="fas fa-trash"></i></a></td>
 							</tr>
+							  <c:set var="counter" value="${counter + 1}" />
 						</c:forEach>
 					</tbody>
 				</table>

@@ -10,10 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import org.model.AlumniModel;
 import org.model.BatchModel;
 import org.model.DepartmentModel;
+import org.model.EventModel;
 import org.model.FeedbackModel;
 import org.service.Alumniservice;
 import org.service.Batchservice;
 import org.service.DepartmentService;
+import org.service.Eventservice;
 import org.service.FeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,6 +34,8 @@ public class AlumniController {
 	DepartmentService deptservice;
 	@Autowired
 	FeedbackService feedservice;
+	@Autowired
+	Eventservice evservice;
 	@RequestMapping(value = "/alumni")
 	public String getalumnimodel(Model md) {
 		List<AlumniModel> alist = amservice.getalumni();
@@ -154,7 +158,7 @@ public class AlumniController {
 	    md.addAttribute("dept_id", deptId);
 	    return "updatealumni";
 	}
-	@RequestMapping(value = "/finalupdatealumni", method = RequestMethod.POST)
+	@RequestMapping(value = "/finalupdatealumni")
 	public String getupdatedalumni(Model md, AlumniModel amodel, HttpServletRequest req) {
 	    List<DepartmentModel> deptlist = deptservice.getdept();
 	    md.addAttribute("deptname", deptlist);
@@ -187,6 +191,8 @@ public class AlumniController {
 
 	@RequestMapping(value="/feedbackpage")
 	public String getfeedback(Model md) {
+		List<EventModel> events = evservice.getevents();
+		md.addAttribute("ev", events);
 		List<FeedbackModel> feedlist = feedservice.getfeedback();
 		md.addAttribute("fdview", feedlist);
 		return "Viewfeedback";

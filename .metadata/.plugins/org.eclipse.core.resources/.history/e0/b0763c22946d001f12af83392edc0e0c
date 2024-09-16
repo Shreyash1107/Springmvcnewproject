@@ -1,9 +1,0 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const toggleButton = document.getElementById('sidebar-toggle');
-    const sidebar = document.getElementById('sidebar');
-
-    toggleButton.addEventListener('click', function () {
-        sidebar.classList.toggle('hidden');
-        document.querySelector('.content').classList.toggle('shifted');
-    });
-});

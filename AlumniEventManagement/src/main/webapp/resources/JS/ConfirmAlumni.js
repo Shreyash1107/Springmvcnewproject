@@ -30,4 +30,3 @@ function confirmUpdate(aid, name, email, Contact, Age, Company, Gender, Bid, dep
 			'&dept_id=' + dept_id;
 	}
 }
-

@@ -1,0 +1,31 @@
+package org.repository;
+
+import org.springframework.jdbc.core.PreparedStatementSetter;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import org.model.EventModel;
+import org.model.FeedbackModel;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class FeedbackrepositoryImpl implements Feedbackrepository{
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    public boolean submitFeedback(FeedbackModel feedbackModel, EventModel eventModel, int alumniId) {
+        String sql = "INSERT INTO feedback (suggestions, Eid, Aid, Ratings) VALUES (?, ?, ?, ?)";
+        int result = jdbcTemplate.update(sql, new PreparedStatementSetter() {
+            @Override
+            public void setValues(PreparedStatement ps) throws SQLException {
+                ps.setString(1, feedbackModel.getDetails()); 
+                ps.setInt(2, eventModel.getEid());            
+                ps.setInt(3, alumniId);                       
+                ps.setInt(4, feedbackModel.getRating());  
+            }
+        });
+        return result > 0;
+    }
+}

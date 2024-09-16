@@ -11,6 +11,12 @@
     <link href="<c:url value='/resources/CSS/Feedback.css' />" rel="stylesheet" />
     <script src="resources/JS/alert.js"></script>
     <script src="resources/JS/Validatefeedback.js"></script> 
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.875em; /* Smaller font size for error messages */
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -36,18 +42,18 @@
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="eventName" class="form-label mt-4">Event Name</label>
-                        <select class="form-select mt-2" id="eventName" name="eventid" required>
+                        <select class="form-select mt-2" id="eventName" name="eventid">
                             <option value="">Select Event</option>
                             <c:forEach var="event" items="${evl}">
                                 <option value="${event.getEid()}">${event.getName()}</option>
                             </c:forEach>
                         </select>
                         <!-- Error message for Event Name -->
-                        <span id="eventError" style="color: red;"></span>
+                        <span id="eventError" class="error-message"></span>
                     </div>
                     <div class="col-md-6">
                         <label for="rating" class="form-label mt-4">Rating</label>
-                        <select class="form-select mt-2" id="rating" name="rating" required>
+                        <select class="form-select mt-2" id="rating" name="rating">
                             <option value="">Select a rating</option>
                             <option value="1">1 - Worst</option>
                             <option value="2">2 - Poor</option>
@@ -56,21 +62,21 @@
                             <option value="5">5 - Excellent</option>
                         </select>
                         <!-- Error message for Rating -->
-                        <span id="ratingError" style="color: red;"></span>
+                        <span id="ratingError" class="error-message"></span>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="alumniName" class="form-label mt-4">Alumni Name</label>
-                        <input class="form-control mt-2" id="alumniName" name="Name" placeholder="Enter your name" required autocomplete="off"/>
+                        <input class="form-control mt-2" id="alumniName" name="Name" placeholder="Enter your name" autocomplete="off"/>
                         <!-- Error message for Alumni Name -->
-                        <span id="alumniNameError" style="color: red;"></span>
+                        <span id="alumniNameError" class="error-message"></span>
                     </div>
                     <div class="col-md-6">
                         <label for="feedbackDetails" class="form-label mt-4">Any Suggestions</label>
-                        <input class="form-control mt-2" id="feedbackDetails" name="feedbackDetails" rows="4" placeholder="Enter your feedback here..." style="width:100%" required autocomplete="off"></input>
+                        <input class="form-control mt-2" id="feedbackDetails" name="feedbackDetails" rows="4" placeholder="Enter your feedback here..." style="width:100%" autocomplete="off"></input>
                         <!-- Error message for Feedback Details -->
-                        <span id="feedbackDetailsError" style="color: red;"></span>
+                        <span id="feedbackDetailsError" class="error-message"></span>
                     </div>
                 </div>
                 <div class="text-center mt-4">
@@ -83,7 +89,61 @@
             </c:if>
         </div>
     </div>
+<script>
+function validateFeedbackForm() {
+    var isValid = true;
 
+    // Get form elements
+    var eventName = document.getElementById("eventName");
+    var rating = document.getElementById("rating");
+    var feedbackDetails = document.getElementById("feedbackDetails");
+    var alumniName = document.getElementById("alumniName");
+
+    // Clear previous error messages
+    document.getElementById("eventError").innerHTML = "";
+    document.getElementById("ratingError").innerHTML = "";
+    document.getElementById("feedbackDetailsError").innerHTML = "";
+    document.getElementById("alumniNameError").innerHTML = "";
+
+    // Validate Event Name
+    if (eventName.value.trim() === "") {
+        document.getElementById("eventError").innerHTML = "<span class='error-message'>Event Name cannot be empty.</span>";
+        isValid = false;
+    }
+
+    // Validate Rating
+    if (rating.value.trim() === "") {
+        document.getElementById("ratingError").innerHTML = "<span class='error-message'>Rating cannot be empty.</span>";
+        isValid = false;
+    }
+
+    // Validate Feedback Details
+    var feedbackValue = feedbackDetails.value.trim();
+    if (feedbackValue === "") {
+        document.getElementById("feedbackDetailsError").innerHTML = "<span class='error-message'>Feedback Details cannot be empty.</span>";
+        isValid = false;
+    } else if (!/^[a-zA-Z\s]+$/.test(feedbackValue)) {
+        document.getElementById("feedbackDetailsError").innerHTML = "<span class='error-message'>Feedback Details should only contain alphabets and spaces.</span>";
+        isValid = false;
+    } else if (/^\s/.test(feedbackValue)) {
+        document.getElementById("feedbackDetailsError").innerHTML = "<span class='error-message'>Feedback Details should not start with a space.</span>";
+        isValid = false;
+    }
+    var alumniNameValue = alumniName.value.trim();
+    var alumniNameRegex = /^[A-Za-z]+(?:\s[A-Za-z]+)*$/;
+    
+    if (alumniNameValue === "") {
+        document.getElementById("alumniNameError").innerHTML = "<span class='error-message'>Alumni Name cannot be empty.</span>";
+        isValid = false;
+    } else if (!alumniNameRegex.test(alumniNameValue)) {
+        document.getElementById("alumniNameError").innerHTML = "<span class='error-message'>Alumni Name should only contain letters and spaces between words, and should not start with a space.</span>";
+        isValid = false;
+    }
+
+    return isValid;
+}
+
+</script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

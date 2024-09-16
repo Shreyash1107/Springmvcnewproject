@@ -1,0 +1,12 @@
+package org.repository;
+
+import java.util.List;
+
+import org.model.AlumniModel;
+import org.model.EventModel;
+import org.model.FeedbackModel;
+
+public interface Feedbackrepository {
+	public boolean issubmitFeedback(FeedbackModel fmodel,EventModel emodel,AlumniModel amodel);
+	public List<FeedbackModel> getfeedback();
+}

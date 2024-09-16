@@ -1588,3 +1588,153 @@ Sep 12, 2024 21:20:14.43 [13508:13204:0912/212014.432:ERROR:connection_factory_i
 Sep 12, 2024 21:20:14.43 [13508:13204:0912/212014.433:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
 Sep 12, 2024 21:29:45.18 [13508:13204:0912/212945.180:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
 Sep 12, 2024 21:29:45.18 [13508:13204:0912/212945.182:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+
+Sep 13, 2024 08:16:03.65 NEW SESSION
+Sep 13, 2024 08:16:03.69 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 13, 2024 08:16:26.10 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 13, 2024 08:27:09.58 [16932:16936:0913/082709.588:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 13, 2024 08:43:52.62 [16932:16936:0913/084352.623:ERROR:device_event_log_impl.cc(196)] [08:43:52.623] FIDO: gpm_enclave_controller.cc:599 Fetching the account state timed out.
+Sep 13, 2024 08:45:32.12 [16932:16012:0913/084532.123:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 13, 2024 08:45:32.12 [16932:16012:0913/084532.124:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 13, 2024 09:10:28.90 [16932:16936:0913/091028.740:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 13, 2024 10:06:43.55 [16932:16012:0913/100643.109:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 13, 2024 10:06:53.96 [16932:16012:0913/100653.964:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 13, 2024 10:22:43.94 [16932:16012:0913/102243.943:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Sep 13, 2024 11:30:04.00 [16932:16936:0913/113004.005:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 13, 2024 13:11:08.40 [16932:16012:0913/131108.408:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 13, 2024 16:36:36.33 [16932:16012:0913/163636.331:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 13, 2024 16:36:36.96 [16932:16012:0913/163636.573:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 13, 2024 17:27:19.28 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 13, 2024 17:27:50.62 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 13, 2024 17:46:07.71 [2788:16608:0913/174607.713:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 13, 2024 17:46:07.71 [2788:16608:0913/174607.715:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+
+Sep 13, 2024 17:53:43.80 NEW SESSION
+Sep 13, 2024 17:53:43.82 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 13, 2024 17:54:19.46 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 13, 2024 17:54:51.21 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 13, 2024 17:56:24.79 [16488:15988:0913/175624.791:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 13, 2024 20:56:29.21 [16488:15988:0913/205629.217:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 13, 2024 22:02:52.72 [16488:15988:0913/220252.728:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Sep 13, 2024 22:02:52.76 [16488:15144:0913/220252.764:ERROR:get_updates_processor.cc(265)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+
+Sep 14, 2024 08:41:16.07 NEW SESSION
+Sep 14, 2024 08:41:16.09 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 14, 2024 08:41:43.27 [12680:12652:0914/084143.270:ERROR:account_info_fetcher.cc(62)] OnGetTokenFailure: Connection failed (-106).
+Sep 14, 2024 08:41:43.77 [12680:12652:0914/084143.770:ERROR:account_info_fetcher.cc(62)] OnGetTokenFailure: Connection failed (-106).
+Sep 14, 2024 08:41:46.24 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 14, 2024 08:45:17.32 [12680:12652:0914/084517.321:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Sep 14, 2024 08:45:22.05 [12680:12652:0914/084522.050:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 14, 2024 08:46:27.58 [12680:14028:0914/084627.581:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 08:46:27.58 [12680:14028:0914/084627.583:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 08:58:57.48 [12680:14028:0914/085857.485:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 08:58:57.57 [12680:14028:0914/085857.486:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 09:02:53.70 [12680:14028:0914/090253.701:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 09:02:53.79 [12680:14028:0914/090253.702:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 09:03:34.98 [12680:14028:0914/090334.985:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 09:03:34.98 [12680:14028:0914/090334.985:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 09:06:07.10 [12680:14028:0914/090607.106:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 09:06:07.10 [12680:14028:0914/090607.107:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 09:08:41.78 [12680:14028:0914/090841.787:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 09:08:41.78 [12680:14028:0914/090841.788:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 09:09:23.60 [12680:14028:0914/090923.603:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 09:09:23.60 [12680:14028:0914/090923.605:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 09:10:35.84 [12680:14028:0914/091035.844:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 09:10:35.84 [12680:14028:0914/091035.845:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 09:55:47.60 [12680:14028:0914/095547.607:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 14, 2024 10:34:44.69 [12680:14028:0914/103444.695:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 10:34:44.69 [12680:14028:0914/103444.697:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 10:56:34.53 [12680:14028:0914/105634.533:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 14, 2024 11:01:22.63 [12680:12652:0914/110122.631:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Sep 14, 2024 11:38:00.06 [12680:14028:0914/113800.063:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 11:38:00.16 [12680:14028:0914/113800.065:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 12:12:14.83 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 14, 2024 12:12:46.06 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 14, 2024 12:13:53.54 [11316:22760:0914/121353.539:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Sep 14, 2024 12:14:02.52 [11316:22760:0914/121402.524:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 14, 2024 12:15:44.51 [11316:22760:0914/121544.516:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Sep 14, 2024 13:03:47.18 [11316:22760:0914/130347.184:ERROR:interface_endpoint_client.cc(722)] Message 5 rejected by interface blink.mojom.WidgetHost
+Sep 14, 2024 13:15:13.73 [11316:4716:0914/131513.730:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 14, 2024 13:38:47.86 [11316:4716:0914/133847.866:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 13:38:47.86 [11316:4716:0914/133847.867:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 13:38:51.37 [11316:4716:0914/133851.374:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 13:44:21.25 [11316:4716:0914/134421.253:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 13:44:21.25 [11316:4716:0914/134421.255:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 13:56:55.92 [11316:4716:0914/135655.928:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 17:09:52.45 [11316:22760:0914/170952.422:ERROR:interface_endpoint_client.cc(722)] Message 5 rejected by interface blink.mojom.WidgetHost
+Sep 14, 2024 17:27:14.95 [11316:4716:0914/172714.958:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 14, 2024 17:33:09.20 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 14, 2024 17:33:41.01 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 14, 2024 17:50:45.03 [20464:12660:0914/175045.030:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Sep 14, 2024 18:33:18.54 [20464:24248:0914/183318.546:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 18:33:19.53 [20464:24248:0914/183319.531:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 18:34:13.45 [20464:24248:0914/183413.458:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 18:56:11.82 [20464:24248:0914/185611.820:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 18:56:12.63 [20464:24248:0914/185612.634:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 19:18:30.99 [20464:24248:0914/191830.992:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 14, 2024 20:16:35.11 [20464:24248:0914/201635.113:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 20:16:35.11 [20464:24248:0914/201635.114:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 14, 2024 20:17:28.20 [20464:12660:0914/201728.205:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Sep 14, 2024 20:38:03.36 [20464:12660:0914/203803.366:ERROR:interface_endpoint_client.cc(722)] Message 5 rejected by interface blink.mojom.WidgetHost
+Sep 14, 2024 21:02:31.14 [20464:24248:0914/210231.144:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 14, 2024 22:12:25.12 [20464:12660:0914/221225.125:ERROR:interface_endpoint_client.cc(722)] Message 5 rejected by interface blink.mojom.WidgetHost
+Sep 14, 2024 22:34:42.34 [20464:24248:0914/223442.340:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 15, 2024 24:10:14.33 [20464:24248:0915/001014.292:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 15, 2024 03:10:18.62 [20464:24248:0915/031018.625:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 15, 2024 06:59:14.42 [20464:24248:0915/065914.423:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Sep 15, 2024 06:59:15.11 [20464:24288:0915/065914.634:ERROR:get_updates_processor.cc(265)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+Sep 15, 2024 07:35:45.75 [20464:24248:0915/073545.755:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 07:35:46.67 [20464:24248:0915/073546.671:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+
+Sep 15, 2024 08:37:25.39 NEW SESSION
+Sep 15, 2024 08:37:25.40 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 15, 2024 08:37:57.24 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 15, 2024 08:41:03.55 [20000:10664:0915/084103.551:ERROR:interface_endpoint_client.cc(722)] Message 5 rejected by interface blink.mojom.WidgetHost
+Sep 15, 2024 08:51:05.93 [20000:10664:0915/085105.932:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 15, 2024 08:59:11.44 [20000:25180:0915/085911.446:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 15, 2024 09:02:06.00 [20000:25180:0915/090206.009:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 09:02:06.01 [20000:25180:0915/090206.014:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 09:32:16.46 [20000:25180:0915/093216.466:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 09:32:21.54 [20000:25180:0915/093221.539:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Sep 15, 2024 09:54:32.04 [20000:25180:0915/095432.048:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 15, 2024 09:57:28.21 [20000:25180:0915/095728.211:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 09:57:28.21 [20000:25180:0915/095728.213:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 10:04:50.63 [20000:25180:0915/100450.635:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 15, 2024 10:09:27.03 [20000:8956:0915/100927.036:ERROR:get_updates_processor.cc(265)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+Sep 15, 2024 10:09:55.08 [20000:25180:0915/100955.087:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 10:09:58.13 [20000:25180:0915/100958.132:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 10:18:25.93 [20000:25180:0915/101825.934:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 10:18:28.98 [20000:25180:0915/101828.984:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 10:23:23.63 [20000:25180:0915/102323.639:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 15, 2024 10:24:49.19 [20000:25180:0915/102449.193:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 10:24:49.19 [20000:25180:0915/102449.194:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 10:25:04.79 [20000:25180:0915/102504.795:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 15, 2024 10:26:14.93 [20000:25180:0915/102614.938:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Sep 15, 2024 10:32:55.90 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 15, 2024 10:33:11.87 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 15, 2024 10:52:28.96 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 15, 2024 10:53:00.81 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 15, 2024 11:07:14.73 [12540:22920:0915/110714.729:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Sep 15, 2024 11:07:19.16 [12540:22920:0915/110719.162:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 15, 2024 11:13:40.40 [12540:22920:0915/111340.400:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 15, 2024 11:15:32.57 [12540:24776:0915/111532.578:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 15, 2024 11:19:10.97 [12540:24776:0915/111910.974:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 11:19:10.97 [12540:24776:0915/111910.975:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 11:19:45.02 [12540:22920:0915/111945.026:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 15, 2024 11:22:35.14 [12540:22920:0915/112235.148:ERROR:interface_endpoint_client.cc(722)] Message 0 rejected by interface blink.mojom.WidgetHost
+Sep 15, 2024 11:37:35.29 [12540:22920:0915/113735.293:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Sep 15, 2024 11:47:12.17 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 15, 2024 11:47:43.83 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 15, 2024 11:52:49.82 [13528:13380:0915/115249.825:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 11:52:52.88 [13528:13380:0915/115252.879:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 11:54:04.18 [13528:21804:0915/115404.181:ERROR:interface_endpoint_client.cc(722)] Message 1 rejected by interface blink.mojom.WidgetHost
+Sep 15, 2024 14:24:33.70 Created TensorFlow Lite XNNPACK delegate for CPU.
+Sep 15, 2024 14:25:05.83 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#58 is a dynamic-sized tensor).
+Sep 15, 2024 14:27:16.94 [1876:21916:0915/142716.942:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 14:27:19.99 [1876:21916:0915/142719.995:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+Sep 15, 2024 14:35:35.36 [1876:21916:0915/143535.369:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 15, 2024 15:05:15.23 [1876:18604:0915/150515.237:ERROR:device_event_log_impl.cc(196)] [15:05:15.236] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Sep 15, 2024 15:34:44.99 [1876:21916:0915/153444.996:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 15, 2024 18:34:48.75 [1876:21916:0915/183448.758:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+Sep 16, 2024 08:11:26.43 [1876:21916:0916/081126.431:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+Sep 16, 2024 08:11:26.54 [1876:17044:0916/081126.443:ERROR:get_updates_processor.cc(265)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)

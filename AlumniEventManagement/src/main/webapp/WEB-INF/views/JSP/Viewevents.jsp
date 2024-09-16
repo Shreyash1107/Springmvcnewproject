@@ -39,20 +39,22 @@
                 <table id="eventsTable" class="table table-sm table-black text-center bg-primary">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">Eid</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Time</th>
+                            <th scope="col" class="text-center">Sr. No</th>
+                            <th scope="col" class="text-center">Name</th>
+                            <th scope="col" class="text-center">Date</th>
+                            <th scope="col" class="text-center">Time</th>
                         </tr>
                     </thead>
                     <tbody>
+                    <c:set var="counter" value="1"/>
                         <c:forEach var="evlst" items="${ev}">
                             <tr>
-                                <td>${evlst.getEid()}</td>
+                                <td>${counter}</td>
                                 <td>${evlst.getName()}</td>
                                 <td>${evlst.getDate()}</td>
                                 <td>${evlst.getTime()}</td>
                             </tr>
+                            <c:set var="counter" value="${counter + 1}" />
                         </c:forEach>
                     </tbody>
                 </table>

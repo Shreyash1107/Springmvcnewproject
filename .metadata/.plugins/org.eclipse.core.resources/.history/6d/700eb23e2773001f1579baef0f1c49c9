@@ -1,0 +1,49 @@
+function validateFeedbackForm() {
+    var isValid = true;
+
+    // Get form elements
+    var eventName = document.getElementById("eventName");
+    var rating = document.getElementById("rating");
+    var feedbackDetails = document.getElementById("feedbackDetails");
+    var alumniName = document.getElementById("alumniName");
+
+    // Clear previous error messages
+    document.getElementById("eventError").innerText = "";
+    document.getElementById("ratingError").innerText = "";
+    document.getElementById("feedbackDetailsError").innerText = "";
+    document.getElementById("alumniNameError").innerText = "";
+
+    // Validate Event Name
+    if (eventName.value === "") {
+        document.getElementById("eventError").innerText = "Event Name cannot be empty.";
+        isValid = false;
+    }
+
+    // Validate Rating
+    if (rating.value === "") {
+        document.getElementById("ratingError").innerText = "Rating cannot be empty.";
+        isValid = false;
+    }
+
+    // Validate Feedback Details
+    var feedbackValue = feedbackDetails.value.trim();
+    if (feedbackValue === "") {
+        document.getElementById("feedbackDetailsError").innerText = "Feedback Details cannot be empty.";
+        isValid = false;
+    } else if (!/^[a-zA-Z\s]+$/.test(feedbackValue)) {
+        document.getElementById("feedbackDetailsError").innerText = "Feedback Details should only contain alphabets and spaces.";
+        isValid = false;
+    } else if (/^\s/.test(feedbackValue)) {
+        document.getElementById("feedbackDetailsError").innerText = "Feedback Details should not start with a space.";
+        isValid = false;
+    }
+
+    // Validate Alumni Name (Optional)
+    var alumniNameValue = alumniName.value.trim();
+    if (alumniNameValue === "") {
+        document.getElementById("alumniNameError").innerText = "Alumni Name cannot be empty.";
+        isValid = false;
+    }
+
+    return isValid;
+}

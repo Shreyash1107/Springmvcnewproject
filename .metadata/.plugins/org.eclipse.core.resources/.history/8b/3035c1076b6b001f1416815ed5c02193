@@ -1,7 +1,0 @@
-package org.service;
-
-import org.model.FeedbackModel;
-
-public interface FeedbackService {
-	public boolean issubmitFeedback(FeedbackModel fmodel);
-}

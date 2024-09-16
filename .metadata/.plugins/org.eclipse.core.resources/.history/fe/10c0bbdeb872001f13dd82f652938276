@@ -1,0 +1,195 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Alumni</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<c:url value='/resources/CSS/alumni.css' />" rel="stylesheet" />
+    <script src="<c:url value='/resources/JS/Validatealumni.js' />"></script>
+    <script src="<c:url value='/resources/JS/alert.js' />"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
+    <style>
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        body{
+        overflow:hidden;
+        }
+        .form-control {
+            height: calc(2.25rem + 2px);
+        }
+        .error-message {
+            display: block;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        .navbar, .sidebar, .content {
+            margin-bottom: 1rem;
+        }
+        .content {
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Admin</a>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3 class="text-center">Admin Dashboard</h3>
+        <a href="department">Department Module</a>
+        <a href="btchmodel">Batch Module</a>
+        <a href="alumni">Alumni Module</a>
+        <a href="events">Event Module</a>
+        <a href="feedbackpage">Feedback Module</a>
+        <a href="logout">Log out</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h4 class="text-center">Update Alumni</h4>
+
+        <!-- Form for Updating Alumni -->
+        <form name="frm" action="finalupdatealumni" method="POST" class="mt-4">
+            <div class="row g-3">
+                <!-- Alumni ID Field (Hidden) -->
+                <input type="hidden" class="form-control" name="Aid" value="${aid}" readonly>
+
+                <!-- Name Field -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="inputname" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="inputname" name="Name" value="${name}" placeholder="Enter Alumni Name" autocomplete="off" onkeyup="validateName()">
+                        <span id="nameError" class="error-message text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="inputemail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="inputemail" name="Email" value="${email}" placeholder="Enter Alumni Email" autocomplete="off" onkeyup="validateEmail()">
+                        <span id="emailError" class="error-message text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Contact Field -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="inputcontact" class="form-label">Contact</label>
+                        <input type="text" class="form-control" id="inputcontact" name="Contact" value="${Contact}" placeholder="Enter Alumni Contact" autocomplete="off" onkeyup="validateContact()">
+                        <span id="contactError" class="error-message text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Age Field -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="inputage" class="form-label">Age</label>
+                        <input type="number" class="form-control" id="inputage" name="Age" value="${Age}" placeholder="Enter Alumni Age" autocomplete="off" onkeyup="validateAge()">
+                        <span id="ageError" class="error-message text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Company Field -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="inputcompany" class="form-label">Company</label>
+                        <input type="text" class="form-control" id="inputcompany" name="Company" value="${Company}" placeholder="Enter Alumni Company" autocomplete="off" onkeyup="validateCompany()">
+                        <span id="companyError" class="error-message text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Gender Dropdown -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="gend" class="form-label">Gender</label>
+                        <select class="form-control" id="gend" name="Gender" onchange="validateGender()">
+                            <option value="">Select Gender</option>
+                            <option value="Male" ${Gender == 'Male' ? 'selected' : ''}>Male</option>
+                            <option value="Female" ${Gender == 'Female' ? 'selected' : ''}>Female</option>
+                        </select>
+                        <span id="genderError" class="error-message text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Department Dropdown (First) -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="deptSelect">Select Department</label>
+                        <select class="form-control" id="deptSelect" name="dept_id" onchange="validateDept()">
+                            <option value="">Select Department</option>
+                            <c:forEach var="dept" items="${dl}">
+                                <option value="${dept.getdeptmodel().getDept_id()}" ${dept.getdeptmodel().getDept_id() == dept_id ? 'selected' : ''}>${dept.getdeptmodel().getDept_name()}</option>
+                            </c:forEach>
+                        </select>
+                        <div id="deptError" class="text-danger"></div>
+                    </div>
+                </div>
+
+                <!-- Department Dropdown (Second) -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="deptSelect2">Choose Department</label>
+                        <select class="form-control" id="deptSelect2" name="id" onchange="validateDept()">
+                            <option value="">Select Department</option>
+                            <c:forEach var="deptname" items="${deptname}">
+                                <option value="${deptname.getDept_id()}">${deptname.getDept_name()}</option>
+                            </c:forEach>
+                        </select>
+                        <div id="deptError" class="text-danger"></div>
+                    </div>
+                </div>
+
+                <!-- Passout Batch Dropdown (First) -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="batchselect">Selected Passout Batch</label>
+                        <select class="form-control" id="batchselect" name="Bid" onchange="validateBatch()">
+                            <option value="">Select Batch</option>
+                            <c:forEach var="btyear" items="${dl}">
+                                <option value="${btyear.getbatchmodel().getBid()}" ${btyear.getbatchmodel().getBid() == Bid ? 'selected' : ''}>${btyear.getbatchmodel().getBatch_year()}</option>
+                            </c:forEach>
+                        </select>
+                        <span id="batchError" class="error-message text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Passout Batch Dropdown (Second) -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="batchselect2">Passout-Batch</label>
+                        <select class="form-control" id="batchselect2" name="Bid" onchange="validateBatch()">
+                            <option value="">Select Batch</option>
+                            <c:forEach var="btyear" items="${b}">
+                                <option value="${btyear.getBid()}">${btyear.getBatch_year()}</option>
+                            </c:forEach>
+                        </select>
+                        <div id="batchError" class="text-danger"></div>
+                    </div>
+                </div>
+
+                <!-- Update Button -->
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-primary">Update Alumni</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+</body>
+</html>

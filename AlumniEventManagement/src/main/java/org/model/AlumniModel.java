@@ -8,7 +8,7 @@ public class AlumniModel {
 	private Integer Age;
 	private String Company;
 	private String Gender;
-	private Integer Dept_id;
+	public Integer Dept_id;
 	private Integer Bid;
 	private DepartmentModel deptmodel;
 	private BatchModel bmodel;

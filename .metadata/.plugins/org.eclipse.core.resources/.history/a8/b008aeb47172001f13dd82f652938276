@@ -1,0 +1,76 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Update Batch</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <!-- Form for Updating Batch -->
+    <form action="finalupdatebatches" method="GET">
+        <div class="row">
+            <!-- Batch Year Field -->
+            <div class="col-md-4">
+                <label for="passoutYear" class="form-label">Pass-out Batch</label>
+                <input type="text" class="form-control" name="batch_year" value="${batch_year}" placeholder="Enter Passout Batch">
+            </div>
+
+            <!-- Department Dropdown -->
+            <div class="col-md-4">
+                <label for="deptSelect" class="form-label">Department</label>
+                <select class="form-control" id="deptSelect" name="dept_id">
+                    <option value="">Select Department</option>
+                    <c:forEach var="depart" items="${d}">
+                        <option value="${depart.dept_id}" <c:if test="${depart.dept_id == dept_id}">selected</c:if>>${depart.dept_name}</option>
+                    </c:forEach>
+                </select>
+            </div>
+
+            <!-- Update Button -->
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-info">Update Batch</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Message Display -->
+    <c:if test="${not empty message}">
+        <div class="alert alert-primary mt-4">${message}</div>
+    </c:if>
+
+    <!-- Table Display -->
+    <c:if test="${showTable}">
+        <table class="table table-dark mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">Sr. No</th>
+                    <th scope="col">Batch Year</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:set var="counter" value="1" />
+                <c:forEach var="batch" items="${v}">
+                    <tr>
+                        <td>${counter}</td>
+                        <td>${batch.batch_year}</td>
+                        <td>${batch.deptmodel.dept_name}</td>
+                        <td><a href="updatebatch?bid=${batch.bid}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a></td>
+                        <td><a href="remove?bid=${batch.bid}" class="btn btn-danger"><i class="fas fa-trash"></i></a></td>
+                    </tr>
+                    <c:set var="counter" value="${counter + 1}" />
+                </c:forEach>
+            </tbody>
+        </table>
+    </c:if>
+
+</body>
+</html>

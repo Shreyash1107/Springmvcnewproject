@@ -65,7 +65,7 @@ public class DepartmentController {
     @RequestMapping(value = "/finalupdate", method = RequestMethod.POST)
     public String getupdateddept(HttpServletRequest req, HttpServletResponse response, DepartmentModel dmodel, Map<String, Object> map) throws IOException {
         int dept_id = Integer.parseInt(req.getParameter("dept_id"));
-        String dept_name = req.getParameter("dept_name").trim().toUpperCase(); 
+        String dept_name = req.getParameter("dept_name").toUpperCase().trim(); 
         dmodel.setDept_id(dept_id);
         dmodel.setDept_name(dept_name);
         boolean isUpdated = deptservice.isupdateDepartment(dmodel);
@@ -73,11 +73,12 @@ public class DepartmentController {
             List<DepartmentModel> list = deptservice.getdept();
             map.put("deptlist", list);
             map.put("message", "Department updated successfully.");
-            map.put("showTable", true); 
+            map.put("showTable", true);
         } else {
             map.put("message", "Failed to update the department. Department name already exists.");
-            map.put("showTable", false); 
+            map.put("showTable", false);
         }
-        return "Updatedept"; 
+        return "Updatedept";
     }
+
 }

@@ -1,0 +1,88 @@
+package org.controller;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.model.AlumniModel;
+import org.model.EventModel;
+import org.model.FeedbackModel;
+import org.service.Eventservice;
+import org.service.FeedbackService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class UserController {
+	@Autowired
+	Eventservice evservice;
+	@Autowired
+	FeedbackService feedservice;
+
+	@RequestMapping(value = "/eventview")
+	public String viewevetnts(Model md) {
+		List<EventModel> eventslist = evservice.getevents();
+		md.addAttribute("ev", eventslist);
+		return "Viewevents";
+	}
+
+    @RequestMapping(value = "/feedback", method = RequestMethod.GET)
+    public String showFeedbackForm(Model md, HttpSession session) {
+        // Retrieve events to populate the dropdown
+        List<EventModel> events = evservice.getevents();
+        md.addAttribute("evl", events);
+
+        // Check if the user is logged in
+        Integer alumniId = (Integer) session.getAttribute("alumniId");
+        if (alumniId == null) {
+            return "Adminlogin";
+        }
+
+        return "Feedback";
+    }
+
+    @RequestMapping(value = "/getfeedback", method = RequestMethod.POST)
+    public String handleFeedbackSubmission(HttpServletRequest req, HttpSession session, Model md) {
+        Integer alumniId = (Integer) session.getAttribute("alumniId");
+        if (alumniId == null) {
+            return "redirect:/admin";
+        }
+
+        // Retrieve form parameters
+        int eventId = Integer.parseInt(req.getParameter("eventid"));
+        String feedbackDetails = req.getParameter("feedbackDetails");
+        int rating = Integer.parseInt(req.getParameter("rating"));
+
+        // Create and populate FeedbackModel
+        FeedbackModel feedbackModel = new FeedbackModel();
+        feedbackModel.setDetails(feedbackDetails);
+        feedbackModel.setRating(rating);
+
+        // Create and populate EventModel
+        EventModel eventModel = new EventModel();
+        eventModel.setEid(eventId);
+
+        // Save feedback
+        boolean isSuccess = feedbackService.submitFeedback(feedbackModel, eventModel, alumniId);
+
+        // Add attributes for display
+        if (isSuccess) {
+            md.addAttribute("fd", "Feedback Submitted. Thank you for your response.");
+        } else {
+            md.addAttribute("fd", "Failed to submit feedback. Please try again.");
+        }
+
+        // Retrieve events for display
+        List<EventModel> events = evservice.getEvents();
+        md.addAttribute("evl", events);
+
+        return "Feedback";
+    }
+}

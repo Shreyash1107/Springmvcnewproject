@@ -9,6 +9,8 @@
 <title>Admin Dashboard</title>
 <!-- Bootstrap CSS -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -102,18 +104,21 @@
 						</tr>
 					</thead>
 					<tbody>
+					 <c:set var="counter" value="1" />
 						<c:forEach var="evlst" items="${e}">
 							<tr>
-								<td>${evlst.getEid()}</td>
+								<td>${counter}</td>
 								<td>${evlst.getName()}</td>
-								<td>${evlst.getDate()}</td>
+								<td>${evlst.getDate()}</td>   
 								<td>${evlst.getTime()}</td>
 								<td><a
 									href="javascript:void(0);"
-									class="btn btn-warning" role="button" onclick="confirmUpdate(${evlst.getEid()},'${evlst.getName()}','${evlst.getDate()}','${evlst.getTime()}')">Update</a></td>
+									class="btn btn-warning" role="button" onclick="confirmUpdate(${evlst.getEid()},'${evlst.getName()}','${evlst.getDate()}','${evlst.getTime()}')"><i class="fas fa-pencil-alt"></i></a></td>
 								<td><a href="javascript:void(0);"
-									class="btn btn-danger" role="button" onclick="confirmDelete(${evlst.getEid()})">Delete</a></td>
+									class="btn btn-danger" role="button" onclick="confirmDelete(${evlst.getEid()})"> <i
+									class="fas fa-trash"></i></a></td>
 							</tr>
+							<c:set var="counter" value="${counter + 1}" />
 						</c:forEach>
 					</tbody>
 				</table>

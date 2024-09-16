@@ -1,0 +1,50 @@
+package org.config;
+
+import java.io.UnsupportedEncodingException;
+import java.util.Properties;
+
+import jakarta.mail.Authenticator;
+import jakarta.mail.Message;
+import jakarta.mail.MessagingException;
+import jakarta.mail.PasswordAuthentication;
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
+
+public class EmailConfig {
+
+    public static void sendEmail(String fromName, String toEmailId, String toName, String emailSubject, String emailContent) {
+        // Set properties for the mail session
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");  // Use 587 for TLS
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");  // Enable STARTTLS
+
+        // Get the mail session
+        Session session = Session.getInstance(props, new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("shreyash123kawane@gmail.com", "oklmxkgkccyhzjja");  // Use App Password
+            }
+        });
+
+        // Compose the message
+        try {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress("shreyash123kawane@gmail.com", fromName));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmailId, toName));
+            message.setSubject(emailSubject);
+            message.setContent(emailContent, "text/html");
+
+            // Send the message
+            Transport.send(message);
+            System.out.println("Email sent successfully!");
+        } catch (MessagingException messagingException) {
+            System.out.println("Email not sent!");
+            throw new RuntimeException(messagingException);
+        } catch (UnsupportedEncodingException unsupportedEncodingException) {
+            unsupportedEncodingException.printStackTrace();
+        }
+    }
+}

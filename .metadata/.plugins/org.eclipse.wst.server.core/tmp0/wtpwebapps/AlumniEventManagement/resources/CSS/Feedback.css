@@ -7,6 +7,13 @@ body {
     margin: 0;
 }
 
+/* Feedback.css */
+.feedback-details {
+    max-width: 500px; /* Adjust the max width as needed */
+    width: 50%; /* Ensure the textarea takes full width of its container */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
 /* Navigation Bar Styling */
 .navbar {
     background-color: darkgoldenrod;

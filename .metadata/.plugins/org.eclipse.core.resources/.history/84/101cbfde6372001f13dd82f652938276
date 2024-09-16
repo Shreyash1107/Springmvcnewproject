@@ -1,0 +1,23 @@
+package org.model;
+
+public class BatchModel extends DepartmentModel {
+	private int Bid;
+	private String batch_year;
+	public int getBid() {
+		return Bid;
+	}
+	public void setBid(int bid) {
+		Bid = bid;
+	}
+	public String getBatch_year() {
+		return batch_year;
+	}
+	public void setBatch_year(String batch_year) {
+		this.batch_year = batch_year;
+	}
+	@Override
+	public String toString() {
+		return "BatchModel [Bid=" + Bid + ", batch_year=" + batch_year + "]";
+	}
+
+}

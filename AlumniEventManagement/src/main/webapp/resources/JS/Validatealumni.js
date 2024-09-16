@@ -6,18 +6,16 @@ function validateName() {
         nameError.innerHTML = "Name is required.";
         return false;
     } 
-    else if (/^\s/.test(name)) {
+    if (/^\s/.test(name)) {
         nameError.innerHTML = "Name should not start with spaces.";
         return false;
     }
-    else if (!namePattern.test(name.trim())) {
+    if (!namePattern.test(name.trim())) {
         nameError.innerHTML = "Name should contain only letters and spaces.";
         return false;
     } 
-    else {
-        nameError.innerHTML = "";
-        return true;
-    }
+    nameError.innerHTML = "";
+    return true;
 }
 
 function validateEmail() {
@@ -27,13 +25,13 @@ function validateEmail() {
     if (email === "") {
         emailError.innerHTML = "Email is required.";
         return false;
-    } else if (!emailPattern.test(email)) {
+    }
+    if (!emailPattern.test(email)) {
         emailError.innerHTML = "Invalid email format.";
         return false;
-    } else {
-        emailError.innerHTML = "";
-        return true;
     }
+    emailError.innerHTML = "";
+    return true;
 }
 
 function validateContact() {
@@ -43,13 +41,13 @@ function validateContact() {
     if (contact === "") {
         contactError.innerHTML = "Contact number is required.";
         return false;
-    } else if (!contactPattern.test(contact) || contact.length < 10) {
-        contactError.innerHTML = "Contact number must be numeric and at least 10 digits long.";
-        return false;
-    } else {
-        contactError.innerHTML = "";
-        return true;
     }
+    if (!contactPattern.test(contact) || contact.length !== 10) {
+        contactError.innerHTML = "Contact number must be numeric and 10 digits long.";
+        return false;
+    }
+    contactError.innerHTML = "";
+    return true;
 }
 
 function validateAge() {
@@ -58,103 +56,79 @@ function validateAge() {
     if (age === "") {
         ageError.innerHTML = "Age is required.";
         return false;
-    } else if (isNaN(age) || age <= 0) {
+    }
+    if (isNaN(age) || age <= 0) {
         ageError.innerHTML = "Age must be a positive number.";
         return false;
-    } else {
-        ageError.innerHTML = "";
-        return true;
     }
+    ageError.innerHTML = "";
+    return true;
 }
 
 function validateCompany() {
     var company = document.forms["frm"]["Company"].value;
     var companyError = document.getElementById("companyError");
     var regex = /^[A-Za-z]+(?:\s[A-Za-z]+)*$/;
-
     if (company.startsWith(" ")) {
         companyError.innerHTML = "Starting space is not allowed.";
         return false;
     }
-
-    else if (company === "") {
+    if (company === "") {
         companyError.innerHTML = "Company is required.";
         return false;
     }
-
-    else if (!regex.test(company)) {
+    if (!regex.test(company)) {
         companyError.innerHTML = "Only alphabets and spaces between words are allowed.";
         return false;
-    } 
-
-    else {
-        companyError.innerHTML = "";
-        return true;
     }
+    companyError.innerHTML = "";
+    return true;
 }
 
 function validateGender() {
-    var gender = document.forms["frm"]["Gender"].value;
+    var gender = document.getElementById("gend").value;
     var genderError = document.getElementById("genderError");
     if (gender === "") {
-        genderError.innerHTML = "Gender is required.";
+        genderError.innerText = "Please select a gender.";
         return false;
-    } else {
-        genderError.innerHTML = "";
-        return true;
     }
+    genderError.innerText = "";
+    return true;
 }
 
 function validateDept() {
-    var dept = document.forms["frm"]["dept_id"].value;
+    var dept = document.getElementById("deptSelect").value;
     var deptError = document.getElementById("deptError");
     if (dept === "") {
-        deptError.innerHTML = "Department is required.";
+        deptError.innerText = "Please select a department.";
         return false;
-    } else {
-        deptError.innerHTML = "";
-        return true;
     }
+    deptError.innerText = "";
+    return true;
 }
 
 function validateBatch() {
-    var batch = document.forms["frm"]["Bid"].value;
+    var batch = document.getElementById("batchselect").value;
     var batchError = document.getElementById("batchError");
     if (batch === "") {
-        batchError.innerHTML = "Batch is required.";
+        batchError.innerText = "Please select a batch.";
         return false;
-    } else {
-        batchError.innerHTML = "";
-        return true;
     }
+    batchError.innerText = "";
+    return true;
 }
 
 function validateForm() {
     var isValid = true;
 
-    if (!validateName()) {
-        isValid = false;
-    }
-    if (!validateEmail()) {
-        isValid = false;
-    }
-    if (!validateContact()) {
-        isValid = false;
-    }
-    if (!validateAge()) {
-        isValid = false;
-    }
-    if (!validateCompany()) {
-        isValid = false;
-    }
-    if (!validateGender()) {
-        isValid = false;
-    }
-    if (!validateDept()) {
-        isValid = false;
-    }
-    if (!validateBatch()) {
-        isValid = false;
-    }   
+    if (!validateName()) isValid = false;
+    if (!validateEmail()) isValid = false;
+    if (!validateContact()) isValid = false;
+    if (!validateAge()) isValid = false;
+    if (!validateCompany()) isValid = false;
+    if (!validateGender()) isValid = false;
+    if (!validateDept()) isValid = false;
+    if (!validateBatch()) isValid = false;
+
     return isValid;
 }

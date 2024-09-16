@@ -53,7 +53,7 @@ public class EventRepositoryImpl implements Eventrepository {
 				return emodel;
 			}
 		};
-		List<EventModel> evlist = template.query("select *from Events", rmap);
+		List<EventModel> evlist = template.query("select *from Events order by Eid desc", rmap);
 		return evlist.size() > 0 ? evlist : null;
 	}
 

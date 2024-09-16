@@ -1,0 +1,13 @@
+	function confirmDelete(bid) {
+			if (confirm("Are you sure you want to delete this Batch Details?")) {
+				window.location.href = 'remove?bid=' + bid;
+			}
+		}
+
+		function showUpdateModal(bid, batch_year, dept_id) {
+			document.getElementById('updateBid').value = bid;
+			document.getElementById('updateBatchYear').value = batch_year;
+			document.getElementById('updateDeptSelect').value = dept_id;
+			var updateBatchModal = new bootstrap.Modal(document.getElementById('updateBatchModal'));
+			updateBatchModal.show();
+		}
