@@ -1,0 +1,30 @@
+document.getElementById('toggleBtn').addEventListener('click', function() {
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('mainContent');
+    const toggleContainer = document.querySelector('.toggle-container');
+
+    // Toggle sidebar visibility
+    if (sidebar.classList.contains('hide')) {
+        // Show sidebar
+        sidebar.classList.remove('hide');
+        content.style.marginLeft = '250px';  // Adjust content margin when sidebar is visible
+        toggleContainer.style.left = '250px'; // Position toggle button beside the sidebar
+    } else {
+        // Hide sidebar
+        sidebar.classList.add('hide');
+        content.style.marginLeft = '0';  // Adjust content margin when sidebar is hidden
+        toggleContainer.style.left = '0';  // Position toggle button to the left
+    }
+     if (window.innerWidth < 768) {
+        // Toggle sidebar visibility for responsive screens
+        if (sidebar.classList.contains('hide')) {
+            sidebar.classList.remove('hide');
+            content.style.marginTop = '250px';  // Adjust content margin when sidebar is visible
+            toggleContainer.style.top = '250px'; // Position toggle button based on sidebar
+        } else {
+            sidebar.classList.add('hide');
+            content.style.marginTop = '0';  // Adjust content margin when sidebar is hidden
+            toggleContainer.style.top = '0';  // Position toggle button to the top
+        }
+    }
+});

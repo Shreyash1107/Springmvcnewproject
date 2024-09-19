@@ -1,0 +1,14 @@
+127.0.0.1 - - [18/Sep/2024:14:58:16 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:14:58:18 +0530] "GET /AlumniEventManagement/ HTTP/1.1" 200 27323
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:14:58:19 +0530] "GET /AlumniEventManagement/resources/CSS/style.css;jsessionid=CD7103523DBFDCD6E90881D183BE3C9D HTTP/1.1" 200 5895
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:14:58:24 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:14:58:26 +0530] "GET /AlumniEventManagement/admin HTTP/1.1" 200 3013
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:14:58:26 +0530] "GET /AlumniEventManagement/resources/JS/alert.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:14:58:26 +0530] "GET /AlumniEventManagement/resources/CSS/admin.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:14:58:26 +0530] "GET /AlumniEventManagement/resources/JS/validatelogin.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:14:58:36 +0530] "GET /AlumniEventManagement/adminlogin?Name=Shreyash7213&pass=Shreyash%40123 HTTP/1.1" 200 3579
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:14:58:37 +0530] "GET /AlumniEventManagement/resources/CSS/admindashboard.css HTTP/1.1" 200 2938
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:14:58:50 +0530] "GET /AlumniEventManagement/department HTTP/1.1" 200 19914
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:14:58:50 +0530] "GET /AlumniEventManagement/resources/CSS/department.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:14:58:50 +0530] "GET /AlumniEventManagement/resources/JS/Confirmation.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [18/Sep/2024:14:58:50 +0530] "GET /AlumniEventManagement/resources/JS/pagination.js HTTP/1.1" 200 1564

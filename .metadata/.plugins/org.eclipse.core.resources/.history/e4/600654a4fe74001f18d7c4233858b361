@@ -1,0 +1,204 @@
+/* General Body Styling */
+body {
+    background-color: #1c1e21;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    background-color: darkslategray;
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.navbar-brand:hover {
+    color: #adb5bd !important;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    height: calc(100vh - 56px);
+    width: 250px;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    background-color: black;
+    color: white;
+    padding-top: 20px;
+    z-index: 900;
+    transition: all 0.3s ease;
+}
+
+.sidebar a {
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: blue;
+}
+
+/* Content Styling */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    padding-top: 76px;
+    background-color: #212529;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+.content h4,
+.content p {
+    color: white;
+}
+
+/* Button Styling */
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
+
+/* Card Styling */
+.card {
+    max-width: 100%;
+    margin: auto;
+}
+
+/* Pagination Container */
+.pagination-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pagination-container .paginate_button {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    margin: 2px;
+    border: 1px solid #dee2e6;
+}
+
+.pagination-container .paginate_button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Responsive Styling */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 200px;
+    }
+    .content {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+    }
+    .content {
+        margin-left: 0;
+        padding-top: 56px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar a {
+        font-size: 18px;
+    }
+
+    .pagination-container .paginate_button {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+}
+
+/* Base styles for pagination container */
+.dataTables_wrapper .dataTables_paginate {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Base styles for pagination buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 0 2px;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 992px) {
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+}
+
+@media (max-width: 576px) {
+    .dataTables_wrapper .dataTables_paginate {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        font-size: 8px;
+        padding: 2px 4px;
+        display: block; /* Stack buttons if needed */
+    }
+}
+
+
+@media (max-width: 576px) {
+    .sidebar a {
+        font-size: 16px;
+        padding: 10px;
+    }
+    .content {
+        padding: 10px;
+    }
+}

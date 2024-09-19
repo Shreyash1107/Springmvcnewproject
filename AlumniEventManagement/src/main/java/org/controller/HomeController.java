@@ -49,19 +49,13 @@ public class HomeController {
 	public String getAdminLogin(HttpServletRequest req, Model md, LoginModel model) {
 	    String username = req.getParameter("Name");
 	    String password = req.getParameter("pass");
-
-	    // Fetch login details from the service
 	    List<LoginModel> list = adminservice.getadminlogin(username, password);
-
-	    // Fetch dashboard counts
 	    int departmentCount = dashservice.getdeptcount();
 	    md.addAttribute("dash", departmentCount);
 	    int alumniCount = dashservice.getalumnicount();
 	    md.addAttribute("alumnicount", alumniCount);
 	    int eventCount = dashservice.geteventcount();
 	    md.addAttribute("eventcount", eventCount);
-
-	    // Validate username and password
 	    if (username == null || password == null || username.isEmpty() || password.isEmpty()) {
 	        md.addAttribute("msg", "Username and Password can't be empty");
 	        return "Adminlogin";

@@ -1,5 +1,0 @@
-function confirmDelete(aid) {
-    if (confirm("Are you sure you want to remove this Alumni?")) {
-        window.location.href = 'del?aid=' + aid;
-    }
-}

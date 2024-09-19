@@ -1,0 +1,147 @@
+@charset "ISO-8859-1";
+
+body {
+    background-color: #1c1e21;
+    color: white;
+    margin: 0;
+}
+
+.navbar {
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: darkslategray;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.navbar-brand:hover {
+    color: #adb5bd !important;
+}
+
+.sidebar {
+    height: calc(100vh - 56px); 
+    width: 250px;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    background-color: black;
+    color: white;
+    padding-top: 20px;
+    z-index: 900;
+    transition: transform 0.3s ease, height 0.3s ease;
+    transform: scaleY(1); /* Default to visible */
+    transform-origin: bottom; /* Ensure it scales up from the bottom */
+}
+
+/* Sidebar Hidden */
+.sidebar.hide {
+    transform: scaleY(0);
+    height: 0;
+    overflow: hidden;
+}
+
+/* Adjust the toggle button */
+.toggle-container {
+    position: fixed;
+    top: 65px;  /* Adjust as necessary based on your layout */
+    left: 0;    /* Align toggle button to the left for mobile screens */
+    z-index: 1001;
+    transition: top 0.3s ease;
+}
+
+/* Toggle button style */
+.toggle-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.toggle-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 4px;
+    background-color: white;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    padding-top: 96px; 
+    background-color: #212529;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+.dashboard-heading {
+    padding-top: 10px;
+    margin-top: 10px;
+    color: white;
+}
+
+.welcome-text {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: fixed; /* Keep it fixed so it slides up from the bottom */
+        bottom: 0;
+        transform: scaleY(1); /* Default to visible */
+    }
+
+    .sidebar.hide {
+        transform: scaleY(0); /* Hide by scaling down from the bottom */
+        height: 0;
+    }
+
+    .toggle-container {
+        top: 0; /* Keep toggle button at the top for mobile screens */
+    }
+
+    .content {
+        margin-left: 0; /* Remove left margin when sidebar is hidden */
+        padding-top: 60px; /* Adjust padding if needed for small screens */
+    }
+
+    .welcome-text {
+        font-size: 1.75rem;
+    }
+
+    .card {
+        min-height: 100px; /* Reduce card height for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar a {
+        font-size: 16px;
+        padding: 10px;
+    }
+    .content {
+        padding: 10px;
+        padding-top: 30px; 
+    }
+
+    .welcome-text {
+        font-size: 1.5rem;
+    }
+
+    .dashboard-heading {
+        padding-top: 15px;
+    }
+}

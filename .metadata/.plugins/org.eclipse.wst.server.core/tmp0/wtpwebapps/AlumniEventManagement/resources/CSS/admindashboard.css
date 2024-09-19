@@ -1,19 +1,18 @@
-/* Body background color */
+@charset "ISO-8859-1";
 body {
     background-color: #1c1e21;
     color: white;
     margin: 0;
 }
 
-/* Navigation Bar styling */
 .navbar {
-    background-color: #000000;
     color: white;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+    background-color: darkslategray;
 }
 
 .navbar-brand {
@@ -24,109 +23,89 @@ body {
     color: #adb5bd !important;
 }
 
-/* Sidebar styling */
 .sidebar {
-    height: 100vh;
+    height: calc(100vh - 56px); 
     width: 250px;
     position: fixed;
-    top: 56px; /* Adjust if needed to fit below the navbar */
+    top: 56px;
     left: 0;
-    background-color: #343a40;
+    background-color: black;
     color: white;
     padding-top: 20px;
     z-index: 900;
-    transition: left 0.3s ease;
+    transition: width 0.3s ease, left 0.3s ease;
 }
-
-/* Sidebar hidden */
-.sidebar.hide {
-    left: -250px;
-    transition: left 0.3s ease;
-}
-
-/* Sidebar links */
 .sidebar a {
     color: white;
-    padding: 15px;
+    padding: 13px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     display: block;
+    border-radius: 4px;
 }
 
 .sidebar a:hover {
     background-color: blue;
 }
 
-/* Toggle button container (attached to sidebar) */
-.toggle-container {
-    position: fixed;
-    top: 60px; /* Adjust to fit below the navbar */
-    left: 250px; /* Initially aligned with sidebar */
-    z-index: 1001;
-    transition: left 0.3s ease;
+/* Add this to your CSS file */
+
+/* Sidebar Hidden */
+/*.sidebar.hide {
+    width: 0;
+    overflow: hidden;  Ensure content inside the sidebar is hidden 
 }
 
-/* Hamburger icon (three lines) styling */
+ Adjust the toggle button 
+.toggle-container {
+    position: fixed;
+    top: 65px;   Adjust as necessary based on your layout 
+    left: 250px;   Default position with sidebar visible 
+    z-index: 1001;
+    transition: left 0.3s ease;   Smooth transition 
+}
+
+ Toggle button style 
 .toggle-btn {
-    background-color: transparent;
+    background-color: #333;
+    color: white;
     border: none;
+    padding: 10px;
     cursor: pointer;
-    outline: none;
 }
 
 .toggle-btn span {
     display: block;
-    width: 30px;
+    width: 25px;
     height: 3px;
+    margin: 4px;
     background-color: white;
-    margin: 6px 0;
-    transition: 0.4s;
 }
 
-/* Change toggle button position when sidebar is hidden */
-.sidebar.hide + .toggle-container {
-    left: 0; /* Move toggle button when sidebar is hidden */
-    transition: left 0.3s ease;
-}
-
-/* Content styling */
+*/
 .content {
     margin-left: 250px;
     padding: 20px;
-    padding-top: 76px;
+    padding-top: 96px; 
     background-color: #212529;
     min-height: 100vh;
     transition: margin-left 0.3s ease;
 }
 
-/* Content full-width when sidebar is hidden */
-.content.full-width {
-    margin-left: 0;
-}
-
-/* Card styling */
-.card {
-    max-width: 100%;
-    margin: auto;
-}
-
-.card-title, .card-text {
+.dashboard-heading {
+    padding-top: 10px;
+    margin-top: 10px;
     color: white;
 }
 
-/* Button styling */
-.btn-custom {
-    background-color: #495057;
+.welcome-text {
     color: white;
-    border: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-.btn-custom:hover {
-    background-color: #adb5bd;
-    color: #000;
-}
-
-/* Responsive Styling */
+/* Responsive Design */
 @media (max-width: 992px) {
     .sidebar {
         width: 200px;
@@ -134,16 +113,32 @@ body {
 
     .content {
         margin-left: 200px;
+        padding-top: 90px; 
+    }
+
+    .welcome-text {
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 768px) {
-    .toggle-container {
-        left: 200px; /* Adjust for smaller screens */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static; /* Sidebar no longer fixed */
     }
 
-    .sidebar.hide + .toggle-container {
-        left: 0;
+    .content {
+        margin-left: 0;
+        padding-top: 40px; /* Reduced padding for smaller screens */
+    }
+
+    .welcome-text {
+        font-size: 1.75rem;
+    }
+
+    .card {
+        min-height: 100px; /* Reduce card height for smaller screens */
     }
 }
 
@@ -152,8 +147,16 @@ body {
         font-size: 16px;
         padding: 10px;
     }
-
     .content {
         padding: 10px;
+        padding-top: 30px; 
+    }
+
+    .welcome-text {
+        font-size: 1.5rem;
+    }
+
+    .dashboard-heading {
+        padding-top: 15px;
     }
 }

@@ -1,31 +1,47 @@
 $(document).ready(function () {
     // Number of rows to show per page
-    var rowsShown = 10;
+    var rowsShown = 5;
     
     // Total number of rows
-    var rowsTotal = $('#data tbody tr').length;
+    var $rows = $('#data tbody tr');
+    var rowsTotal = $rows.length;
     
     // Total number of pages
     var numPages = Math.ceil(rowsTotal / rowsShown);
 
-    // Append pagination buttons
-    $('#data').after('<div id="nav" class="pagination-container"></div>');
+    // Create pagination buttons
+    var $paginationContainer = $('<div id="nav" class="pagination-container"></div>');
     for (var i = 0; i < numPages; i++) {
         var pageNum = i + 1;
-        $('#nav').append('<button class="btn btn-outline-primary page-button" data-page="' + i + '">' + pageNum + '</button> ');
+        $paginationContainer.append('<button class="btn btn-outline-primary page-button" data-page="' + i + '">' + pageNum + '</button> ');
+    }
+    $('#data').after($paginationContainer);
+
+    // Function to show a specific page
+    function showPage(pageIndex) {
+        var startItem = pageIndex * rowsShown;
+        var endItem = startItem + rowsShown;
+        $rows.hide().slice(startItem, endItem).show();
+        $('#nav .page-button').removeClass('active');
+        $('#nav .page-button').eq(pageIndex).addClass('active');
     }
 
-    // Show the first set of rows
-    $('#data tbody tr').hide().slice(0, rowsShown).show();
-    $('#nav .page-button:first').addClass('active');
+    // Show the first page
+    showPage(0);
 
     // Handle page button click
-    $('#nav .page-button').click(function () {
-        $('#nav .page-button').removeClass('active');
-        $(this).addClass('active');
-        var currPage = $(this).data('page');
-        var startItem = currPage * rowsShown;
-        var endItem = startItem + rowsShown;
-        $('#data tbody tr').hide().slice(startItem, endItem).show();
+    $('#nav').on('click', '.page-button', function () {
+        var pageIndex = $(this).data('page');
+        showPage(pageIndex);
     });
+
+    // Adjust pagination visibility on window resize
+    $(window).resize(function () {
+        showPage($('#nav .page-button.active').data('page') || 0);
+    });
+
+    // Optional: Adjust pagination if no rows are present
+    if (rowsTotal === 0) {
+        $('#nav').hide();
+    }
 });

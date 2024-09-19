@@ -1,0 +1,182 @@
+@charset "ISO-8859-1";
+body {
+    background-color: #1c1e21;
+    color: white;
+    margin: 0;
+}
+
+.navbar {
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: darkslategray;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.navbar-brand:hover {
+    color: #adb5bd !important;
+}
+
+.sidebar {
+    height: calc(100vh - 56px); 
+    width: 250px;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    background-color: black;
+    color: white;
+    padding-top: 20px;
+    z-index: 900;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+/* Add this to your CSS file */
+
+/* Sidebar Hidden */
+.sidebar.hide {
+    height: 0;
+    overflow: hidden; /* Ensure content inside the sidebar is hidden */
+}
+
+/* Adjust the toggle button */
+.toggle-container {
+    position: fixed;
+    top: 65px;  /* Adjust as necessary based on your layout */
+    left: 0;  /* Keep toggle button in place horizontally */
+    z-index: 1001;
+    transition: top 0.3s ease;  /* Smooth transition for vertical movement */
+}
+
+/* Toggle button style */
+.toggle-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.toggle-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 4px;
+    background-color: white;
+}
+
+/* Apply vertical hiding only for responsive screens */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 56px;  /* Position relative to navbar */
+        left: 0;
+        width: 100%;
+        height: 250px;  /* Default height when visible */
+        background-color: black;
+        transition: height 0.3s ease; /* Smooth transition for height */
+    }
+
+    .content {
+        margin-top: 250px; /* Adjust margin for content when sidebar is visible */
+        transition: margin-top 0.3s ease; /* Smooth transition for margin change */
+    }
+}
+
+
+.sidebar a {
+    color: white;
+    padding: 13px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    border-radius: 4px;
+}
+
+.sidebar a:hover {
+    background-color: blue;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    padding-top: 96px; 
+    background-color: #212529;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+.dashboard-heading {
+    padding-top: 10px;
+    margin-top: 10px;
+    color: white;
+}
+
+.welcome-text {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 200px;
+        padding-top: 90px; 
+    }
+
+    .welcome-text {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static; /* Sidebar no longer fixed */
+    }
+
+    .content {
+        margin-left: 0;
+        padding-top: 40px; /* Reduced padding for smaller screens */
+    }
+
+    .welcome-text {
+        font-size: 1.75rem;
+    }
+
+    .card {
+        min-height: 100px; /* Reduce card height for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .content {
+        padding: 10px;
+        padding-top: 30px; /* Further reduce padding on smaller screens */
+    }
+
+    .welcome-text {
+        font-size: 1.5rem;
+    }
+
+    .dashboard-heading {
+        padding-top: 15px;
+    }
+}

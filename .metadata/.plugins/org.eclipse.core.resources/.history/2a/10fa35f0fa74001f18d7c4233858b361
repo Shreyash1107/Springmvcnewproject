@@ -1,0 +1,162 @@
+/* General Body Styling */
+body {
+    background-color: #1c1e21;
+    color: white;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    background-color: darkslategray;
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.navbar-brand:hover {
+    color: #adb5bd !important;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    height: calc(100vh - 56px);
+    width: 250px;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    background-color: black;
+    color: white;
+    padding-top: 20px;
+    z-index: 900;
+}
+
+.sidebar a {
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: blue;
+}
+
+/* Content Styling */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    padding-top: 76px;
+    background-color: #212529;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+.content h4,
+.content p {
+    color: white;
+}
+
+/* Button Styling */
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
+
+/* Form Centering */
+.form-group-center {
+    display: flex;
+    justify-content: center;
+}
+
+/* Card Styling */
+.card {
+    max-width: 18rem;
+}
+
+/* Pagination Container */
+.pagination-container {
+    text-align: center;
+    margin-top: 20px;
+    overflow-x: auto; /* Ensure horizontal scroll if needed */
+}
+
+.pagination-container .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.pagination-container .page-item {
+    margin: 0 2px;
+}
+
+.pagination-container .page-link {
+    color: white;
+    background-color: #495057;
+    border: 1px solid #495057;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem; /* Adjust font size for better responsiveness */
+}
+
+.pagination-container .page-link:hover {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 200px;
+    }
+    .content {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .content {
+        margin-left: 0;
+        padding-top: 56px; /* Adjust padding to fit below the navbar */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar a {
+        font-size: 18px;
+    }
+    .pagination-container .page-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar a {
+        font-size: 16px;
+        padding: 10px;
+    }
+    .content {
+        padding: 10px;
+    }
+    .pagination-container .page-link {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+    }
+}
